@@ -1,0 +1,1340 @@
+{
+  "app": {
+    "name": "VIBE",
+    "city": "Москва",
+    "googleMapsKey": "",
+    "weather": {
+      "temp": 14,
+      "text": "Облачно, без дождя"
+    },
+    "limits": {
+      "surprisesPerDay": 3,
+      "routesPerDay": 1
+    },
+    "premium": {
+      "title": "VIBE+",
+      "price": "149 ⭐ в месяц",
+      "perks": [
+        "Безлимитные «Удиви меня»",
+        "Маршруты на весь день без ограничений",
+        "Секретные места недели",
+        "Общие списки с друзьями"
+      ]
+    }
+  },
+  "moods": [
+    {
+      "id": "calm",
+      "label": "Спокойно"
+    },
+    {
+      "id": "atmo",
+      "label": "Атмосферно"
+    },
+    {
+      "id": "tasty",
+      "label": "Вкусно"
+    },
+    {
+      "id": "culture",
+      "label": "Культурно"
+    },
+    {
+      "id": "active",
+      "label": "Активно"
+    },
+    {
+      "id": "romance",
+      "label": "Романтика"
+    },
+    {
+      "id": "party",
+      "label": "Потусить"
+    }
+  ],
+  "company": [
+    {
+      "id": "solo",
+      "label": "Одна",
+      "icon": "person"
+    },
+    {
+      "id": "pair",
+      "label": "Вдвоём",
+      "icon": "heart"
+    },
+    {
+      "id": "friends",
+      "label": "Друзья",
+      "icon": "users"
+    },
+    {
+      "id": "family",
+      "label": "Семья",
+      "icon": "home"
+    }
+  ],
+  "times": [
+    {
+      "id": "morning",
+      "label": "Утро",
+      "icon": "sunrise",
+      "from": 7,
+      "to": 12
+    },
+    {
+      "id": "day",
+      "label": "День",
+      "icon": "sun",
+      "from": 12,
+      "to": 17
+    },
+    {
+      "id": "evening",
+      "label": "Вечер",
+      "icon": "sunset",
+      "from": 17,
+      "to": 22
+    },
+    {
+      "id": "night",
+      "label": "Ночь",
+      "icon": "moon",
+      "from": 22,
+      "to": 7
+    }
+  ],
+  "budgets": [
+    {
+      "id": "free",
+      "label": "Бесплатно",
+      "max": 0
+    },
+    {
+      "id": "1000",
+      "label": "До 1000 ₽",
+      "max": 1000
+    },
+    {
+      "id": "3000",
+      "label": "До 3000 ₽",
+      "max": 3000
+    },
+    {
+      "id": "any",
+      "label": "Неважно",
+      "max": null
+    }
+  ],
+  "districts": [
+    {
+      "id": "center",
+      "label": "Китай-город",
+      "lat": 55.7558,
+      "lon": 37.632
+    },
+    {
+      "id": "zamoskv",
+      "label": "Замоскворечье",
+      "lat": 55.7395,
+      "lon": 37.628
+    },
+    {
+      "id": "khamovniki",
+      "label": "Хамовники",
+      "lat": 55.7303,
+      "lon": 37.577
+    },
+    {
+      "id": "patriki",
+      "label": "Патриаршие",
+      "lat": 55.7636,
+      "lon": 37.5925
+    },
+    {
+      "id": "basmanny",
+      "label": "Басманный",
+      "lat": 55.765,
+      "lon": 37.66
+    },
+    {
+      "id": "savelovsky",
+      "label": "Савёловский",
+      "lat": 55.794,
+      "lon": 37.587
+    }
+  ],
+  "places": [
+    {
+      "id": "zaryadye",
+      "name": "Парк «Зарядье»",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 50,
+      "open": "00:00-24:00",
+      "why": "Парящий мост над рекой и вид на Кремль, особенно красиво на закате",
+      "description": "Ландшафтный парк в самом центре: климатические зоны России, ледяная пещера и амфитеатр.",
+      "address": "ул. Варварка, 6",
+      "lat": 55.7512,
+      "lon": 37.629,
+      "photo": "img/zaryadye.jpg",
+      "tones": [
+        "#bed9f4",
+        "#f3e9d6"
+      ],
+      "tags": [
+        "парк",
+        "прогулка",
+        "вид",
+        "мост",
+        "свидание"
+      ],
+      "photoCredit": "Bestalex · CC0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Moscow._View_to_Zaryadye_Park_from_Floating_bridge.jpg",
+      "photos": [
+        {
+          "src": "img/zaryadye.jpg",
+          "credit": "Bestalex · CC0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow._View_to_Zaryadye_Park_from_Floating_bridge.jpg"
+        },
+        {
+          "src": "img/zaryadye-1.jpg",
+          "credit": "Юрий Д.К. · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Sunflower_in_Zaryadye_Park,_Moscow_-_July_2026.jpg"
+        },
+        {
+          "src": "img/zaryadye-2.jpg",
+          "credit": "DmitriyGuryanov · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Glass_Crust_in_Zaryadye_park,_Moscow,_Russia.jpg"
+        },
+        {
+          "src": "img/zaryadye-3.jpg",
+          "credit": "Юрий Д.К. · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_-_2026_-_A_bench_in_Zaryadye_Park.jpg"
+        }
+      ]
+    },
+    {
+      "id": "garage",
+      "name": "Музей «Гараж»",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 600,
+      "priceText": "≈ 600 ₽",
+      "stay": 90,
+      "open": "11:00-22:00",
+      "why": "Современное искусство без пафоса, после выставки можно зайти в книжный",
+      "description": "Музей современного искусства в Парке Горького: выставки, лекции и большой арт-книжный.",
+      "address": "ул. Крымский Вал, 9, стр. 32",
+      "lat": 55.7275,
+      "lon": 37.6016,
+      "photo": "img/garage.jpg",
+      "tones": [
+        "#dfe7ee",
+        "#c9d6e3"
+      ],
+      "tags": [
+        "музей",
+        "выставка",
+        "искусство",
+        "книжный"
+      ],
+      "photoCredit": "Sergey Norin from Moscow, Russia · CC BY 2.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Moscow,_Garage_Museum_building_in_Gorky_Park_(19531528135).jpg",
+      "photos": [
+        {
+          "src": "img/garage.jpg",
+          "credit": "Sergey Norin from Moscow, Russia · CC BY 2.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_Garage_Museum_building_in_Gorky_Park_(19531528135).jpg"
+        },
+        {
+          "src": "img/garage-1.jpg",
+          "credit": "Garage Museum of Contemporary Art · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%9C%D1%83%D0%B7%D0%B5%D1%8F_%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B0_%C2%AB%D0%93%D0%B0%D1%80%D0%B0%D0%B6%C2%BB.jpg"
+        },
+        {
+          "src": "img/garage-2.jpg",
+          "credit": "Sergey Norin from Moscow, Russia · CC BY 2.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_Garage_Museum_building_in_Gorky_Park_(18910681363).jpg"
+        },
+        {
+          "src": "img/garage-3.jpg",
+          "credit": "Gennady Grachev from Moscow, Russia · CC BY 2.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_Garage_Museum_building_square_in_Gorky_Park_(31331519162).jpg"
+        },
+        {
+          "src": "img/garage-4.jpg",
+          "credit": "Garage · CC BY-SA 3.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Garage_Shigeru_Ban_pavilion.jpg"
+        }
+      ]
+    },
+    {
+      "id": "vorobyovy",
+      "name": "Смотровая на Воробьёвых горах",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 30,
+      "open": "00:00-24:00",
+      "why": "Весь город как на ладони, вечерние огни выглядят особенно атмосферно",
+      "description": "Главная смотровая площадка Москвы напротив Лужников, рядом прогулочная набережная.",
+      "address": "ул. Косыгина, 28",
+      "lat": 55.7106,
+      "lon": 37.5531,
+      "photo": "img/vorobyovy.jpg",
+      "tones": [
+        "#a9c8ea",
+        "#fbe3cf"
+      ],
+      "tags": [
+        "вид",
+        "смотровая",
+        "панорама",
+        "закат",
+        "свидание"
+      ],
+      "photoCredit": "ProtoplasmaKid · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Personas_en_el_mirador_de_la_Colina_de_los_Gorriones.jpg",
+      "photos": [
+        {
+          "src": "img/vorobyovy.jpg",
+          "credit": "ProtoplasmaKid · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Personas_en_el_mirador_de_la_Colina_de_los_Gorriones.jpg"
+        },
+        {
+          "src": "img/vorobyovy-4.jpg",
+          "credit": "Sergey Norin from Moscow, Russia · CC BY 2.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_night_view_of_Mosfilmovsky_Pond_and_Vorobyovy_Gory_towers.jpg"
+        }
+      ]
+    },
+    {
+      "id": "depo",
+      "name": "Фудмолл «Депо»",
+      "category": "Фудмолл",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "active"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 900,
+      "priceText": "≈ 900 ₽",
+      "stay": 60,
+      "open": "08:00-23:00",
+      "why": "Каждый выберет своё, от рамена до хинкали, и всё под одной крышей",
+      "description": "Фудмолл в историческом трамвайном депо: больше 70 гастрономических точек.",
+      "address": "ул. Лесная, 20, стр. 3",
+      "lat": 55.7797,
+      "lon": 37.589,
+      "photo": "img/depo.jpg",
+      "tones": [
+        "#f4e4cc",
+        "#e6d2b8"
+      ],
+      "tags": [
+        "еда",
+        "поесть",
+        "фудкорт",
+        "ужин",
+        "кафе"
+      ],
+      "photoCredit": "Ludvig14 · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Moscow_MiusskoeTramDepot_1687.jpg",
+      "photos": [
+        {
+          "src": "img/depo.jpg",
+          "credit": "Ludvig14 · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_MiusskoeTramDepot_1687.jpg"
+        },
+        {
+          "src": "img/depo-2.jpg",
+          "credit": "Ludvig14 · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_MiusskoeTramDepot_1690.jpg"
+        }
+      ]
+    },
+    {
+      "id": "aptekarsky",
+      "name": "Аптекарский огород",
+      "category": "Ботанический сад",
+      "icon": "leaf",
+      "moods": [
+        "calm",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 500,
+      "priceText": "≈ 500 ₽",
+      "stay": 60,
+      "open": "10:00-21:00",
+      "why": "Тишина, оранжереи и пальмы посреди города, чтобы перезагрузиться",
+      "description": "Старейший ботанический сад Москвы с оранжереями, прудом и тропическими растениями.",
+      "address": "пр-т Мира, 26, стр. 1",
+      "lat": 55.7771,
+      "lon": 37.633,
+      "photo": "img/aptekarsky.jpg",
+      "tones": [
+        "#dbe8dc",
+        "#eef2e4"
+      ],
+      "tags": [
+        "сад",
+        "оранжерея",
+        "тишина",
+        "природа"
+      ],
+      "photoCredit": "MBH · CC BY 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Palm_greenhouse_(Aptekarsky_garden)_15.jpg",
+      "photos": [
+        {
+          "src": "img/aptekarsky.jpg",
+          "credit": "MBH · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Palm_greenhouse_(Aptekarsky_garden)_15.jpg"
+        },
+        {
+          "src": "img/aptekarsky-1.jpg",
+          "credit": "MBH · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Grotto_in_Aptekarsky_Ogorod_02.jpg"
+        },
+        {
+          "src": "img/aptekarsky-2.jpg",
+          "credit": "MBH · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Grotto_in_Aptekarsky_Ogorod_05.jpg"
+        },
+        {
+          "src": "img/aptekarsky-3.jpg",
+          "credit": "MBH · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Grotto_in_Aptekarsky_Ogorod_07.jpg"
+        },
+        {
+          "src": "img/aptekarsky-4.jpg",
+          "credit": "MBH · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Grotto_in_Aptekarsky_Ogorod_06.jpg"
+        }
+      ]
+    },
+    {
+      "id": "flacon",
+      "name": "Дизайн-завод «Флакон»",
+      "category": "Креативный кластер",
+      "icon": "spark",
+      "moods": [
+        "culture",
+        "active",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "friends",
+        "pair"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 0,
+      "priceText": "Вход свободный",
+      "stay": 60,
+      "open": "10:00-23:00",
+      "why": "Шоурумы, маркеты по выходным и уличные кафе, можно гулять пару часов",
+      "description": "Бывший хрустальный завод, где теперь дизайнерские магазины, студии и события.",
+      "address": "ул. Большая Новодмитровская, 36",
+      "lat": 55.8057,
+      "lon": 37.5846,
+      "photo": "img/flacon.jpg",
+      "tones": [
+        "#e7e1ef",
+        "#d7e3f2"
+      ],
+      "tags": [
+        "маркет",
+        "шоурум",
+        "дизайн",
+        "кафе"
+      ],
+      "photoCredit": "Flacon PR department · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Old_Flacon_5.jpg",
+      "photos": [
+        {
+          "src": "img/flacon.jpg",
+          "credit": "Flacon PR department · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Old_Flacon_5.jpg"
+        },
+        {
+          "src": "img/flacon-1.jpg",
+          "credit": "Flacon PR department · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Flacon_inside.jpg"
+        },
+        {
+          "src": "img/flacon-2.jpg",
+          "credit": "Flacon PR department · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Flacon_territory_4.jpg"
+        },
+        {
+          "src": "img/flacon-3.jpg",
+          "credit": "Flacon PR department · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Old_Flacon_4.jpg"
+        },
+        {
+          "src": "img/flacon-4.jpg",
+          "credit": "Flacon PR department · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Flacon_people_9.jpg"
+        }
+      ]
+    },
+    {
+      "id": "gorky",
+      "name": "Парк Горького",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "active",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Набережная, прокат и кофе на каждом шагу, для лёгкой прогулки без плана",
+      "description": "Главный парк города: Пушкинская набережная, Нескучный сад и летние веранды.",
+      "address": "ул. Крымский Вал, 9",
+      "lat": 55.7298,
+      "lon": 37.6011,
+      "photo": "img/gorky.jpg",
+      "tones": [
+        "#d4e6f6",
+        "#eef0e0"
+      ],
+      "tags": [
+        "парк",
+        "прогулка",
+        "набережная",
+        "велосипед",
+        "кофе"
+      ],
+      "photoCredit": "Retired electrician · CC0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Moscow,_Gorky_Park_entrance_May_2023_02(DXO).jpg",
+      "photos": [
+        {
+          "src": "img/gorky.jpg",
+          "credit": "Retired electrician · CC0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_Gorky_Park_entrance_May_2023_02(DXO).jpg"
+        },
+        {
+          "src": "img/gorky-1.jpg",
+          "credit": "A.Savin · FAL · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_Gorky_Park_main_portal_08-2016_img1.jpg"
+        },
+        {
+          "src": "img/gorky-2.jpg",
+          "credit": "A.Savin · FAL · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_Gorky_Park_Pushkinsky_Bridge_08-2016_img3.jpg"
+        },
+        {
+          "src": "img/gorky-3.jpg",
+          "credit": "A.Savin · FAL · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_Gorky_Park_colonnades_viewpoint_08-2016_img1.jpg"
+        },
+        {
+          "src": "img/gorky-4.jpg",
+          "credit": "A.Savin · FAL · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_Gorky_Park_colonnades_viewpoint_08-2016_img3.jpg"
+        }
+      ]
+    },
+    {
+      "id": "muzeon",
+      "name": "Парк «Музеон»",
+      "category": "Арт-парк",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 40,
+      "open": "00:00-24:00",
+      "why": "Скульптуры под открытым небом и вид на Москву-реку",
+      "description": "Парк искусств у Крымского моста, больше тысячи скульптур и тихие аллеи.",
+      "address": "ул. Крымский Вал, 2",
+      "lat": 55.7353,
+      "lon": 37.6068,
+      "photo": "img/muzeon.jpg",
+      "tones": [
+        "#e6ebee",
+        "#f4efe2"
+      ],
+      "tags": [
+        "парк",
+        "скульптуры",
+        "искусство"
+      ],
+      "photoCredit": "MareCap · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Stalinist_architecture,_Muzeon_Park_of_Arts,_Moscow.jpg",
+      "photos": [
+        {
+          "src": "img/muzeon.jpg",
+          "credit": "MareCap · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Stalinist_architecture,_Muzeon_Park_of_Arts,_Moscow.jpg"
+        },
+        {
+          "src": "img/muzeon-2.jpg",
+          "credit": "sailko · CC BY-SA 3.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Muzeon_Park_03.JPG"
+        },
+        {
+          "src": "img/muzeon-3.jpg",
+          "credit": "Dima41 · CC BY-SA 3.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Parko_Muzeono_en_Moskvo.JPG"
+        },
+        {
+          "src": "img/muzeon-4.jpg",
+          "credit": "Sergey Rodovnichenko from Moscow, Russia · CC BY-SA 2.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Muzeon_20130427_172147_(8686208400).jpg"
+        }
+      ]
+    },
+    {
+      "id": "patriarshy-bridge",
+      "name": "Патриарший мост",
+      "category": "Прогулка",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "00:00-24:00",
+      "why": "Лучший вид на храм и Кремль вечером, короткая, но очень красивая остановка",
+      "description": "Пешеходный мост через Москву-реку от храма Христа Спасителя к Берсеневской набережной.",
+      "address": "Пречистенская наб.",
+      "lat": 55.743,
+      "lon": 37.6078,
+      "photo": "img/patriarshy-bridge.jpg",
+      "tones": [
+        "#b8d3ef",
+        "#f1e2d3"
+      ],
+      "tags": [
+        "вид",
+        "мост",
+        "прогулка",
+        "свидание"
+      ],
+      "photoCredit": "Andrey Korzun · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Cathedral_of_Christ_the_Saviour_and_Patriarshy_bridge_at_night_03.jpg",
+      "photos": [
+        {
+          "src": "img/patriarshy-bridge.jpg",
+          "credit": "Andrey Korzun · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Cathedral_of_Christ_the_Saviour_and_Patriarshy_bridge_at_night_03.jpg"
+        },
+        {
+          "src": "img/patriarshy-bridge-2.jpg",
+          "credit": "Alexxx1979 · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow._Moskva_river._Patriarshy_Bridge_P8100216_2800.jpg"
+        }
+      ]
+    },
+    {
+      "id": "tretyakovka",
+      "name": "Третьяковская галерея",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 800,
+      "priceText": "≈ 800 ₽",
+      "stay": 100,
+      "open": "10:00-18:00",
+      "why": "Шишкин, Айвазовский и Врубель в оригинале, классика, которая не надоедает",
+      "description": "Главное собрание русского искусства в Лаврушинском переулке.",
+      "address": "Лаврушинский пер., 10",
+      "lat": 55.7415,
+      "lon": 37.6208,
+      "photo": "img/tretyakovka.jpg",
+      "tones": [
+        "#efe6d6",
+        "#dfe6ee"
+      ],
+      "tags": [
+        "музей",
+        "живопись",
+        "искусство"
+      ],
+      "photoCredit": "Sergey A. Demidov · CC BY 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:20180711_Main_building_of_Tretyakov_Gallery_-_exterior_01.jpg",
+      "photos": [
+        {
+          "src": "img/tretyakovka.jpg",
+          "credit": "Sergey A. Demidov · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:20180711_Main_building_of_Tretyakov_Gallery_-_exterior_01.jpg"
+        },
+        {
+          "src": "img/tretyakovka-1.jpg",
+          "credit": "Mike1979 Russia · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Tretyakov_Gallery_Main_Building_Lavrushinskiy_Lane_10_str_4_2016-04-19_2690.jpg"
+        },
+        {
+          "src": "img/tretyakovka-3.jpg",
+          "credit": "Sergey A. Demidov · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:20180711_Main_building_of_Tretyakov_Gallery_-_exterior_02.jpg"
+        },
+        {
+          "src": "img/tretyakovka-4.jpg",
+          "credit": "Wmpearl · CC0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Tretyakov_Gallery,_Moscow,_main_building_.JPG"
+        }
+      ]
+    },
+    {
+      "id": "central-market",
+      "name": "Центральный рынок",
+      "category": "Гастрорынок",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 1000,
+      "priceText": "≈ 1000 ₽",
+      "stay": 60,
+      "open": "10:00-23:00",
+      "why": "Три этажа ресторанных корнеров в центре, удобно встретиться компанией",
+      "description": "Гастрорынок на Рождественском бульваре с кухнями разных стран и винным баром.",
+      "address": "Рождественский б-р, 1",
+      "lat": 55.7667,
+      "lon": 37.625,
+      "photo": "img/central-market.jpg",
+      "tones": [
+        "#f1e3cf",
+        "#e4ecf3"
+      ],
+      "tags": [
+        "еда",
+        "поесть",
+        "ужин",
+        "бар",
+        "вино"
+      ],
+      "photoCredit": "Retired electrician · CC0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Moscow,_Trubnaya_Square,_new_Central_Market_building,_May_2026_01.jpg",
+      "photos": [
+        {
+          "src": "img/central-market.jpg",
+          "credit": "Retired electrician · CC0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_Trubnaya_Square,_new_Central_Market_building,_May_2026_01.jpg"
+        }
+      ]
+    },
+    {
+      "id": "patriki",
+      "name": "Патриаршие пруды",
+      "category": "Прогулка",
+      "icon": "leaf",
+      "moods": [
+        "calm",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 30,
+      "open": "00:00-24:00",
+      "why": "Тихие переулки, пруд и лучшие кофейни района в пяти минутах",
+      "description": "Один из самых атмосферных районов центра: пруд, бульвар и старые переулки.",
+      "address": "Малый Патриарший пер.",
+      "lat": 55.7636,
+      "lon": 37.5925,
+      "photo": "img/patriki.jpg",
+      "tones": [
+        "#d9e9f6",
+        "#f3efe1"
+      ],
+      "tags": [
+        "прогулка",
+        "кофе",
+        "кофейня",
+        "пруд"
+      ],
+      "photoCredit": "Dimа · CC BY-SA 3.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Patriarch_Ponds.jpg",
+      "photos": [
+        {
+          "src": "img/patriki.jpg",
+          "credit": "Dimа · CC BY-SA 3.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Patriarch_Ponds.jpg"
+        },
+        {
+          "src": "img/patriki-2.jpg",
+          "credit": "A.Savin · FAL · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_05-2017_img39_Patriarshiy_Pond.jpg"
+        },
+        {
+          "src": "img/patriki-3.jpg",
+          "credit": "Elisa.rolle · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Patriarch_Ponds,_skating_ring.jpg"
+        }
+      ]
+    },
+    {
+      "id": "sakhalin",
+      "name": "Ресторан «Сахалин»",
+      "category": "Ресторан",
+      "icon": "glass",
+      "moods": [
+        "romance",
+        "tasty"
+      ],
+      "company": [
+        "pair"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 4000,
+      "priceText": "≈ 4000 ₽",
+      "stay": 90,
+      "open": "12:00-24:00",
+      "why": "Панорама на 22-м этаже и морепродукты, для особенного вечера вдвоём",
+      "description": "Ресторан на верхнем этаже с панорамными окнами на Смоленскую и центр.",
+      "address": "Смоленская пл., 3, 22 этаж",
+      "lat": 55.7478,
+      "lon": 37.5836,
+      "photo": "img/sakhalin.jpg",
+      "tones": [
+        "#c4d7ec",
+        "#ead9c8"
+      ],
+      "tags": [
+        "ресторан",
+        "ужин",
+        "вид",
+        "свидание",
+        "бар",
+        "коктейли"
+      ],
+      "photoCredit": "Смоленская площадь · Artyom Svetlov · CC BY 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Moscow_Smolenskaya-Sennaya_Square_32_2013-12_1387720254.JPG",
+      "photos": [
+        {
+          "src": "img/sakhalin.jpg",
+          "credit": "Смоленская площадь · Artyom Svetlov · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_Smolenskaya-Sennaya_Square_32_2013-12_1387720254.JPG"
+        },
+        {
+          "src": "img/sakhalin-1.jpg",
+          "credit": "Смоленская площадь · Юрий Д.К. · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_-_2025_-_The_Russian_Ministry_of_Foreign_Affairs_building._Smolenskaya-Sennaya_Square_and_Smolenskaya_Street.jpg"
+        },
+        {
+          "src": "img/sakhalin-2.jpg",
+          "credit": "Смоленская площадь · Lesless · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Smolenskaya-Sennaya_Square_20220731_111435.jpg"
+        }
+      ]
+    },
+    {
+      "id": "serebryanicheskaya",
+      "name": "Серебряническая набережная",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "calm",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "00:00-24:00",
+      "why": "Вид на высотку на Котельнической, одно из самых фотогеничных мест города",
+      "description": "Набережная Яузы у впадения в Москву-реку с видом на сталинскую высотку.",
+      "address": "Серебряническая наб.",
+      "lat": 55.749,
+      "lon": 37.65,
+      "photo": "img/serebryanicheskaya.jpg",
+      "tones": [
+        "#cfe1f3",
+        "#f5ebdd"
+      ],
+      "tags": [
+        "вид",
+        "набережная",
+        "фото"
+      ],
+      "photoCredit": "Alexxx1979 · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Moscow._Kotelnicheskaya_Embankment_Building_P5142338_3585.jpg",
+      "photos": [
+        {
+          "src": "img/serebryanicheskaya.jpg",
+          "credit": "Alexxx1979 · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow._Kotelnicheskaya_Embankment_Building_P5142338_3585.jpg"
+        },
+        {
+          "src": "img/serebryanicheskaya-1.jpg",
+          "credit": "Юрий Д.К. · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Skyscraper_on_Kotelnicheskaya_Embankment_with_the_backdrop_of_smoke_from_Wildberries_fire.jpg"
+        },
+        {
+          "src": "img/serebryanicheskaya-2.jpg",
+          "credit": "Юрий Д.К. · CC BY 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow_-_2025_-_Building_on_Kotelnicheskaya_-_full_view.jpg"
+        },
+        {
+          "src": "img/serebryanicheskaya-3.jpg",
+          "credit": "DmitriyGuryanov · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Kotelnicheskaya_Embankment_Building_in_winter.jpg"
+        },
+        {
+          "src": "img/serebryanicheskaya-4.jpg",
+          "credit": "This photo was taken by Anton Zelenov.\nPlease credit this wi · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Kotelnicheskaya_Embankment_Building_2013.jpg"
+        }
+      ]
+    },
+    {
+      "id": "khlebozavod",
+      "name": "Хлебозавод №9",
+      "category": "Креативный кластер",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "culture",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 700,
+      "priceText": "≈ 700 ₽",
+      "stay": 60,
+      "open": "09:00-23:00",
+      "why": "Кофейни, книжный и маленькие магазины в здании старого завода",
+      "description": "Креативный квартал у Савёловской: кафе, бутики локальных брендов и выставки.",
+      "address": "Новодмитровская ул., 1",
+      "lat": 55.7921,
+      "lon": 37.5937,
+      "photo": "img/khlebozavod.jpg",
+      "tones": [
+        "#efe5d5",
+        "#dde7f1"
+      ],
+      "tags": [
+        "кофе",
+        "кофейня",
+        "кафе",
+        "магазины",
+        "бар"
+      ],
+      "photoCredit": "Bezik · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Khlebozavod_9_from_Butyrskaya.jpeg",
+      "photos": [
+        {
+          "src": "img/khlebozavod.jpg",
+          "credit": "Bezik · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Khlebozavod_9_from_Butyrskaya.jpeg"
+        },
+        {
+          "src": "img/khlebozavod-2.jpg",
+          "credit": "Artyom Svetlov · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Khlebozavod_9_2017-05_1495991378.JPG"
+        },
+        {
+          "src": "img/khlebozavod-3.jpg",
+          "credit": "Artyom Svetlov · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Khlebozavod_9_2017-05_1495991335.JPG"
+        }
+      ]
+    },
+    {
+      "id": "mutabor",
+      "name": "Клуб «Мутабор»",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "night"
+      ],
+      "price": 1500,
+      "priceText": "≈ 1500 ₽ вход",
+      "stay": 180,
+      "open": "23:00-07:00",
+      "why": "Огромный техно-клуб в бывшем заводском цеху, сильные диджеи и свет до утра",
+      "description": "Один из главных клубов Москвы: несколько танцполов, большой звук и вечеринки по выходным.",
+      "address": "Шарикоподшипниковская ул., 13, стр. 32",
+      "lat": 55.7196,
+      "lon": 37.6743,
+      "photo": "img/mutabor.jpg",
+      "tones": [
+        "#c4d7ec",
+        "#ead9c8"
+      ],
+      "tags": [
+        "клуб",
+        "техно",
+        "вечеринка",
+        "танцы",
+        "диджей",
+        "ночь"
+      ],
+      "photoCredit": "7.83hz · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:%D0%9C%D1%8D%D0%B9%D0%BD_%D0%BC%D1%83%D1%82%D0%B0%D0%B1%D0%BE%D1%80_%D1%841.jpg",
+      "photos": [
+        {
+          "src": "img/mutabor.jpg",
+          "credit": "7.83hz · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:%D0%9C%D1%8D%D0%B9%D0%BD_%D0%BC%D1%83%D1%82%D0%B0%D0%B1%D0%BE%D1%80_%D1%841.jpg"
+        }
+      ]
+    },
+    {
+      "id": "mosty",
+      "name": "Клуб «Мосты»",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "night"
+      ],
+      "price": 2000,
+      "priceText": "≈ 2000 ₽ вход",
+      "stay": 180,
+      "open": "23:00-06:00",
+      "why": "Электроника в старом цеху «Красного Октября», окна прямо на реку",
+      "description": "Андеграундный клуб на территории бывшей кондитерской фабрики на Берсеневской набережной.",
+      "address": "Берсеневская наб., 6, стр. 3",
+      "lat": 55.7413,
+      "lon": 37.6093,
+      "photo": "img/mosty.jpg",
+      "tones": [
+        "#c4d7ec",
+        "#ead9c8"
+      ],
+      "tags": [
+        "клуб",
+        "электроника",
+        "вечеринка",
+        "танцы",
+        "диджей",
+        "ночь"
+      ],
+      "photoCredit": "Dmitry Ivanov. · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Buildings_of_Red_October_confectionery_on_Bersenevskaya_embankment_2018.jpg",
+      "photos": [
+        {
+          "src": "img/mosty.jpg",
+          "credit": "Dmitry Ivanov. · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Buildings_of_Red_October_confectionery_on_Bersenevskaya_embankment_2018.jpg"
+        },
+        {
+          "src": "img/mosty-2.jpg",
+          "credit": "Dmitry Ivanov. · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Buildings_of_Red_October_confectionery_on_Bersenevskaya_embankment.jpg"
+        },
+        {
+          "src": "img/mosty-3.jpg",
+          "credit": "Alexxx1979 · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow._Moskva_river._Bersenevskaya_Embankment._The_building_of_the_confectionery_factory_Red_October_P8090062_2750.jpg"
+        },
+        {
+          "src": "img/mosty-4.jpg",
+          "credit": "Dmitry Ivanov. · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:A_building_of_Red_October_confectionery_and_dome_of_Cathedral_of_Christ_the_Saviour.jpg"
+        }
+      ]
+    },
+    {
+      "id": "gipsy",
+      "name": "Gipsy",
+      "category": "Бар-клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "romance"
+      ],
+      "company": [
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 1500,
+      "priceText": "≈ 1500 ₽",
+      "stay": 150,
+      "open": "18:00-06:00",
+      "why": "Бар, танцпол и терраса на крыше, весело компанией до утра",
+      "description": "Бар-клуб на «Красном Октябре»: коктейли, диджеи и летняя терраса с видом на центр.",
+      "address": "Болотная наб., 3/4, стр. 2",
+      "lat": 55.7418,
+      "lon": 37.6106,
+      "photo": "img/mosty.jpg",
+      "tones": [
+        "#c4d7ec",
+        "#ead9c8"
+      ],
+      "tags": [
+        "клуб",
+        "бар",
+        "коктейли",
+        "танцы",
+        "терраса",
+        "вечеринка",
+        "ночь"
+      ],
+      "photoCredit": "здание «Красного Октября» · Dmitry Ivanov. · CC BY-SA 4.0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Buildings_of_Red_October_confectionery_on_Bersenevskaya_embankment_2018.jpg",
+      "photos": [
+        {
+          "src": "img/mosty.jpg",
+          "credit": "здание «Красного Октября» · Dmitry Ivanov. · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Buildings_of_Red_October_confectionery_on_Bersenevskaya_embankment_2018.jpg"
+        },
+        {
+          "src": "img/mosty-2.jpg",
+          "credit": "здание «Красного Октября» · Dmitry Ivanov. · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Buildings_of_Red_October_confectionery_on_Bersenevskaya_embankment.jpg"
+        },
+        {
+          "src": "img/mosty-3.jpg",
+          "credit": "здание «Красного Октября» · Alexxx1979 · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow._Moskva_river._Bersenevskaya_Embankment._The_building_of_the_confectionery_factory_Red_October_P8090062_2750.jpg"
+        },
+        {
+          "src": "img/mosty-4.jpg",
+          "credit": "здание «Красного Октября» · Dmitry Ivanov. · CC BY-SA 4.0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:A_building_of_Red_October_confectionery_and_dome_of_Cathedral_of_Christ_the_Saviour.jpg"
+        }
+      ]
+    },
+    {
+      "id": "krizis",
+      "name": "«Кризис жанра»",
+      "category": "Бар-клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 1000,
+      "priceText": "≈ 1000 ₽",
+      "stay": 150,
+      "open": "18:00-06:00",
+      "why": "Живые концерты и танцы до утра, легендарный бар центра",
+      "description": "Бар с живой музыкой на Покровке: кавер-группы, танцпол и шумные вечера по выходным.",
+      "address": "ул. Покровка, 16/16",
+      "lat": 55.759,
+      "lon": 37.645,
+      "photo": "img/krizis.jpg",
+      "tones": [
+        "#c4d7ec",
+        "#ead9c8"
+      ],
+      "tags": [
+        "клуб",
+        "бар",
+        "концерт",
+        "живая музыка",
+        "танцы",
+        "вечеринка",
+        "ночь"
+      ],
+      "photoCredit": "улица Покровка · Retired electrician · CC0 · Wikimedia Commons",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Moscow,_Pokrovka_8_May_2021_02.jpg",
+      "photos": [
+        {
+          "src": "img/krizis.jpg",
+          "credit": "улица Покровка · Retired electrician · CC0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_Pokrovka_8_May_2021_02.jpg"
+        },
+        {
+          "src": "img/krizis-2.jpg",
+          "credit": "улица Покровка · Retired electrician · CC0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_Pokrovka_6,4_May_2021_01.jpg"
+        },
+        {
+          "src": "img/krizis-3.jpg",
+          "credit": "улица Покровка · Retired electrician · CC0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_Pokrovka_2-1_May_2021_05.jpg"
+        },
+        {
+          "src": "img/krizis-4.jpg",
+          "credit": "улица Покровка · Retired electrician · CC0 · Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Moscow,_Pokrovka_2-1_May_2021_04.jpg"
+        }
+      ]
+    }
+  ]
+}
