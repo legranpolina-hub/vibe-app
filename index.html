@@ -840,7 +840,7 @@
 
   function renderBar() {
     var bar = $("bar"), s = S.screen, h = "";
-    if (s === "plan1") h = '<button class="btn gloss" data-act="toPlan2">Далее ' + ic("arrow") + "</button>";
+    if (s === "plan1") h = '<button class="btn soft" data-act="build" style="width:auto;padding:0 20px">' + ic("spark") + ' Сразу</button><button class="btn gloss" data-act="toPlan2">Далее ' + ic("arrow") + "</button>";
     else if (s === "plan2") h = '<button class="btn soft" data-act="back">' + ic("back") + " Назад</button><button class=\"btn gloss\" data-act=\"toPlan3\">Далее " + ic("arrow") + "</button>";
     else if (s === "plan3") h = '<button class="btn soft" data-act="back">' + ic("back") + " Назад</button><button class=\"btn gloss\" data-act=\"build\">" + (leftR() > 0 ? "Собрать" : ic("lock") + " VIBE+") + "</button>";
     else if (s === "route") h = '<button class="btn soft" data-act="rebuild" aria-label="Собрать другой">' + ic("refresh") + "</button><button class=\"btn gloss\" data-act=\"start\">Поехали " + ic("arrow") + "</button>";
@@ -1094,7 +1094,8 @@
 
   /* ================= сборка вечера: шаг 1 ================= */
   function newPlan() {
-    return { moods: S.mood ? [S.mood] : [], company: "solo", time: timeNow(), q: "", count: 3, budget: "any", endBy: (nowMin() + 300) % 1440, finish: "any" };
+    // настроение, компания и бюджет с главной сразу подставляются в «Собрать весь вечер»
+    return { moods: S.mood ? [S.mood] : [], company: S.company || "solo", time: timeNow(), q: "", count: 3, budget: S.budget || "any", endBy: (nowMin() + 300) % 1440, finish: "any" };
   }
   function planHead(step, title) {
     return '<div class="subhead"><button class="round" data-act="' + (step === 1 ? "closePlan" : "back") + '" aria-label="Назад">' + ic(step === 1 ? "close" : "back") + '</button>' +
@@ -1105,7 +1106,7 @@
     var P1 = S.plan;
     return planHead(1, "Подбор под тебя") +
       '<h1 class="h-display" style="font-size:26px;margin:0 4px">Каким будет вечер?</h1>' +
-      '<p class="muted" style="margin:10px 4px 0;font-size:14px">Ответь на три коротких вопроса. Можно выбрать несколько настроений.</p>' +
+      '<p class="muted" style="margin:10px 4px 0;font-size:14px">' + (S.mood || S.company !== "solo" || S.budget !== "any" ? "Настроение, компанию и бюджет подставили с главной. Жми «Сразу» или уточни детали." : "Ответь на три коротких вопроса или жми «Сразу». Можно выбрать несколько настроений.") + '</p>' +
       '<div class="q">Что хочется</div>' +
       '<div class="chips">' + D.moods.map(function (m) { return '<button class="chip' + (P1.moods.indexOf(m.id) >= 0 ? " on" : "") + '" data-pmood="' + m.id + '">' + esc(m.label) + "</button>"; }).join("") + '</div>' +
       '<div class="q">С кем</div>' +
