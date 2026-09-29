@@ -779,12 +779,27 @@
     if (!c) { try { c = new URLSearchParams(location.search).get("gift") || ""; } catch (e) {} }
     return c.trim();
   }
+  function sha(txt) {
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(txt)).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+    });
+  }
+  /* друзья из списка data.json → app.plusUsers получают VIBE+ сами, при обычном входе через бота */
+  function checkFriend(done) {
+    var list = (D.app && D.app.plusUsers) || [], tu = null;
+    try { tu = tg.initDataUnsafe.user; } catch (e) {}
+    if (!tu || !list.length || isPlus() || !window.crypto || !crypto.subtle) { done(false); return; }
+    var keys = ["id:" + tu.id]; if (tu.username) keys.push("u:" + String(tu.username).toLowerCase());
+    Promise.all(keys.map(sha)).then(function (hs) {
+      if (hs.some(function (h) { return list.indexOf(h) >= 0; })) { store.set("plus", true); done(true); } else done(false);
+    }).catch(function () { done(false); });
+  }
   function checkGift(done) {
     var c = giftCode(), list = (D.app && D.app.giftCodes) || [];
-    if (!c || !list.length || isPlus() || !window.crypto || !crypto.subtle) { done(false); return; }
+    if (!c || !list.length || isPlus() || !window.crypto || !crypto.subtle) { checkFriend(done); return; }
     crypto.subtle.digest("SHA-256", new TextEncoder().encode(c)).then(function (buf) {
       var hex = Array.prototype.map.call(new Uint8Array(buf), function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
-      if (list.indexOf(hex) >= 0) { store.set("plus", true); done(true); } else done(false);
+      if (list.indexOf(hex) >= 0) { store.set("plus", true); done(true); } else checkFriend(done);
     }).catch(function () { done(false); });
   }
   function spend(k) { var u = usage(); u[k]++; store.set("usage", u); }
