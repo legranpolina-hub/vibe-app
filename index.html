@@ -764,8 +764,24 @@
     plan: null, route: null, active: null, current: null, note: ""
   };
   function usage() { var u = store.get("usage", null); if (!u || u.day !== today()) u = { day: today(), s: 0, r: 0 }; return u; }
-  function leftS() { return Math.max(0, D.app.limits.surprisesPerDay - usage().s); }
-  function leftR() { return Math.max(0, D.app.limits.routesPerDay - usage().r); }
+  /* VIBE+ по подарочной ссылке: t.me/<бот>?startapp=КОД или ...github.io/vibe-app/?gift=КОД */
+  function isPlus() { return !!store.get("plus", false); }
+  function leftS() { return isPlus() ? 99 : Math.max(0, D.app.limits.surprisesPerDay - usage().s); }
+  function leftR() { return isPlus() ? 99 : Math.max(0, D.app.limits.routesPerDay - usage().r); }
+  function giftCode() {
+    var c = "";
+    try { c = (tg && tg.initDataUnsafe && tg.initDataUnsafe.start_param) || ""; } catch (e) {}
+    if (!c) { try { c = new URLSearchParams(location.search).get("gift") || ""; } catch (e) {} }
+    return c.trim();
+  }
+  function checkGift(done) {
+    var c = giftCode(), list = (D.app && D.app.giftCodes) || [];
+    if (!c || !list.length || isPlus() || !window.crypto || !crypto.subtle) { done(false); return; }
+    crypto.subtle.digest("SHA-256", new TextEncoder().encode(c)).then(function (buf) {
+      var hex = Array.prototype.map.call(new Uint8Array(buf), function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+      if (list.indexOf(hex) >= 0) { store.set("plus", true); done(true); } else done(false);
+    }).catch(function () { done(false); });
+  }
   function spend(k) { var u = usage(); u[k]++; store.set("usage", u); }
   function locObj() { return byId(D.districts, S.loc) || D.districts[0]; }
   function timeNow() { var h = new Date().getHours(); for (var i = 0; i < D.times.length; i++) { var t = D.times[i]; if (t.from < t.to ? h >= t.from && h < t.to : h >= t.from || h < t.to) return t.id; } return "evening"; }
@@ -851,7 +867,7 @@
           '<div class="label">Удиви меня<span>→</span></div>' +
           '<div class="knob" id="knob"></div>' +
         '</div>' +
-        '<div class="quota"><span>' + (u > 0 ? "Осталось " + u + " из " + lim + " на сегодня" : "Лимит на сегодня исчерпан") + '</span><div class="dots">' + dots + '</div></div>' +
+        '<div class="quota"><span>' + (isPlus() ? "VIBE+ · без ограничений" : u > 0 ? "Осталось " + u + " из " + lim + " на сегодня" : "Лимит на сегодня исчерпан") + '</span>' + (isPlus() ? "" : '<div class="dots">' + dots + '</div>') + '</div>' +
       '</section>' +
       '<div class="sec"><div class="sec-head"><h3>Какое настроение</h3>' + (S.mood ? '<button data-act="clearMood">Любое</button>' : "") + '</div>' +
         '<div class="chips scroll">' + D.moods.map(function (m) { return '<button class="chip' + (S.mood === m.id ? " on" : "") + '" data-mood="' + m.id + '">' + ic(MOOD_IC[m.id] || "spark") + esc(m.label) + "</button>"; }).join("") + '</div>' +
@@ -1371,10 +1387,10 @@
     for (var i = 0; i < 10; i++) stamps += '<span class="stamp' + (i < S.stamps ? " got" : "") + '">' + ic("star") + "</span>";
     var u = usage();
     return '<div class="top" style="margin-bottom:22px"><div class="avatar" style="width:56px;height:56px;font-size:20px">' + esc((user.name || "V").charAt(0)) + '</div>' +
-      '<div class="hello" style="margin-left:6px"><small>Бесплатный план</small><b>' + esc(user.name || "Гость VIBE") + '</b></div></div>' +
-      '<section class="gloss plus"><span class="eyebrow">Подписка</span><h2>' + esc(a.premium.title) + '</h2>' +
+      '<div class="hello" style="margin-left:6px"><small>' + (isPlus() ? "VIBE+ · подарочный доступ" : "Бесплатный план") + '</small><b>' + esc(user.name || "Гость VIBE") + '</b></div></div>' +
+      '<section class="gloss plus"><span class="eyebrow">' + (isPlus() ? "Активна" : "Подписка") + '</span><h2>' + esc(a.premium.title) + '</h2>' +
         '<ul>' + a.premium.perks.map(function (x) { return "<li>" + ic("check") + esc(x) + "</li>"; }).join("") + '</ul>' +
-        '<button class="btn" data-act="buy">Подключить за ' + esc(a.premium.price) + '</button></section>' +
+        (isPlus() ? '<div class="btn" style="pointer-events:none">' + ic("check") + ' Открыт бесплатно</div>' : '<button class="btn" data-act="buy">Подключить за ' + esc(a.premium.price) + '</button>') + '</section>' +
       '<div class="sec"><div class="sec-head"><h3>Сегодня</h3></div><div class="stats">' +
         '<div class="neu stat"><b>' + Math.max(0, a.limits.surprisesPerDay - u.s) + '</b><small>удивлений</small></div>' +
         '<div class="neu stat"><b>' + Math.max(0, a.limits.routesPerDay - u.r) + '</b><small>маршрутов</small></div>' +
@@ -1504,6 +1520,7 @@
         D = d;
         if (!byId(D.districts, S.loc)) S.loc = D.districts[0].id;
         render();
+        checkGift(function (ok) { if (ok) { haptic("success"); render(); toast("Тебе открыт VIBE+ бесплатно ✦"); } });
       })
       .catch(fallback);
   }
