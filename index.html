@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>VIBE</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* воздушная палитра: ледяное небо, белые арки, жемчуг, глубокий navy */
+    --milk: #fbfcf1;
+    --white: #ffffff;
+    --bg: #e9f0f7;
+    --surface: #f8fbfe;
+    --sky: #c9ddf1;
+    --sky-2: #a9c6e6;
+    --teal: #d6e6f5;
+    --sky-deep: #2b7fd8;
+    --sky-ink: #0b1b3f;
+    --navy: #0b1b3f;
+    --ink: #0b1b3f;
+    --ink-2: #3f4a60;
+    --ink-3: #7b879b;
+    --line: rgba(22, 27, 36, .07);
+    --hot: #7b93c9;
+    --ok: #5fae8c;
+
+    --out: 0 14px 32px rgba(60, 92, 140, .18), 0 2px 6px rgba(60, 92, 140, .08), inset 0 1px 0 #fff;
+    --out-sm: 0 8px 18px rgba(60, 92, 140, .16), 0 1px 3px rgba(60, 92, 140, .08), inset 0 1px 0 #fff;
+    --in: inset 3px 3px 8px rgba(110, 138, 180, .32), inset -3px -3px 8px rgba(255, 255, 255, .9);
+    /* жемчуг — выбранные состояния */
+    --pearl: linear-gradient(180deg, #f2faff 0%, #d6eefb 50%, #bfe3f7 100%);
+    --pearl-shadow: inset 0 1px 1px #fff, inset 0 -3px 8px rgba(69, 173, 230, .22), 0 0 0 1.5px rgba(108, 196, 238, .55), 0 8px 20px rgba(69, 173, 230, .25);
+    /* главные кнопки: чистый ледяной голубой градиент, как свечение сферы */
+    /* горизонтальный голубой градиент, как «пошаговый план»; при наведении уезжает в более глубокий тон */
+    --gloss: linear-gradient(90deg, #78c9ff 0%, #87d2ff 50%, #96ddff 100%);
+    --gloss-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), 0 10px 24px rgba(110, 190, 250, .45);
+    --gloss-shadow-hover: inset 0 1px 0 rgba(255, 255, 255, .4), 0 14px 30px rgba(43, 127, 216, .5);
+    --teal-fill: linear-gradient(90deg, #a9c6e6, #d6e6f5 60%, #ffffff);
+
+    --display: "Manrope", "Helvetica Neue", Arial, sans-serif;
+    --text: "Manrope", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --r: 28px;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    font-family: var(--text); color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  button, input { font: inherit; color: inherit; }
+  button { border: 0; background: none; padding: 0; cursor: pointer; }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--sky-deep); outline-offset: 3px; }
+  svg.i { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  /* фон как на референсе: морозное небо, снежные дюны, вода с отражением, ледяная сфера */
+  .sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; background: var(--bg); }
+  .sky svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .orb-bg {
+    position: absolute; right: -70px; top: 44%; width: 240px; height: 240px; border-radius: 50%;
+    background:
+      radial-gradient(circle at 34% 30%, rgba(255,255,255,.98) 0 10%, rgba(255,255,255,.55) 24%, transparent 46%),
+      radial-gradient(circle at 58% 56%, rgba(120,214,240,.85) 0%, rgba(150,196,236,.55) 22%, rgba(214,228,246,.5) 48%, rgba(248,251,255,.9) 76%);
+    box-shadow: inset -18px -22px 40px rgba(130,160,214,.45), inset 10px 10px 30px rgba(255,255,255,.9), 0 40px 60px -30px rgba(120,150,200,.45);
+    animation: float 9s ease-in-out infinite; opacity: .75;
+  }
+  .orb-bg::after {
+    content: ""; position: absolute; left: 8%; right: 8%; top: 108%; height: 70%; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(200,222,246,.7), rgba(200,222,246,0)); filter: blur(10px); opacity: .8;
+  }
+  @keyframes float { 50% { transform: translateY(-12px); } }
+  .wrap {
+    position: relative; z-index: 1; max-width: 460px; margin: 0 auto;
+    padding: max(16px, env(safe-area-inset-top)) 18px calc(118px + env(safe-area-inset-bottom));
+  }
+  .wrap.no-nav { padding-bottom: calc(120px + env(safe-area-inset-bottom)); }
+
+  /* ---------- базовые элементы ---------- */
+  .neu { background: var(--surface); box-shadow: var(--out); border-radius: var(--r); }
+  .neu-in { background: var(--bg); box-shadow: var(--in); border-radius: var(--r); }
+  .glass {
+    background: rgba(255, 255, 255, .84);
+    -webkit-backdrop-filter: blur(24px) saturate(160%); backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid #ffffff;
+    box-shadow: 0 22px 48px rgba(50, 84, 134, .2), 0 2px 8px rgba(50, 84, 134, .08), inset 0 1px 0 #fff;
+    border-radius: 30px;
+  }
+  /* кнопка переливается: градиент медленно течёт + пробегает блик; при наведении — светлый сиренево-розовый */
+  .gloss {
+    position: relative; overflow: hidden; isolation: isolate;
+    background: var(--gloss);
+    box-shadow: var(--gloss-shadow); color: #fff; text-shadow: 0 1px 2px rgba(40, 120, 190, .25);
+    transition: box-shadow .35s ease, transform .15s ease;
+  }
+  .gloss::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; opacity: 0;
+    background: linear-gradient(90deg, #a18af0 0%, #c49cee 50%, #ec9fd2 100%); background-size: 220% 100%;
+    animation: flow 6s ease-in-out infinite; transition: opacity .45s ease;
+  }
+  .gloss::after {
+    content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 45%; pointer-events: none; border-radius: inherit;
+    background: linear-gradient(105deg, transparent, rgba(255,255,255,.55), transparent);
+    animation: shine 3.6s ease-in-out infinite;
+  }
+  @keyframes flow { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
+  @keyframes shine { 0% { left: -60%; } 55%, 100% { left: 130%; } }
+  @media (hover: hover) { .gloss:hover { box-shadow: 0 14px 32px rgba(190, 150, 240, .5), inset 0 1px 0 rgba(255,255,255,.5); } .gloss:hover::before { opacity: 1; } }
+  .gloss:active { box-shadow: 0 14px 32px rgba(190, 150, 240, .5); }
+  .gloss:active::before { opacity: 1; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+  .h-display { font-family: var(--display); font-weight: 800; letter-spacing: -.03em; line-height: 1.08; text-wrap: balance; margin: 0; }
+  .muted { color: var(--ink-2); }
+  .row { display: flex; align-items: center; gap: 10px; }
+  .between { justify-content: space-between; }
+  .stack { display: grid; gap: 14px; }
+  .sec { margin-top: 28px; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; margin: 0 4px 12px; }
+  .sec-head h3 { margin: 0; font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+  .sec-head button { font-size: 13px; font-weight: 600; color: var(--sky-deep); }
+
+  .round {
+    width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--surface); box-shadow: var(--out-sm); color: var(--ink);
+  }
+  .round:active, .chip:active, .tile:active, .btn:active { transform: scale(.97); }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; background: rgba(255,255,255,.6); box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+    border: 1px solid rgba(255,255,255,.8);
+  }
+  .avatar {
+    width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+    font-family: var(--display); font-size: 15px; color: var(--sky-ink);
+    background: var(--surface); box-shadow: var(--out-sm);
+  }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chips.scroll { flex-wrap: nowrap; overflow-x: auto; margin: 0 -18px; padding: 6px 18px 14px; scrollbar-width: none; }
+  .chips.scroll::-webkit-scrollbar { display: none; }
+  .chip {
+    flex: none; height: 44px; padding: 0 18px; border-radius: 999px; font-size: 15px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--surface); box-shadow: var(--out-sm); color: var(--ink); transition: transform .15s;
+  }
+  .chip.on { background: var(--pearl); box-shadow: var(--pearl-shadow); color: var(--navy); }
+
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .tile {
+    height: 84px; border-radius: 20px; display: grid; place-items: center; align-content: center; gap: 8px;
+    background: var(--surface); box-shadow: var(--out-sm); font-size: 13px; font-weight: 700; color: var(--ink);
+    transition: transform .15s;
+  }
+  .tile svg.i { width: 24px; height: 24px; }
+  .tile.on { box-shadow: var(--in); color: var(--sky-deep); background: var(--bg); }
+
+  .btn {
+    height: 58px; border-radius: 999px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+    font-size: 16px; font-weight: 700; letter-spacing: .01em; transition: transform .15s, opacity .2s;
+  }
+  .btn.gloss { color: #fff; letter-spacing: .01em; }
+  .btn.soft { background: var(--surface); box-shadow: var(--out-sm); color: var(--ink); }
+  .btn[disabled] { opacity: .45; pointer-events: none; }
+  .link { font-size: 13px; font-weight: 600; color: var(--sky-deep); display: inline-flex; align-items: center; gap: 4px; }
+
+  /* картинка места: мягкая абстракция в тонах места */
+  .art { position: relative; overflow: hidden; background-size: cover; background-position: center; }
+  .art svg.scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+  /* ---------- главный экран ---------- */
+  .top { display: flex; align-items: center; gap: 10px; }
+  .top .hello { margin-right: auto; }
+  .hello small { display: block; font-size: 12px; color: var(--ink-2); font-weight: 600; }
+  .hello b { font-family: var(--display); font-weight: 800; font-size: 20px; letter-spacing: .12em; }
+
+  .hero { margin-top: 22px; padding: 22px 20px 20px; }
+  .hero .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .hero h1 { font-size: 42px; line-height: 1; }
+  .hero p { margin: 10px 0 18px; font-size: 15px; line-height: 1.45; color: var(--ink-2); max-width: 32ch; }
+  .btn.big { height: 68px; font-size: 19px; font-weight: 800; letter-spacing: .01em; }
+  .btn.big svg.i { width: 22px; height: 22px; }
+  .filters { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .filter {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 16px; border-radius: 20px; text-align: left;
+    background: var(--surface); box-shadow: var(--out-sm);
+  }
+  .filter small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px; }
+  .filter b { font-size: 15px; font-weight: 700; }
+  .filter > svg.i { color: var(--ink-3); width: 16px; height: 16px; transform: rotate(90deg); }
+
+  /* слайдер «Удиви меня» — глянцевый тумблер */
+  /* дорожка голубая и переливается; чем дальше тянешь сферу вправо, тем сильнее проступает сиренево-розовый */
+  .slide {
+    position: relative; height: 70px; border-radius: 999px; overflow: hidden; touch-action: none; user-select: none; cursor: pointer;
+    background: var(--gloss); box-shadow: var(--gloss-shadow);
+  }
+  .slide .tint {
+    position: absolute; inset: 0; border-radius: inherit; opacity: 0; pointer-events: none;
+    background: linear-gradient(90deg, #a18af0 0%, #c49cee 50%, #ec9fd2 100%);
+  }
+  .slide .tint.back { transition: opacity .35s ease; }
+  .slide::after {
+    content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 45%; pointer-events: none;
+    background: linear-gradient(105deg, transparent, rgba(255,255,255,.6), transparent);
+    animation: shine 3.6s ease-in-out infinite;
+  }
+  .slide .label {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-left: 50px;
+    color: #fff; font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: .01em; pointer-events: none;
+    text-shadow: 0 1px 2px rgba(40, 120, 190, .25);
+  }
+  .slide .label span { opacity: .75; margin-left: 8px; animation: nudge 1.8s ease-in-out infinite; }
+  @keyframes nudge { 50% { transform: translateX(5px); opacity: 1; } }
+  .knob {
+    position: absolute; top: 5px; left: 5px; width: 60px; height: 60px; border-radius: 50%;
+    background: radial-gradient(circle at 34% 28%, #ffffff 0 18%, rgba(255,255,255,.6) 30%, transparent 55%),
+      radial-gradient(circle at 60% 65%, #bcd6f0 0%, #e3eefa 45%, #f7fbff 75%);
+    box-shadow: 0 8px 18px rgba(92, 124, 176, .35), inset -4px -6px 12px rgba(140, 170, 214, .45), inset 3px 3px 6px rgba(255,255,255,.9);
+    display: flex; align-items: center; justify-content: center; gap: 4px; cursor: grab;
+  }
+  .knob i { display: none; }
+  .knob.back { transition: transform .35s cubic-bezier(.2,.9,.3,1.2); }
+  .quota { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; font-size: 12px; font-weight: 600; color: var(--ink-2); }
+  .dots { display: flex; gap: 6px; }
+  .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--hot); }
+  .dots i.off { background: rgba(27,38,51,.12); }
+
+  .plan-card { display: flex; align-items: center; gap: 16px; padding: 18px; }
+  .plan-card .ico { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; background: var(--bg); box-shadow: var(--in); color: var(--sky-deep); flex: none; }
+  .plan-card .ico svg.i { width: 26px; height: 26px; }
+  .plan-card b { display: block; font-size: 16px; }
+  .plan-card small { display: block; margin-top: 4px; font-size: 12px; color: var(--ink-2); font-weight: 500; }
+  .plan-card .go { margin-left: auto; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+
+  .hscroll { display: flex; gap: 14px; overflow-x: auto; margin: 0 -18px; padding: 6px 18px 18px; scrollbar-width: none; }
+  .hscroll::-webkit-scrollbar { display: none; }
+  .pcard-s { flex: none; width: 176px; text-align: left; padding: 8px; border-radius: 24px; }
+  .pcard-s .art { height: 124px; border-radius: 18px; }
+  .pcard-s .t { padding: 10px 6px 4px; }
+  .pcard-s b { display: block; font-size: 14px; line-height: 1.3; min-height: 36px; }
+  .pcard-s small { display: flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 12px; color: var(--ink-2); font-weight: 600; }
+  .pcard-s small svg.i { width: 14px; height: 14px; }
+  .state {
+    position: absolute; left: 10px; top: 10px; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px;
+    border-radius: 999px; font-size: 11px; font-weight: 700; background: rgba(255,255,255,.8);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  }
+  .state::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+  .state.closed::before { background: var(--hot); }
+
+  /* ---------- нижняя навигация ---------- */
+  .nav {
+    position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 20;
+    width: min(420px, calc(100% - 32px)); height: 70px; padding: 8px; border-radius: 999px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+    background: rgba(233, 236, 240, .85); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+    box-shadow: 0 14px 34px rgba(90, 110, 140, .22), inset 0 1px 0 #fff; border: 1px solid rgba(255,255,255,.8);
+  }
+  .nav button { border-radius: 999px; display: grid; place-items: center; align-content: center; gap: 3px; font-size: 11px; font-weight: 700; color: var(--ink-2); }
+  .nav button.on { background: var(--pearl); box-shadow: var(--pearl-shadow); color: var(--navy); }
+
+  /* ---------- шапка подэкрана ---------- */
+  .subhead { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .subhead .ttl { flex: 1; text-align: center; font-weight: 700; font-size: 15px; }
+  .subhead .sp { width: 46px; }
+  .progress { height: 8px; border-radius: 999px; background: var(--bg); box-shadow: var(--in); overflow: hidden; margin-bottom: 26px; }
+  .progress i { display: block; height: 100%; border-radius: 999px; background: var(--teal-fill); box-shadow: 0 0 10px rgba(143,208,205,.6); transition: width .4s; }
+  .q { margin: 26px 4px 12px; font-size: 16px; font-weight: 700; }
+
+  .field {
+    display: flex; align-items: center; gap: 10px; height: 56px; padding: 0 18px; border-radius: 20px;
+    background: var(--bg); box-shadow: var(--in); color: var(--ink-3);
+  }
+  .field input { border: 0; outline: 0; background: none; flex: 1; min-width: 0; font-size: 15px; color: var(--ink); }
+  .field input::placeholder { color: var(--ink-3); }
+
+  .bottom-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+    padding: 14px 18px calc(16px + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(230,233,237,0), var(--bg) 30%);
+  }
+  .bottom-bar .in { max-width: 424px; margin: 0 auto; display: flex; gap: 12px; }
+  .bottom-bar .btn.soft { width: 120px; flex: none; }
+
+  /* карта-схема старта */
+  /* карта: матовое стекло, настоящая Москва-река, Садовое кольцо тонкой линией, светящиеся точки и сфера-пин */
+  .map {
+    position: relative; height: 260px; border-radius: 30px; overflow: hidden;
+    background:
+      radial-gradient(70% 60% at 20% 15%, rgba(255,255,255,.95), transparent 60%),
+      radial-gradient(60% 70% at 90% 100%, rgba(199,184,245,.35), transparent 65%),
+      linear-gradient(160deg, #f6faff 0%, #e6eff9 55%, #dde8f5 100%);
+    border: 1px solid #fff; box-shadow: var(--out);
+  }
+  .map svg.base { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .map .lbl {
+    position: absolute; transform: translate(-50%, -50%); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    color: rgba(22, 40, 80, .38); white-space: nowrap; pointer-events: none; transition: color .3s;
+  }
+  .map .lbl.on { color: var(--ink); }
+  .map .dot {
+    position: absolute; width: 7px; height: 7px; border-radius: 50%; transform: translate(-50%, -50%);
+    background: #fff; box-shadow: 0 0 0 3px rgba(111, 176, 236, .22), 0 0 10px rgba(111, 176, 236, .8);
+  }
+  .map .pin {
+    position: absolute; width: 26px; height: 26px; border-radius: 50%; transform: translate(-50%, -50%);
+    transition: left .5s cubic-bezier(.2,.9,.3,1.15), top .5s cubic-bezier(.2,.9,.3,1.15);
+    background: radial-gradient(circle at 34% 30%, #fff 0 16%, rgba(255,255,255,.4) 30%, transparent 50%),
+      radial-gradient(circle at 60% 60%, #6fb0ec, #a9d4f5 55%, #eef6ff 90%);
+    box-shadow: 0 6px 14px rgba(43, 127, 216, .45), inset -3px -4px 8px rgba(40, 110, 190, .35);
+  }
+  .map .pin::before, .map .pin::after {
+    content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 1.5px solid rgba(111, 176, 236, .55);
+    animation: pulse 2.4s ease-out infinite;
+  }
+  .map .pin::after { animation-delay: 1.2s; }
+  @keyframes pulse { from { transform: scale(.6); opacity: 1; } to { transform: scale(3.2); opacity: 0; } }
+  .map .locate { position: absolute; right: 12px; top: 12px; }
+  .map .legend { position: absolute; left: 14px; bottom: 12px; display: flex; gap: 12px; font-size: 10px; font-weight: 600; color: var(--ink-2); }
+  .map .legend i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; background: #fff; box-shadow: 0 0 6px rgba(111,176,236,.9); vertical-align: 1px; }
+
+  .stepper { display: flex; align-items: center; justify-content: space-between; padding: 10px; }
+  .stepper b { font-family: var(--display); font-weight: 400; font-size: 30px; }
+
+  /* ---------- экран места ---------- */
+  .place-art { height: 360px; margin: 0 -18px; border-radius: 0 0 36px 36px; }
+  .gal { position: relative; overflow: hidden; }
+  .gal-track { display: flex; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .gal-track::-webkit-scrollbar { display: none; }
+  .gal-slide { flex: 0 0 100%; height: 100%; scroll-snap-align: center; background-size: cover; background-position: center; }
+  .gal-dots { position: absolute; left: 0; right: 0; bottom: 76px; display: flex; justify-content: center; gap: 6px; pointer-events: none; }
+  .gal-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.55); box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: width .25s, background .25s; }
+  .gal-dots i.on { width: 20px; border-radius: 4px; background: #fff; }
+  .gal-count { position: absolute; right: 18px; bottom: 76px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #fff; background: rgba(15,29,58,.35); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .place-top { position: absolute; left: 18px; right: 18px; top: max(16px, env(safe-area-inset-top)); display: flex; justify-content: space-between; }
+  .place-top .round { background: rgba(255,255,255,.7); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 6px 16px rgba(45,89,135,.15); }
+  .place-body { position: relative; margin-top: -60px; padding: 24px 20px 22px; }
+  .place-body h1 { font-size: 26px; margin-top: 8px; }
+  .why { margin-top: 16px; padding: 14px 16px; border-radius: 20px; background: var(--bg); box-shadow: var(--in); font-size: 14px; line-height: 1.5; }
+  .why b { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--hot); margin-bottom: 4px; }
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+  .fact { padding: 12px; border-radius: 18px; background: var(--surface); box-shadow: var(--out-sm); }
+  .fact svg.i { color: var(--sky-deep); width: 18px; height: 18px; }
+  .fact b { display: block; margin-top: 8px; font-size: 13px; }
+  .fact small { font-size: 11px; color: var(--ink-3); font-weight: 600; }
+  .desc { margin: 18px 2px 0; font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+  .addr { margin: 10px 2px 0; display: flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 600; }
+  .credit { margin: 8px 2px 0; font-size: 11px; color: var(--ink-3); font-weight: 600; }
+  .credit:empty { display: none; }
+  .credit a { color: inherit; text-decoration: none; }
+  .addr svg.i { width: 16px; height: 16px; color: var(--sky-deep); }
+  .acts { display: grid; grid-template-columns: 1fr 58px 1fr; gap: 12px; margin-top: 14px; }
+  .acts .btn { font-size: 14px; height: 54px; }
+  .heart { width: 58px; height: 54px; border-radius: 999px; display: grid; place-items: center; background: var(--surface); box-shadow: var(--out-sm); }
+  .heart.on { color: #fff; background: var(--gloss); background-size: 200% 100%; background-position: 100% 0; box-shadow: var(--gloss-shadow); }
+  .heart.on svg.i { fill: currentColor; }
+  .swipe-hint { text-align: center; margin-top: 14px; font-size: 11px; color: var(--ink-3); font-weight: 600; letter-spacing: .04em; }
+  .note { margin-top: 12px; padding: 12px 16px; border-radius: 18px; font-size: 13px; font-weight: 600; color: var(--sky-ink); background: rgba(190,217,244,.45); }
+
+  /* ---------- маршрут ---------- */
+  .route-hero { padding: 22px 20px 20px; margin-bottom: 26px; }
+  .route-hero h1 { font-size: 26px; margin: 6px 0 14px; }
+  .route-hero .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tl { position: relative; display: grid; gap: 14px; }
+  .tl-item { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 10px; position: relative; }
+  .tl-time { text-align: right; padding-top: 16px; }
+  .tl-time b { display: block; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .tl-time small { font-size: 11px; color: var(--ink-3); font-weight: 600; }
+  .tl-card { padding: 12px; display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; border-radius: 24px; position: relative; }
+  .tl-card .art { width: 64px; height: 64px; border-radius: 16px; }
+  .tl-card .num {
+    position: absolute; left: -10px; top: -8px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+    font-size: 12px; font-weight: 700; color: var(--navy); background: var(--pearl); box-shadow: var(--pearl-shadow);
+  }
+  .tl-card b { font-size: 15px; line-height: 1.25; display: block; }
+  .tl-card .cat { font-size: 12px; color: var(--sky-deep); font-weight: 700; margin-top: 3px; }
+  .tl-card p { margin: 6px 0 0; font-size: 12px; line-height: 1.45; color: var(--ink-2); }
+  .tl-card .swap { margin-top: 8px; flex-wrap: wrap; gap: 6px 14px; justify-content: flex-start; }
+  .tl-item > *, .tl-card > div { min-width: 0; }
+  .leg { margin-left: 50px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: var(--ink-2); padding: 0 6px; }
+  .leg svg.i { width: 16px; height: 16px; color: var(--sky-deep); }
+  .leg::before { content: ""; width: 2px; height: 22px; border-radius: 2px; background: repeating-linear-gradient(180deg, var(--sky-2) 0 4px, transparent 4px 8px); margin: 0 8px 0 4px; }
+
+  .now { padding: 14px; }
+  .now .art { height: 200px; border-radius: 20px; }
+  .now .t { padding: 16px 6px 6px; }
+  .now h2 { font-size: 22px; margin: 6px 0 8px; }
+  .steps { display: flex; align-items: center; gap: 0; margin: 8px 6px 0; }
+  .steps .s { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 700; background: var(--surface); box-shadow: var(--out-sm); color: var(--ink-3); flex: none; }
+  .steps .s.done { background: var(--pearl); box-shadow: var(--pearl-shadow); color: var(--navy); }
+  .steps .s.cur { box-shadow: var(--in); color: var(--sky-deep); background: var(--bg); }
+  .steps .bar { flex: 1; height: 3px; border-radius: 3px; background: rgba(27,38,51,.08); }
+  .steps .bar.done { background: var(--sky-2); }
+
+  /* ---------- сохранённое / профиль ---------- */
+  .seg { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding: 6px; height: 56px; border-radius: 999px; background: var(--bg); box-shadow: var(--in); }
+  .seg button { position: relative; z-index: 1; border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--ink-2); transition: color .25s; }
+  .seg button.on { color: var(--navy); }
+  .seg .thumb { position: absolute; top: 6px; bottom: 6px; left: 6px; width: calc(50% - 6px); border-radius: 999px; background: var(--pearl); box-shadow: var(--pearl-shadow); transition: transform .35s cubic-bezier(.2,.9,.3,1.1); }
+  .seg.r .thumb { transform: translateX(100%); }
+  .list-item { display: flex; align-items: center; gap: 14px; padding: 10px; border-radius: 22px; width: 100%; text-align: left; }
+  .list-item .art { width: 60px; height: 60px; border-radius: 16px; flex: none; }
+  .list-item b { display: block; font-size: 14px; }
+  .list-item small { display: block; margin-top: 4px; font-size: 12px; color: var(--ink-2); font-weight: 600; }
+  .list-item > svg.i { margin-left: auto; color: var(--ink-3); }
+  .empty { text-align: center; padding: 36px 20px; color: var(--ink-2); font-size: 14px; line-height: 1.5; }
+  .empty .round { margin: 0 auto 14px; color: var(--sky-deep); }
+
+  .plus { padding: 22px 20px; border-radius: 30px; position: relative; overflow: hidden; }
+  .plus::after { content: ""; position: absolute; right: -40px; top: -60px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.45), transparent 70%); }
+  .plus h2 { font-family: var(--display); font-weight: 400; font-size: 28px; margin: 4px 0 10px; }
+  .plus ul { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 8px; font-size: 14px; font-weight: 600; }
+  .plus li { display: flex; gap: 8px; align-items: center; }
+  .plus li svg.i { width: 16px; height: 16px; }
+  .plus .btn { background: #fff; color: var(--ink); box-shadow: var(--out-sm); height: 52px; font-size: 15px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stat { padding: 16px 12px; text-align: center; }
+  .stat b { display: block; font-family: var(--display); font-weight: 400; font-size: 24px; font-variant-numeric: tabular-nums; }
+  .stat small { font-size: 11px; color: var(--ink-2); font-weight: 600; }
+  .stamps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 18px; }
+  .stamp { aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: var(--bg); box-shadow: var(--in); color: var(--ink-3); }
+  .stamp svg.i { width: 20px; height: 20px; }
+  .stamp.got { background: var(--pearl); box-shadow: var(--pearl-shadow); color: var(--sky-deep); }
+  .settings .list-item { border-radius: 0; padding: 16px 18px; }
+  .settings .list-item + .list-item { border-top: 1px solid var(--line); }
+
+  /* ---------- оверлеи ---------- */
+  .overlay {
+    position: fixed; inset: 0; z-index: 50; display: none; place-items: center; padding: 24px;
+    background: rgba(230,233,237,.6); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  }
+  .overlay.show { display: grid; animation: fade .25s; }
+  @keyframes fade { from { opacity: 0; } }
+  .slot { width: min(320px, 100%); padding: 26px 22px; text-align: center; }
+  .slot .art { height: 150px; border-radius: 20px; margin-bottom: 16px; }
+  .slot b { font-family: var(--display); font-weight: 400; font-size: 18px; display: block; min-height: 44px; }
+  .slot.tick .art, .slot.tick b { animation: tick .1s linear; }
+  @keyframes tick { from { transform: translateY(-8px); opacity: .5; } }
+  .loader { text-align: center; }
+  .loader .orb { width: 110px; height: 110px; margin: 0 auto 30px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff 0 14%, rgba(255,255,255,.5) 26%, transparent 50%), radial-gradient(circle at 55% 60%, #9fc0e6 0%, #d3e4f6 40%, #f6faff 75%); box-shadow: 0 30px 40px -18px rgba(123,152,196,.55), inset -8px -10px 18px rgba(130,165,214,.45), inset 4px 4px 10px #fff; animation: orb 2.2s ease-in-out infinite; }
+  @keyframes orb { 50% { transform: translateY(-8px) scale(1.04); } }
+  .loader h2 { font-family: var(--display); font-weight: 400; font-size: 22px; margin: 0; line-height: 1.3; }
+  .loader p { color: var(--ink-2); font-size: 14px; margin: 10px 0 0; }
+
+  .scrim { position: fixed; inset: 0; z-index: 60; background: rgba(27,38,51,.22); display: none; }
+  .scrim.show { display: block; animation: fade .2s; }
+  .sheet {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 61; max-width: 460px; margin: 0 auto;
+    padding: 12px 20px calc(24px + env(safe-area-inset-bottom)); border-radius: 32px 32px 0 0;
+    background: var(--surface); box-shadow: 0 -10px 40px rgba(27,38,51,.12);
+    transform: translateY(105%); transition: transform .32s cubic-bezier(.2,.9,.3,1); max-height: 86vh; overflow-y: auto;
+  }
+  .sheet.show { transform: none; }
+  .grab { width: 42px; height: 5px; border-radius: 3px; background: rgba(27,38,51,.15); margin: 0 auto 18px; }
+  .sheet h3 { font-family: var(--display); font-weight: 400; font-size: 22px; margin: 0 0 6px; }
+  .sheet p { margin: 0 0 18px; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+  .opt { width: 100%; display: flex; align-items: center; gap: 14px; padding: 16px 18px; margin-bottom: 10px; border-radius: 20px; background: var(--surface); box-shadow: var(--out-sm); font-weight: 700; font-size: 15px; }
+  .opt svg.i { color: var(--sky-deep); }
+
+  .toast {
+    position: fixed; left: 50%; bottom: calc(100px + env(safe-area-inset-bottom)); z-index: 80; transform: translate(-50%, 20px); opacity: 0;
+    transition: .3s; pointer-events: none; padding: 12px 18px; border-radius: 999px; background: var(--ink); color: var(--milk);
+    font-size: 13px; font-weight: 600; max-width: calc(100% - 40px); text-align: center;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  .fallback { margin-top: 24vh; padding: 30px 24px; text-align: center; }
+  .fallback .round { margin: 0 auto 16px; color: var(--sky-deep); }
+  .fallback h2 { font-family: var(--display); font-weight: 400; font-size: 20px; margin: 0 0 8px; }
+  .fallback p { margin: 0 0 20px; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+  .skeleton { height: 14px; border-radius: 8px; background: rgba(255,255,255,.7); margin: 12px 0; animation: pulse 1.2s infinite; }
+  @keyframes pulse { 50% { opacity: .45; } }
+
+  .screen { animation: rise .35s cubic-bezier(.2,.9,.3,1); }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true">
+  <svg viewBox="0 0 400 860" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="bgSky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#c6daee"/><stop offset=".35" stop-color="#dae7f4"/><stop offset=".62" stop-color="#edf3f9"/><stop offset="1" stop-color="#e8eff7"/>
+      </linearGradient>
+      <linearGradient id="dune" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#dfe7f7"/><stop offset="1" stop-color="#b3c4ec"/>
+      </linearGradient>
+      <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#d9e4f2"/><stop offset="1" stop-color="#eef3f9"/>
+      </linearGradient>
+      <filter id="soft"><feGaussianBlur stdDeviation="10"/></filter>
+      <filter id="softer"><feGaussianBlur stdDeviation="2.5"/></filter>
+    </defs>
+    <rect width="400" height="860" fill="url(#bgSky)"/>
+    <g filter="url(#soft)" fill="#ffffff" opacity=".55">
+      <ellipse cx="90" cy="150" rx="160" ry="18"/><ellipse cx="320" cy="230" rx="170" ry="16"/><ellipse cx="180" cy="330" rx="200" ry="14"/>
+    </g>
+    <rect y="560" width="400" height="300" fill="url(#water)"/>
+    <g filter="url(#softer)">
+      <path d="M-20 580 C 20 552, 50 548, 80 560 C 110 540, 140 536, 170 556 C 190 548, 205 552, 215 564 L215 590 L-20 590z" fill="url(#dune)"/>
+      <path d="M190 584 C 230 540, 270 520, 310 536 C 340 520, 370 516, 420 530 L420 594 L190 594z" fill="url(#dune)"/>
+    </g>
+    <g opacity=".45" filter="url(#softer)">
+      <path d="M-20 596 C 20 616, 50 620, 80 610 C 110 628, 140 632, 170 614 C 190 622, 205 618, 215 606 L215 590 L-20 590z" fill="#c3d1ee"/>
+      <path d="M190 596 C 230 636, 270 652, 310 640 C 340 654, 370 658, 420 646 L420 594 L190 594z" fill="#c3d1ee"/>
+    </g>
+    <path d="M40 640 H160 M220 660 H370 M90 690 H300" stroke="#ffffff" stroke-width="2" opacity=".55" filter="url(#softer)"/>
+  </svg>
+  <div class="orb-bg"></div>
+</div>
+<main class="wrap" id="app">
+  <div class="glass fallback">
+    <div class="skeleton" style="width:50%;margin:0 auto 16px"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton" style="width:75%"></div>
+  </div>
+</main>
+<nav class="nav" id="nav" hidden></nav>
+<div class="bottom-bar" id="bar" hidden><div class="in" id="barIn"></div></div>
+<div class="overlay" id="overlay"></div>
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet"><div class="grab"></div><div id="sheetBody"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ================= Telegram ================= */
+  var tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+  if (tg) {
+    try {
+      tg.ready();
+      tg.expand();
+      if (tg.setHeaderColor) tg.setHeaderColor("#b4cbe3");
+      if (tg.setBackgroundColor) tg.setBackgroundColor("#f4f7fb");
+    } catch (e) {}
+  }
+  function haptic(k) {
+    try {
+      if (!tg || !tg.HapticFeedback) return;
+      if (k === "success" || k === "warning" || k === "error") tg.HapticFeedback.notificationOccurred(k);
+      else if (k === "select") tg.HapticFeedback.selectionChanged();
+      else tg.HapticFeedback.impactOccurred(k || "light");
+    } catch (e) {}
+  }
+  function openLink(url) { try { if (tg && tg.openLink) { tg.openLink(url); return; } } catch (e) {} window.open(url, "_blank"); }
+  function openTgLink(url) { try { if (tg && tg.openTelegramLink) { tg.openTelegramLink(url); return; } } catch (e) {} window.open(url, "_blank"); }
+  var user = { name: "" };
+  try { user.name = tg.initDataUnsafe.user.first_name || ""; } catch (e) {}
+
+  /* ================= хранилище ================= */
+  var store = {
+    get: function (k, d) { try { var v = localStorage.getItem("vibe2:" + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set: function (k, v) { try { localStorage.setItem("vibe2:" + k, JSON.stringify(v)); } catch (e) {} }
+  };
+
+  /* ================= иконки ================= */
+  var P = {
+    home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/>',
+    route: '<circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/>',
+    heart: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+    user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    person: '<circle cx="12" cy="7" r="3.5"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/>',
+    users: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14a6.5 6.5 0 0 1 3.5 6"/>',
+    back: '<path d="M15 5l-7 7 7 7"/>',
+    close: '<path d="M6 6l12 12M18 6L6 18"/>',
+    arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    chev: '<path d="M9 6l6 6-6 6"/>',
+    pin: '<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+    locate: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    walk: '<circle cx="13" cy="4.5" r="1.8"/><path d="M10 21l2-6 3 3v3"/><path d="M8 11l3-3.5 3 2 2 3"/><path d="M11 7.5L10 13l2 2"/>',
+    wallet: '<rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18"/><circle cx="16.5" cy="14.5" r="1"/>',
+    share: '<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/>',
+    refresh: '<path d="M20 11a8 8 0 0 0-14.5-4.5L4 8"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.5 4.5L20 16"/><path d="M20 20v-4h-4"/>',
+    search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+    spark: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    sunrise: '<path d="M4 18h16M7 14a5 5 0 0 1 10 0"/><path d="M12 3v5M9.5 5.5L12 3l2.5 2.5"/><path d="M3 21h18"/>',
+    sunset: '<path d="M4 18h16M7 14a5 5 0 0 1 10 0"/><path d="M12 8V3M9.5 5.5L12 8l2.5-2.5"/><path d="M3 21h18"/>',
+    moon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
+    tree: '<path d="M12 21v-5"/><path d="M12 3l6 8h-3l4 5H5l4-5H6z"/>',
+    frame: '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 16l5-5 4 4 3-3 4 4"/><circle cx="15.5" cy="8.5" r="1.5"/>',
+    view: '<path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+    food: '<path d="M4 11h16a8 8 0 0 1-16 0z"/><path d="M9 7c0-1.5 1-2 1-3.5M13 7c0-1.5 1-2 1-3.5"/>',
+    leaf: '<path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19l7-7"/>',
+    glass: '<path d="M7 3h10l-1 7a4 4 0 0 1-8 0z"/><path d="M12 14v7M8 21h8"/>',
+    coffee: '<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/>',
+    check: '<path d="M5 12l5 5 9-10"/>',
+    lock: '<rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+    star: '<path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/>',
+    bookmark: '<path d="M6 3h12v18l-6-4-6 4z"/>',
+    trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>'
+  };
+  function ic(n, cls) { return '<svg class="i' + (cls ? " " + cls : "") + '" viewBox="0 0 24 24" aria-hidden="true">' + (P[n] || P.spark) + "</svg>"; }
+
+  /* ================= утилиты ================= */
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function byId(list, id) { for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return null; }
+  function place(id) { return byId(D.places, id); }
+  function today() { var d = new Date(); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function hhmm(min) { min = ((Math.round(min) % 1440) + 1440) % 1440; return pad(Math.floor(min / 60)) + ":" + pad(min % 60); }
+  function nowMin() { var d = new Date(); return d.getHours() * 60 + d.getMinutes(); }
+  function plural(n, a, b, c) { var m = n % 10, h = n % 100; return m === 1 && h !== 11 ? a : m >= 2 && m <= 4 && (h < 10 || h >= 20) ? b : c; }
+  function dur(min) { var h = Math.floor(min / 60), m = min % 60; return h ? h + " ч" + (m ? " " + m + " мин" : "") : m + " мин"; }
+  function km(x) { return x.toFixed(1).replace(".", ",") + " км"; }
+
+  function dist(a, b) {
+    var R = 6371, dLat = (b.lat - a.lat) * Math.PI / 180, dLon = (b.lon - a.lon) * Math.PI / 180;
+    var s = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a.lat * Math.PI / 180) * Math.cos(b.lat * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return 2 * R * Math.asin(Math.sqrt(s)) * 1.25; // поправка на реальные улицы
+  }
+  function travel(a, b) {
+    var d = dist(a, b), walk = Math.max(3, Math.round(d / 4.8 * 60));
+    if (walk <= 35) return { km: d, min: walk, mode: "walk", text: walk + " мин пешком" };
+    var metro = Math.round(walk / 3.2 + 10);
+    return { km: d, min: metro, mode: "metro", text: metro + " мин на метро" };
+  }
+  function openInfo(p, atMin) {
+    var parts = p.open.split("-"), f = +parts[0].split(":")[0] * 60 + +parts[0].split(":")[1], t = +parts[1].split(":")[0] * 60 + +parts[1].split(":")[1];
+    if (f === 0 && t === 1440) return { open: true, text: "Круглосуточно" };
+    var m = atMin == null ? nowMin() : ((atMin % 1440) + 1440) % 1440;
+    var o = t > f ? m >= f && m < t : m >= f || m < t;
+    return { open: o, text: o ? "Открыто до " + parts[1].replace("24:00", "00:00") : "Откроется в " + parts[0] };
+  }
+  /* иллюстрации мест в палитре SKY / MILK / сталь */
+  var C = { sky: "#d7e9f8", milk: "#ffffff", steel: "#a9c2e2", mid: "#c9d9ef", light: "#e0eaf6", pale: "#eff4fb", teal: "#e6e2f7", grey: "#e3e8f1", hot: "#e3c3ec" };
+  var sceneN = 0;
+  function scene(kind, seed) {
+    var id = "g" + (++sceneN), dusk = kind === "glass" || kind === "view";
+    var top = dusk ? "#cfe2f5" : C.sky, low = dusk ? "#f7eef8" : "#f8fbff";
+    var h = '<defs><linearGradient id="' + id + 's" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + top + '"/><stop offset="1" stop-color="' + low + '"/></linearGradient>' +
+      '<radialGradient id="' + id + 'g"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>' +
+      '<linearGradient id="' + id + 'm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + C.mid + '"/><stop offset="1" stop-color="' + C.steel + '"/></linearGradient></defs>' +
+      '<rect width="200" height="150" fill="url(#' + id + 's)"/>';
+    var sx = 40 + (seed % 5) * 28;
+    var sun = '<circle cx="' + sx + '" cy="42" r="34" fill="url(#' + id + 'g)"/><circle cx="' + sx + '" cy="42" r="11" fill="' + (dusk ? "#fdf8f4" : C.milk) + '"/>';
+    function rect(x, y, w, hh, f, o) { return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + hh + '" rx="1.5" fill="' + f + '"' + (o ? ' opacity="' + o + '"' : "") + "/>"; }
+    if (kind === "tree" || kind === "leaf") {
+      h += sun + '<path d="M0 104 Q50 82 100 100 T200 92 V150 H0z" fill="' + C.pale + '"/>' +
+        '<path d="M0 122 Q70 98 140 118 T200 110 V150 H0z" fill="' + C.light + '"/>' +
+        '<path d="M70 150 C 90 128, 120 126, 150 150" stroke="' + C.milk + '" stroke-width="6" fill="none" stroke-linecap="round"/>';
+      if (kind === "leaf") {
+        h += '<path d="M28 118 V88 A42 42 0 0 1 112 88 V118z" fill="' + C.milk + '" opacity=".55" stroke="' + C.milk + '" stroke-width="2"/>' +
+          '<path d="M42 118 V92 M56 118 V80 M70 118 V76 M84 118 V80 M98 118 V92 M28 98 H112" stroke="' + C.mid + '" stroke-width="1.2" opacity=".6"/>' +
+          '<ellipse cx="52" cy="110" rx="9" ry="5" fill="' + C.teal + '"/><ellipse cx="78" cy="108" rx="11" ry="6" fill="' + C.teal + '" opacity=".8"/>';
+      } else {
+        [[36, 96, 14], [58, 102, 11], [150, 90, 13], [170, 98, 9]].forEach(function (t, i) {
+          h += rect(t[0] - 1.5, t[1], 3, 16, C.steel, .7) + '<circle cx="' + t[0] + '" cy="' + t[1] + '" r="' + t[2] + '" fill="' + (i % 2 ? C.mid : "url(#" + id + "m)") + '"/>';
+        });
+      }
+    } else if (kind === "view" || kind === "glass") {
+      h += sun;
+      var xs = [0, 16, 30, 48, 60, 80, 132, 148, 166, 184], hs = [40, 58, 34, 66, 46, 52, 44, 70, 38, 56];
+      xs.forEach(function (x, i) { h += rect(x, 120 - hs[(i + seed) % hs.length], 15, hs[(i + seed) % hs.length] + 30, i % 2 ? C.light : C.mid, .9); });
+      h += rect(98, 60, 22, 90, "url(#" + id + "m)") + rect(102, 44, 14, 20, "url(#" + id + "m)") + rect(106, 30, 6, 16, C.steel) + rect(108.5, 14, 1.5, 18, C.steel);
+      for (var w = 0; w < 14; w++) h += rect(101 + (w % 3) * 6, 66 + Math.floor(w / 3) * 12, 3, 5, kind === "glass" ? "#fff8ef" : C.milk, .9);
+      h += rect(0, 122, 200, 28, C.light) + '<path d="M10 132 H70 M100 138 H180 M40 144 H120" stroke="' + C.milk + '" stroke-width="1.6" opacity=".8" stroke-linecap="round"/>';
+    } else if (kind === "frame") {
+      h += sun + rect(0, 124, 200, 26, C.grey) + rect(30, 116, 140, 8, C.milk) + rect(24, 124, 152, 6, "#eef0ea") +
+        '<path d="M34 60 L100 30 L166 60z" fill="' + C.milk + '"/><path d="M52 56 L100 36 L148 56z" fill="' + C.pale + '"/>' + rect(34, 60, 132, 8, C.milk);
+      for (var c = 0; c < 6; c++) h += rect(42 + c * 22, 68, 9, 48, C.milk) + rect(49 + c * 22, 68, 2, 48, C.grey, .7);
+      h += rect(34, 68, 132, 3, C.grey, .6);
+    } else if (kind === "food" || kind === "coffee") {
+      h = h.replace('fill="url(#' + id + 's)"', 'fill="' + C.pale + '"');
+      h += '<path d="M120 20 V110 H180 V20 A30 30 0 0 0 120 20z" fill="url(#' + id + 's)" opacity=".9"/>' +
+        '<path d="M150 0 V110 M120 60 H180" stroke="' + C.milk + '" stroke-width="3"/>';
+      [40, 84].forEach(function (x) { h += '<path d="M' + x + ' 0 V26" stroke="' + C.steel + '" stroke-width="1.2"/><path d="M' + (x - 14) + ' 38 A14 12 0 0 1 ' + (x + 14) + ' 38z" fill="url(#' + id + 'm)"/><circle cx="' + x + '" cy="46" r="16" fill="url(#' + id + 'g)"/>'; });
+      h += rect(0, 110, 200, 40, C.mid) + rect(0, 110, 200, 5, C.light);
+      if (kind === "coffee") h += rect(46, 84, 34, 26, C.milk) + '<path d="M80 90 h6 a6 6 0 0 1 0 12 h-6" stroke="' + C.milk + '" stroke-width="3.5" fill="none"/>' + rect(40, 108, 46, 4, C.milk);
+      else h += '<path d="M34 94 H96 A31 20 0 0 1 34 94z" fill="' + C.milk + '"/>' + rect(30, 92, 70, 4, C.milk);
+      h += '<path d="M52 78 c-6 -8 6 -12 0 -20 M64 78 c-6 -8 6 -12 0 -20" stroke="' + C.milk + '" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".9"/>';
+    } else {
+      // креативный кластер: старый завод с гирляндой
+      h += sun + rect(0, 124, 200, 26, C.light) + rect(24, 62, 120, 62, "url(#" + id + "m)") + rect(150, 30, 14, 94, C.steel) + rect(148, 26, 18, 6, C.mid) +
+        '<path d="M24 62 L54 46 L84 62 L114 46 L144 62z" fill="' + C.mid + '"/>';
+      for (var a = 0; a < 4; a++) h += '<path d="M' + (34 + a * 28) + ' 116 V92 A9 9 0 0 1 ' + (52 + a * 28) + ' 92 V116z" fill="' + C.milk + '" opacity=".9"/>';
+      h += '<path d="M0 44 Q50 62 100 44 T200 46" stroke="' + C.steel + '" stroke-width=".8" fill="none"/>';
+      for (var l = 0; l < 10; l++) h += '<circle cx="' + (10 + l * 20) + '" cy="' + (50 + Math.sin(l * .9) * 5) + '" r="2.4" fill="' + (l % 3 ? C.milk : C.hot) + '"/>';
+    }
+    return '<svg class="scene" viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' + h + "</svg>";
+  }
+  function art(p, cls) {
+    var seed = 0; for (var i = 0; i < p.id.length; i++) seed += p.id.charCodeAt(i);
+    var url = p.photo || (PHOTOS[p.id] && PHOTOS[p.id].url);
+    if (url) return '<div class="art ' + (cls || "") + '" data-art="' + esc(p.id) + '" style="background-image:url(\'' + esc(url) + '\')"></div>';
+    return '<div class="art ' + (cls || "") + '" data-art="' + esc(p.id) + '">' + scene(p.icon, seed) + "</div>";
+  }
+
+  /* ================= фото заведений из Google Карт (Places API) =================
+     Ключ кладётся в data.json → app.googleMapsKey. Без ключа остаются иллюстрации. */
+  var PHOTOS = {};
+  try { PHOTOS = JSON.parse(localStorage.getItem("vibe2:photos") || "{}") || {}; } catch (e) {}
+  var photoBusy = {};
+  function mapsKey() { return D && D.app && D.app.googleMapsKey; }
+  function applyPhoto(id) {
+    var ph = PHOTOS[id]; if (!ph || !ph.url) return;
+    document.querySelectorAll('[data-art="' + id + '"]').forEach(function (el) {
+      if (el.style.backgroundImage) return;
+      var img = new Image();
+      img.onload = function () { el.style.backgroundImage = "url('" + ph.url + "')"; var sc = el.querySelector("svg.scene"); if (sc) sc.remove(); };
+      img.src = ph.url;
+    });
+    var cr = $("photoCredit"); if (cr && S.current && S.current.id === id && ph.author) cr.textContent = "Фото: " + ph.author + " · Google Карты";
+  }
+  function loadPhoto(p) {
+    var key = mapsKey();
+    if (!key || p.photo || photoBusy[p.id]) return;
+    if (PHOTOS[p.id]) { applyPhoto(p.id); return; }
+    photoBusy[p.id] = 1;
+    fetch("https://places.googleapis.com/v1/places:searchText", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Goog-Api-Key": key, "X-Goog-FieldMask": "places.id,places.photos" },
+      body: JSON.stringify({ textQuery: p.name.replace(/[«»]/g, "") + ", " + p.address + ", " + D.app.city, languageCode: "ru", maxResultCount: 1,
+        locationBias: { circle: { center: { latitude: p.lat, longitude: p.lon }, radius: 600 } } })
+    })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) {
+        var ph = j.places && j.places[0] && j.places[0].photos && j.places[0].photos[0];
+        if (!ph) { PHOTOS[p.id] = { url: "" }; return; }
+        var a = ph.authorAttributions && ph.authorAttributions[0];
+        PHOTOS[p.id] = { url: "https://places.googleapis.com/v1/" + ph.name + "/media?maxWidthPx=900&key=" + encodeURIComponent(key), author: a ? a.displayName : "" };
+        try { localStorage.setItem("vibe2:photos", JSON.stringify(PHOTOS)); } catch (e) {}
+        applyPhoto(p.id);
+      })
+      .catch(function () {})
+      .then(function () { delete photoBusy[p.id]; });
+  }
+  function loadVisiblePhotos() {
+    if (!mapsKey()) return;
+    var seen = {};
+    document.querySelectorAll("[data-art]").forEach(function (el) {
+      var id = el.getAttribute("data-art"); if (seen[id]) return; seen[id] = 1;
+      var p = place(id); if (p) loadPhoto(p);
+    });
+  }
+  var tt;
+  function toast(msg) { var t = $("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(function () { t.classList.remove("show"); }, 2300); }
+
+  /* ================= состояние ================= */
+  var D = null;
+  var S = {
+    screen: "home", tab: "home", history: [],
+    mood: store.get("mood", null),
+    budget: store.get("budget", "any"),
+    company: store.get("company", "solo"),
+    loc: store.get("loc", "center"),
+    saved: store.get("saved", []),
+    routes: store.get("routes", []),
+    seen: store.get("seen", []),
+    stamps: store.get("stamps", 0),
+    stats: store.get("stats", { evenings: 0, places: 0, km: 0 }),
+    savedTab: "places",
+    plan: null, route: null, active: null, current: null, note: ""
+  };
+  function usage() { var u = store.get("usage", null); if (!u || u.day !== today()) u = { day: today(), s: 0, r: 0 }; return u; }
+  function leftS() { return Math.max(0, D.app.limits.surprisesPerDay - usage().s); }
+  function leftR() { return Math.max(0, D.app.limits.routesPerDay - usage().r); }
+  function spend(k) { var u = usage(); u[k]++; store.set("usage", u); }
+  function locObj() { return byId(D.districts, S.loc) || D.districts[0]; }
+  function timeNow() { var h = new Date().getHours(); for (var i = 0; i < D.times.length; i++) { var t = D.times[i]; if (t.from < t.to ? h >= t.from && h < t.to : h >= t.from || h < t.to) return t.id; } return "evening"; }
+  function greet() { var h = new Date().getHours(); return h < 5 ? "Доброй ночи" : h < 12 ? "Доброе утро" : h < 17 ? "Добрый день" : "Добрый вечер"; }
+
+  /* ================= навигация ================= */
+  var SUB = { place: 1, plan1: 1, plan2: 1, plan3: 1, route: 1, active: 1, done: 1 };
+  function go(screen, push) {
+    if (push !== false && S.screen !== screen) S.history.push(S.screen);
+    S.screen = screen;
+    if (!SUB[screen]) { S.tab = screen; S.history = []; }
+    render();
+    window.scrollTo(0, 0);
+  }
+  function back() {
+    if ($("sheet").classList.contains("show")) { closeSheet(); return; }
+    var prev = S.history.pop();
+    go(prev || "home", false);
+  }
+  function syncBack() {
+    try {
+      if (!tg || !tg.BackButton) return;
+      if (SUB[S.screen]) tg.BackButton.show(); else tg.BackButton.hide();
+    } catch (e) {}
+  }
+
+  var lastScreen = null;
+  function render() {
+    var s = S.screen;
+    var html = s === "home" ? homeView() : s === "place" ? placeView() : s === "plan1" ? plan1View() : s === "plan2" ? plan2View() :
+      s === "plan3" ? plan3View() : s === "route" ? routeView() : s === "active" ? activeView() : s === "done" ? doneView() :
+      s === "saved" ? savedView() : s === "profile" ? profileView() : s === "routes" ? savedView() : homeView();
+    $("app").className = "wrap" + (SUB[s] ? " no-nav" : "");
+    var fresh = lastScreen !== s; lastScreen = s;
+    $("app").innerHTML = '<div class="' + (fresh ? "screen" : "") + '">' + html + "</div>";
+    renderNav();
+    renderBar();
+    bind();
+    syncBack();
+  }
+
+  function renderNav() {
+    var nav = $("nav");
+    if (SUB[S.screen]) { nav.hidden = true; return; }
+    nav.hidden = false;
+    var tabs = [["home", "home", "Главная"], ["plan1", "route", "Маршрут"], ["saved", "heart", "Избранное"], ["profile", "user", "Профиль"]];
+    nav.innerHTML = tabs.map(function (t) {
+      return '<button data-nav="' + t[0] + '" class="' + (S.tab === t[0] ? "on" : "") + '" aria-label="' + t[2] + '">' + ic(t[1]) + "<span>" + t[2] + "</span></button>";
+    }).join("");
+  }
+
+  function renderBar() {
+    var bar = $("bar"), s = S.screen, h = "";
+    if (s === "plan1") h = '<button class="btn gloss" data-act="toPlan2">Далее ' + ic("arrow") + "</button>";
+    else if (s === "plan2") h = '<button class="btn soft" data-act="back">' + ic("back") + " Назад</button><button class=\"btn gloss\" data-act=\"toPlan3\">Далее " + ic("arrow") + "</button>";
+    else if (s === "plan3") h = '<button class="btn soft" data-act="back">' + ic("back") + " Назад</button><button class=\"btn gloss\" data-act=\"build\">" + (leftR() > 0 ? "Собрать" : ic("lock") + " VIBE+") + "</button>";
+    else if (s === "route") h = '<button class="btn soft" data-act="rebuild" aria-label="Собрать другой">' + ic("refresh") + "</button><button class=\"btn gloss\" data-act=\"start\">Поехали " + ic("arrow") + "</button>";
+    if (!h) { bar.hidden = true; return; }
+    bar.hidden = false;
+    $("barIn").innerHTML = h;
+    if (s === "route") $("barIn").firstChild.style.width = "72px";
+  }
+
+  /* ================= главная ================= */
+  var MOOD_IC = { calm: "leaf", atmo: "spark", tasty: "food", culture: "frame", active: "walk", romance: "heart", party: "glass" };
+  function homeView() {
+    var a = D.app, L = locObj(), u = leftS(), lim = a.limits.surprisesPerDay;
+    var bud = byId(D.budgets, S.budget) || D.budgets[D.budgets.length - 1], comp = byId(D.company, S.company) || D.company[0];
+    var dots = ""; for (var i = 0; i < lim; i++) dots += '<i class="' + (i < u ? "" : "off") + '"></i>';
+    var near = D.places.map(function (p) { return { p: p, t: travel(L, p) }; }).sort(function (x, y) { return x.t.km - y.t.km; }).slice(0, 5);
+    return '' +
+      '<div class="top">' +
+        '<div class="hello"><small>' + greet() + (user.name ? ", " + esc(user.name) : "") + '</small><b>VIBE</b></div>' +
+        '<span class="pill">' + ic("sun") + " " + a.weather.temp + '°</span>' +
+        '<button class="avatar" data-nav="saved" aria-label="Избранное">' + ic("heart") + '</button>' +
+      '</div>' +
+      '<section class="glass hero">' +
+        '<div class="meta"><button class="pill" data-act="changeLoc">' + ic("pin") + " " + esc(L.label) + '</button><span class="pill">' + ic("clock") + " " + hhmm(nowMin()) + '</span></div>' +
+        '<h1 class="h-display">Куда сегодня?</h1>' +
+        '<p>Потяни сферу вправо или просто нажми, и VIBE выберет одно место рядом под твоё настроение.</p>' +
+        '<div class="slide" id="slide" role="button" aria-label="Удиви меня">' +
+          '<div class="tint" id="tint"></div>' +
+          '<div class="label">Удиви меня<span>→</span></div>' +
+          '<div class="knob" id="knob"></div>' +
+        '</div>' +
+        '<div class="quota"><span>' + (u > 0 ? "Осталось " + u + " из " + lim + " на сегодня" : "Лимит на сегодня исчерпан") + '</span><div class="dots">' + dots + '</div></div>' +
+      '</section>' +
+      '<div class="sec"><div class="sec-head"><h3>Какое настроение</h3>' + (S.mood ? '<button data-act="clearMood">Любое</button>' : "") + '</div>' +
+        '<div class="chips scroll">' + D.moods.map(function (m) { return '<button class="chip' + (S.mood === m.id ? " on" : "") + '" data-mood="' + m.id + '">' + ic(MOOD_IC[m.id] || "spark") + esc(m.label) + "</button>"; }).join("") + '</div>' +
+        '<div class="filters">' +
+          '<button class="filter" data-act="pickBudget"><span><small>Бюджет</small><b>' + esc(bud.label) + '</b></span>' + ic("chev") + '</button>' +
+          '<button class="filter" data-act="pickCompany"><span><small>С кем</small><b>' + esc(comp.label) + '</b></span>' + ic("chev") + '</button>' +
+        '</div></div>' +
+      '<button class="neu plan-card" data-act="plan" style="width:100%;text-align:left;margin-top:18px">' +
+        '<span class="ico">' + ic("route") + '</span>' +
+        '<span><b>Собрать весь вечер</b><small>Маршрут из 2–5 мест со временем и дорогой</small></span>' +
+        '<span class="go gloss">' + ic("arrow") + '</span>' +
+      '</button>' +
+      '<div class="sec"><div class="sec-head"><h3>Рядом с тобой</h3><button data-act="changeLoc">' + esc(L.label) + '</button></div>' +
+        '<div class="hscroll">' + near.map(function (n) {
+          var o = openInfo(n.p);
+          return '<button class="neu pcard-s" data-place="' + n.p.id + '">' +
+            '<div style="position:relative">' + art(n.p) + '<span class="state' + (o.open ? "" : " closed") + '">' + (o.open ? "Открыто" : "Закрыто") + '</span></div>' +
+            '<div class="t"><b>' + esc(n.p.name) + '</b><small>' + ic(n.t.mode === "walk" ? "walk" : "route") + " " + esc(n.t.text) + '</small></div></button>';
+        }).join("") + '</div></div>';
+  }
+  function optSheet(title, sub, list, cur, key) {
+    openSheet('<h3>' + esc(title) + '</h3><p>' + esc(sub) + '</p>' + list.map(function (o) {
+      return '<button class="opt" data-set="' + key + ":" + o.id + '">' + ic(o.id === cur ? "check" : (o.icon || "spark")) + esc(o.label) + "</button>";
+    }).join(""));
+  }
+
+  /* слайдер-тумблер */
+  function bindSlider() {
+    var sl = $("slide"), kn = $("knob"), tint = $("tint"); if (!sl) return;
+    var x0 = null, dx = 0, max = 0, moved = false;
+    function set(x) { kn.style.transform = "translateX(" + x + "px)"; tint.style.opacity = max ? Math.min(1, x / max) : 0; }
+    sl.addEventListener("pointerdown", function (e) {
+      max = sl.clientWidth - kn.offsetWidth - 10; x0 = e.clientX; dx = 0; moved = false; kn.classList.remove("back"); tint.classList.remove("back");
+      try { sl.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    sl.addEventListener("pointermove", function (e) {
+      if (x0 === null) return;
+      dx = Math.max(0, Math.min(max, e.clientX - x0));
+      if (dx > 4) moved = true;
+      set(dx);
+      if (dx >= max * .98 && !kn._h) { kn._h = 1; haptic("medium"); }
+    });
+    function end() {
+      if (x0 === null) return;
+      x0 = null; kn._h = 0;
+      kn.classList.add("back"); tint.classList.add("back");
+      if (!moved || dx > max * .7) {
+        set(max); haptic("light");
+        setTimeout(function () { surprise(); }, 320);
+      } else { set(0); }
+    }
+    sl.addEventListener("pointerup", end);
+    sl.addEventListener("pointercancel", end);
+  }
+
+  /* ================= подбор одного места ================= */
+  function fits(p, o) {
+    if (o.mood && p.moods.indexOf(o.mood) < 0) return false;
+    if (o.moods && o.moods.length && !o.moods.some(function (m) { return p.moods.indexOf(m) >= 0; })) return false;
+    if (o.company && p.company.indexOf(o.company) < 0) return false;
+    if (o.time && p.times.indexOf(o.time) < 0) return false;
+    if (o.max != null && p.price > o.max) return false;
+    if (o.q && !matchQ(p, o.q)) return false;
+    return true;
+  }
+  /* пожелание: «клуб», «кофе с видом», «где потанцевать» — ищем по названию, категории, описанию и тегам с синонимами */
+  var SYN = {
+    клуб: ["клуб", "вечерин", "танц", "диджей", "техно"], туса: ["клуб", "вечерин", "танц"], тусов: ["клуб", "вечерин", "танц"],
+    потанц: ["танц", "клуб"], танц: ["танц", "клуб"], дискот: ["клуб", "танц"], вечерин: ["вечерин", "клуб"],
+    бар: ["бар", "коктейл"], выпит: ["бар", "коктейл", "вино"], коктейл: ["коктейл", "бар"],
+    кофе: ["кофе", "кофейн"], кофейн: ["кофе", "кофейн"], вид: ["вид", "панорам", "смотров"], панорам: ["вид", "панорам"],
+    музей: ["музей", "выставк", "искусств"], выставк: ["выставк", "музей"], парк: ["парк", "сад"], погулят: ["прогулк", "парк", "набережн"],
+    поест: ["еда", "ресторан", "фудкорт", "гастро", "ужин"], еда: ["еда", "ресторан", "фудкорт", "гастро"], ресторан: ["ресторан", "ужин"],
+    свидан: ["свидан", "вид", "ресторан"], концерт: ["концерт", "живая музыка"], музык: ["музык", "концерт", "диджей"]
+  };
+  var STOP = { хочу: 1, где: 1, что: 1, куда: 1, место: 1, места: 1, нибудь: 1, какой: 1, какое: 1, пойти: 1, сходить: 1, можно: 1, для: 1, или: 1 };
+  function stem(w) { return w.length > 5 ? w.slice(0, w.length - 2) : w.length > 3 ? w.slice(0, w.length - 1) : w; }
+  function matchQ(p, q) {
+    var hay = (p.name + " " + p.category + " " + p.why + " " + p.description + " " + (p.tags || []).join(" ")).toLowerCase().replace(/ё/g, "е");
+    var words = q.toLowerCase().replace(/ё/g, "е").split(/[^a-zа-я0-9]+/).filter(function (w) { return w.length >= 3 && !STOP[w]; });
+    if (!words.length) return true;
+    return words.every(function (w) {
+      var st = stem(w), keys = [st];
+      Object.keys(SYN).forEach(function (k) { if (st.indexOf(k) === 0 || k.indexOf(st) === 0) keys = keys.concat(SYN[k]); });
+      return keys.some(function (k) { return hay.indexOf(k) >= 0; });
+    });
+  }
+  function pickOne() {
+    var L = locObj(), cur = S.current;
+    var bud = byId(D.budgets, S.budget), f = { mood: S.mood, company: S.company, max: bud ? bud.max : null };
+    var pool = D.places.filter(function (p) { return fits(p, f) && openInfo(p).open; });
+    var note = "";
+    if (!pool.length) { pool = D.places.filter(function (p) { return fits(p, { mood: S.mood, max: f.max }) && openInfo(p).open; }); note = pool.length ? "Под эту компанию мест мало, показываю похожее" : ""; }
+    if (!pool.length) { pool = D.places.filter(function (p) { return fits(p, { mood: S.mood }); }); note = "Под эти фильтры сейчас ничего не открыто, показываю похожее"; }
+    if (!pool.length) { pool = D.places.slice(); note = "Под это настроение мест пока нет, вот что есть рядом"; }
+    pool = pool.filter(function (p) { return travel(L, p).min <= 45; }).length ? pool.filter(function (p) { return travel(L, p).min <= 45; }) : pool;
+    var fresh = pool.filter(function (p) { return S.seen.indexOf(p.id) < 0 && (!cur || p.id !== cur.id); });
+    if (!fresh.length) {
+      var ids = pool.map(function (p) { return p.id; });
+      S.seen = S.seen.filter(function (id) { return ids.indexOf(id) < 0; });
+      fresh = pool.filter(function (p) { return !cur || p.id !== cur.id; });
+      if (!fresh.length) fresh = pool;
+      note = note || "Ты посмотрела всё рядом, начинаем новый круг";
+    }
+    var p = fresh[Math.floor(Math.random() * fresh.length)];
+    S.seen.push(p.id); store.set("seen", S.seen);
+    return { p: p, note: note };
+  }
+  var busy = false;
+  function surprise() {
+    if (busy) return;
+    if (leftS() <= 0) { haptic("warning"); paywall("Бесплатные «удивления» на сегодня закончились."); render(); return; }
+    busy = true; spend("s");
+    var res = pickOne(), n = 0, total = 12, ov = $("overlay");
+    ov.innerHTML = '<div class="glass slot" id="slot"></div>'; ov.classList.add("show");
+    (function spin() {
+      var p = n < total - 1 ? D.places[Math.floor(Math.random() * D.places.length)] : res.p;
+      var sl = $("slot"); sl.innerHTML = art(p) + "<b>" + esc(p.name) + "</b>";
+      sl.classList.remove("tick"); void sl.offsetWidth; sl.classList.add("tick");
+      haptic(n < total - 1 ? "soft" : "medium"); n++;
+      if (n < total) setTimeout(spin, 55 + n * 10);
+      else setTimeout(function () { ov.classList.remove("show"); busy = false; haptic("success"); S.current = res.p; S.note = res.note; go("place"); }, 420);
+    })();
+  }
+
+  /* ================= экран места ================= */
+  function placeView() {
+    var p = S.current, L = locObj(), t = travel(L, p), o = openInfo(p), sv = S.saved.indexOf(p.id) >= 0;
+    var mood = byId(D.moods, S.mood), tail = mood && p.moods.indexOf(mood.id) >= 0 ? " Подходит под «" + mood.label + "»." : "";
+    return '' +
+      '<div style="position:relative" id="placeTop">' +
+        gallery(p) +
+        '<div class="place-top"><button class="round" data-act="back" aria-label="Назад">' + ic("back") + '</button>' +
+        '<span class="pill" style="background:rgba(255,255,255,.75)">' + esc(p.category) + '</span></div>' +
+      '</div>' +
+      '<section class="glass place-body">' +
+        '<span class="state' + (o.open ? "" : " closed") + '" style="position:static">' + esc(o.text) + '</span>' +
+        '<h1 class="h-display">' + esc(p.name) + '</h1>' +
+        '<div class="why"><b>Почему тебе</b>' + esc(p.why) + "." + esc(tail) + '</div>' +
+        '<div class="facts">' +
+          '<div class="fact">' + ic(t.mode === "walk" ? "walk" : "route") + "<b>" + t.min + " мин</b><small>" + (t.mode === "walk" ? "пешком" : "на метро") + '</small></div>' +
+          '<div class="fact">' + ic("wallet") + "<b>" + esc(p.price ? p.priceText : "0 ₽") + "</b><small>" + (p.price ? "на человека" : "бесплатно") + '</small></div>' +
+          '<div class="fact">' + ic("clock") + "<b>~" + dur(p.stay) + "</b><small>на месте</small></div>" +
+        '</div>' +
+        '<p class="desc">' + esc(p.description) + '</p>' +
+        '<div class="addr">' + ic("pin") + esc(p.address) + " · " + km(t.km) + '</div>' +
+        '<div class="credit" id="photoCredit">' + (p.photoCredit ? '<a href="' + esc(p.photoSource || "#") + '" target="_blank" rel="noopener">Фото: ' + esc(p.photoCredit) + "</a>" : PHOTOS[p.id] && PHOTOS[p.id].author ? "Фото: " + esc(PHOTOS[p.id].author) + " · Google Карты" : "") + '</div>' +
+      '</section>' +
+      (S.note ? '<div class="note">' + esc(S.note) + "</div>" : "") +
+      '<div style="margin-top:16px"><button class="btn gloss" data-act="routeTo">' + ic("route") + ' Построить маршрут</button></div>' +
+      '<div class="acts">' +
+        '<button class="btn soft" data-act="another">' + ic("refresh") + ' Другое</button>' +
+        '<button class="heart' + (sv ? " on" : "") + '" data-act="save" aria-label="Сохранить">' + ic("heart") + '</button>' +
+        '<button class="btn soft" data-act="invite">' + ic("share") + ' Позвать</button>' +
+      '</div>' +
+      ((p.photos || []).length > 1 ? '<div class="swipe-hint">Листай фото пальцем вправо и влево</div>' : "");
+  }
+  /* галерея фото места: листается пальцем, точки и счётчик, подпись автора меняется вместе с фото */
+  function gallery(p) {
+    var ph = (p.photos || []).filter(function (x) { return x.src; });
+    if (ph.length < 2) return art(p, "place-art");
+    return '<div class="gal place-art" id="gal">' +
+      '<div class="gal-track" id="galTrack">' + ph.map(function (x, i) {
+        return '<div class="gal-slide" style="background-image:url(\'' + esc(x.src) + '\')" role="img" aria-label="' + esc(p.name) + ", фото " + (i + 1) + '"></div>';
+      }).join("") + '</div>' +
+      '<div class="gal-count" id="galCount">1 / ' + ph.length + '</div>' +
+      '<div class="gal-dots" id="galDots">' + ph.map(function (x, i) { return '<i class="' + (i ? "" : "on") + '"></i>'; }).join("") + '</div>' +
+    '</div>';
+  }
+  function bindGallery() {
+    var tr = $("galTrack"); if (!tr || !S.current) return;
+    var ph = S.current.photos.filter(function (x) { return x.src; }), last = 0;
+    tr.addEventListener("scroll", function () {
+      var i = Math.round(tr.scrollLeft / tr.clientWidth); if (i === last) return; last = i;
+      $("galCount").textContent = (i + 1) + " / " + ph.length;
+      Array.prototype.forEach.call($("galDots").children, function (d, k) { d.className = k === i ? "on" : ""; });
+      var c = $("photoCredit"); if (c && ph[i]) c.innerHTML = '<a href="' + esc(ph[i].source || "#") + '" target="_blank" rel="noopener">Фото: ' + esc(ph[i].credit) + "</a>";
+      haptic("select");
+    }, { passive: true });
+  }
+  function toggleSave(id, force) {
+    var i = S.saved.indexOf(id);
+    if (i >= 0 && !force) { S.saved.splice(i, 1); toast("Убрали из избранного"); }
+    else if (i < 0) { S.saved.push(id); toast("Сохранили в избранное"); }
+    store.set("saved", S.saved); haptic("light");
+  }
+  function bindSwipe() {
+    var el = $("swipe"); if (!el) return;
+    var x0 = null, dx = 0, a = el.querySelector(".art");
+    el.addEventListener("pointerdown", function (e) { if (e.target.closest("button")) return; x0 = e.clientX; dx = 0; a.style.transition = "none"; });
+    el.addEventListener("pointermove", function (e) { if (x0 === null) return; dx = e.clientX - x0; a.style.transform = "translateX(" + dx * .6 + "px) rotate(" + dx / 40 + "deg)"; });
+    function end() {
+      if (x0 === null) return; x0 = null; a.style.transition = "transform .3s"; a.style.transform = "";
+      if (dx > 90) { toggleSave(S.current.id, true); render(); }
+      else if (dx < -90) { another(); }
+    }
+    el.addEventListener("pointerup", end); el.addEventListener("pointercancel", end); el.addEventListener("pointerleave", end);
+  }
+  function another() {
+    if (leftS() <= 0) { haptic("warning"); paywall("Бесплатные «удивления» на сегодня закончились."); return; }
+    S.history.pop(); S.screen = "home"; surprise();
+  }
+  function routeSheet(p) {
+    var ll = p.lat + "," + p.lon;
+    openSheet('<h3>Маршрут</h3><p>' + esc(p.name) + " · " + esc(p.address) + '</p>' +
+      '<button class="opt" data-url="https://yandex.ru/maps/?rtext=~' + ll + '&rtt=pd">' + ic("pin") + 'Яндекс Карты</button>' +
+      '<button class="opt" data-url="https://www.google.com/maps/dir/?api=1&destination=' + ll + '&travelmode=walking">' + ic("pin") + 'Google Карты</button>');
+  }
+  function invite(p) {
+    haptic("light");
+    var url = "https://yandex.ru/maps/?pt=" + p.lon + "," + p.lat + "&z=16&l=map";
+    var text = "Пойдём сюда? " + p.name + ": " + p.why.toLowerCase() + ". Нашла в VIBE";
+    openTgLink("https://t.me/share/url?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(text));
+  }
+
+  /* ================= сборка вечера: шаг 1 ================= */
+  function newPlan() {
+    return { moods: S.mood ? [S.mood] : [], company: "solo", time: timeNow(), q: "", count: 3, budget: "any", endBy: (nowMin() + 300) % 1440, finish: "any" };
+  }
+  function planHead(step, title) {
+    return '<div class="subhead"><button class="round" data-act="' + (step === 1 ? "closePlan" : "back") + '" aria-label="Назад">' + ic(step === 1 ? "close" : "back") + '</button>' +
+      '<div class="ttl">' + title + '</div><span class="eyebrow sp" style="text-align:right">' + step + ' / 3</span></div>' +
+      '<div class="progress"><i style="width:' + (step / 3 * 100) + '%"></i></div>';
+  }
+  function plan1View() {
+    var P1 = S.plan;
+    return planHead(1, "Подбор под тебя") +
+      '<h1 class="h-display" style="font-size:26px;margin:0 4px">Каким будет вечер?</h1>' +
+      '<p class="muted" style="margin:10px 4px 0;font-size:14px">Ответь на три коротких вопроса. Можно выбрать несколько настроений.</p>' +
+      '<div class="q">Что хочется</div>' +
+      '<div class="chips">' + D.moods.map(function (m) { return '<button class="chip' + (P1.moods.indexOf(m.id) >= 0 ? " on" : "") + '" data-pmood="' + m.id + '">' + esc(m.label) + "</button>"; }).join("") + '</div>' +
+      '<div class="q">С кем</div>' +
+      '<div class="tiles">' + D.company.map(function (c) { return '<button class="tile' + (P1.company === c.id ? " on" : "") + '" data-pcomp="' + c.id + '">' + ic(c.icon) + esc(c.label) + "</button>"; }).join("") + '</div>' +
+      '<div class="q">Когда</div>' +
+      '<div class="tiles">' + D.times.map(function (t) { return '<button class="tile' + (P1.time === t.id ? " on" : "") + '" data-ptime="' + t.id + '">' + ic(t.icon) + esc(t.label) + "</button>"; }).join("") + '</div>' +
+      '<div class="q">Есть пожелания</div>' +
+      '<label class="field">' + ic("search") + '<input id="pq" type="text" placeholder="Например: клуб, бар, кофе, вид" value="' + esc(P1.q) + '" autocomplete="off"></label>';
+  }
+
+  /* ================= шаг 2: откуда ================= */
+  function mapXY(pt) {
+    var minLat = 55.70, maxLat = 55.81, minLon = 37.54, maxLon = 37.68;
+    return { x: (pt.lon - minLon) / (maxLon - minLon) * 100, y: (1 - (pt.lat - minLat) / (maxLat - minLat)) * 100 };
+  }
+  // Москва-река через центр (упрощённые реальные координаты)
+  var RIVER = [[55.752, 37.535], [55.744, 37.560], [55.733, 37.566], [55.720, 37.553], [55.712, 37.565], [55.718, 37.585], [55.728, 37.598], [55.736, 37.602],
+    [55.742, 37.609], [55.748, 37.617], [55.749, 37.629], [55.746, 37.645], [55.738, 37.652], [55.728, 37.657], [55.715, 37.672], [55.708, 37.690]];
+  function riverPath() {
+    var pts = RIVER.map(function (p) { return mapXY({ lat: p[0], lon: p[1] }); });
+    var d = "M" + pts[0].x.toFixed(1) + " " + pts[0].y.toFixed(1);
+    for (var i = 1; i < pts.length - 1; i++) {
+      var mx = (pts[i].x + pts[i + 1].x) / 2, my = (pts[i].y + pts[i + 1].y) / 2;
+      d += " Q" + pts[i].x.toFixed(1) + " " + pts[i].y.toFixed(1) + " " + mx.toFixed(1) + " " + my.toFixed(1);
+    }
+    var l = pts[pts.length - 1];
+    return d + " L" + l.x.toFixed(1) + " " + l.y.toFixed(1);
+  }
+  function plan2View() {
+    var L = locObj(), xy = mapXY(L), k = mapXY({ lat: 55.752, lon: 37.617 }), park = mapXY({ lat: 55.722, lon: 37.588 }), rv = riverPath();
+    var dots = D.places.map(function (p) { var q = mapXY(p); return '<span class="dot" style="left:' + q.x + "%;top:" + q.y + '%"></span>'; }).join("");
+    var lbls = D.districts.map(function (d) { var q = mapXY(d); return '<span class="lbl' + (d.id === S.loc ? " on" : "") + '" style="left:' + q.x + "%;top:" + (q.y - 7) + '%">' + esc(d.label) + "</span>"; }).join("");
+    var ns = ' vector-effect="non-scaling-stroke"';
+    return planHead(2, "Откуда стартуем") +
+      '<h1 class="h-display" style="font-size:26px;margin:0 4px">Где ты сейчас?</h1>' +
+      '<p class="muted" style="margin:10px 4px 20px;font-size:14px">Найдём места поближе и посчитаем время в пути.</p>' +
+      '<div class="map">' +
+        '<svg class="base" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">' +
+          '<defs><linearGradient id="rvG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9ecbf2"/><stop offset=".55" stop-color="#b9c3f5"/><stop offset="1" stop-color="#e3bfe9"/></linearGradient>' +
+          '<filter id="rvB" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter></defs>' +
+          '<ellipse cx="' + park.x + '" cy="' + park.y + '" rx="7" ry="9" fill="#dcefe9" opacity=".8"/>' +
+          '<ellipse cx="' + k.x + '" cy="' + k.y + '" rx="26" ry="19" fill="none" stroke="#ffffff" stroke-width="1.4"' + ns + '/>' +
+          '<ellipse cx="' + k.x + '" cy="' + k.y + '" rx="15" ry="11" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 4"' + ns + ' opacity=".9"/>' +
+          '<path d="' + rv + '" stroke="url(#rvG)" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#rvB)" opacity=".55"' + ns + '/>' +
+          '<path d="' + rv + '" stroke="url(#rvG)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"' + ns + '/>' +
+          '<path d="' + rv + '" stroke="#ffffff" stroke-width="1.2" fill="none" opacity=".7" stroke-linecap="round"' + ns + '/>' +
+        '</svg>' + lbls + dots +
+        '<span class="pin" style="left:' + xy.x + "%;top:" + xy.y + '%"></span>' +
+        '<button class="round locate" data-act="locate" aria-label="Определить автоматически">' + ic("locate") + '</button>' +
+        '<div class="legend"><span><i></i>места VIBE</span><span>Москва-река</span></div>' +
+      '</div>' +
+      '<div class="q">Или выбери район</div>' +
+      '<div class="chips">' + D.districts.map(function (d) { return '<button class="chip' + (S.loc === d.id ? " on" : "") + '" data-loc="' + d.id + '">' + esc(d.label) + "</button>"; }).join("") + '</div>';
+  }
+  function locate() {
+    function apply(lat, lon) {
+      var best = D.districts[0], bd = 1e9;
+      D.districts.forEach(function (d) { var x = dist({ lat: lat, lon: lon }, d); if (x < bd) { bd = x; best = d; } });
+      if (bd > 30) { toast("Ты далеко от Москвы, пока выбери район вручную"); return; }
+      S.loc = best.id; store.set("loc", S.loc); haptic("success"); toast("Нашли тебя: " + best.label); render();
+    }
+    function fail() { toast("Геолокация недоступна, выбери район вручную"); }
+    try {
+      if (tg && tg.LocationManager && tg.isVersionAtLeast && tg.isVersionAtLeast("8.0")) {
+        tg.LocationManager.init(function () {
+          if (!tg.LocationManager.isLocationAvailable) { fail(); return; }
+          tg.LocationManager.getLocation(function (l) { if (l) apply(l.latitude, l.longitude); else fail(); });
+        });
+        return;
+      }
+    } catch (e) {}
+    if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function (p) { apply(p.coords.latitude, p.coords.longitude); }, fail, { timeout: 6000 });
+    else fail();
+  }
+
+  /* ================= шаг 3: детали ================= */
+  function plan3View() {
+    var P3 = S.plan;
+    return planHead(3, "Детали маршрута") +
+      '<h1 class="h-display" style="font-size:26px;margin:0 4px">Последние штрихи</h1>' +
+      '<p class="muted" style="margin:10px 4px 0;font-size:14px">Можно ничего не менять, подставим удобные значения.</p>' +
+      '<div class="q">Сколько мест</div>' +
+      '<div class="neu stepper"><button class="round" data-act="cnt-" aria-label="Меньше">−</button><b>' + P3.count + '</b><button class="round" data-act="cnt+" aria-label="Больше">+</button></div>' +
+      '<div class="q">Бюджет на человека</div>' +
+      '<div class="chips">' + D.budgets.map(function (b) { return '<button class="chip' + (P3.budget === b.id ? " on" : "") + '" data-pbud="' + b.id + '">' + esc(b.label) + "</button>"; }).join("") + '</div>' +
+      '<div class="q">Закончить к</div>' +
+      '<label class="field">' + ic("clock") + '<input id="pend" type="time" value="' + hhmm(P3.endBy) + '"></label>' +
+      '<div class="q">Где закончить</div>' +
+      '<div class="chips"><button class="chip' + (P3.finish === "any" ? " on" : "") + '" data-pfin="any">Неважно</button><button class="chip' + (P3.finish === "home" ? " on" : "") + '" data-pfin="home">Ближе к старту</button></div>';
+  }
+
+  /* ================= сборка маршрута ================= */
+  function buildRoute(plan, exclude) {
+    var L = locObj(), bud = byId(D.budgets, plan.budget), max = bud ? bud.max : null;
+    var tries = [
+      { moods: plan.moods, company: plan.company, time: plan.time, max: max, q: plan.q },
+      { moods: plan.moods, company: plan.company, time: plan.time, max: max },
+      { moods: plan.moods, time: plan.time, max: max },
+      { moods: plan.moods, max: max },
+      { moods: plan.moods },
+      {}
+    ];
+    function ok(p) { return !exclude || exclude.indexOf(p.id) < 0; }
+    var pool = [], relaxed = false, hits = [], note = "";
+    if (plan.q) {
+      // сначала ищем строго по пожеланию, постепенно ослабляя остальные фильтры, но не само пожелание
+      var qTries = [
+        { moods: plan.moods, company: plan.company, time: plan.time, max: max, q: plan.q },
+        { company: plan.company, max: max, q: plan.q },
+        { max: max, q: plan.q },
+        { q: plan.q }
+      ];
+      for (var j = 0; j < qTries.length; j++) {
+        hits = D.places.filter(function (p) { return fits(p, qTries[j]) && ok(p); });
+        if (hits.length) { if (j > 1) note = "По запросу «" + plan.q + "» нашли места, но не под все фильтры"; break; }
+      }
+      if (!hits.length) note = "По запросу «" + plan.q + "» пока ничего нет, собрали по настроению";
+    }
+    for (var i = 1; i < tries.length; i++) {
+      pool = D.places.filter(function (p) { return fits(p, tries[i]) && ok(p) && hits.indexOf(p) < 0; });
+      if (pool.length + hits.length >= Math.min(plan.count, 2)) { relaxed = i > 2 && !hits.length; break; }
+    }
+    if (hits.length && hits.length < plan.count && !note) note = "По запросу «" + plan.q + "» нашли " + hits.length + ", добавили ещё места рядом";
+    if (hits.length >= plan.count) pool = [];
+    // перемешиваем, чтобы «Собрать другой» давал новый вариант
+    hits = hits.sort(function () { return Math.random() - .5; });
+    pool = pool.sort(function () { return Math.random() - .5; });
+    var start = Math.ceil((nowMin() + 10) / 5) * 5, stops = [], cur = L, t = start, used = [];
+    var cand = hits.concat(pool);
+    while (stops.length < plan.count && cand.length) {
+      var best = null, bs = 1e9;
+      cand.forEach(function (p) {
+        if (used.indexOf(p.id) >= 0) return;
+        // места под пожелание всегда в приоритете
+        var tr = travel(cur, p), score = tr.min + (openInfo(p, t + tr.min).open ? 0 : 400) + Math.random() * 8 - (hits.indexOf(p) >= 0 ? 1000 : 0);
+        if (score < bs) { bs = score; best = p; }
+      });
+      if (!best) break;
+      var leg = travel(cur, best);
+      t += leg.min;
+      stops.push({ id: best.id, arrive: t, leg: leg, hit: hits.indexOf(best) >= 0 });
+      t += best.stay; used.push(best.id); cur = best;
+    }
+    if (plan.finish === "home" && stops.length > 2) {
+      // последним ставим пункт, ближайший к старту, и пересчитываем тайминг
+      var tail = stops.slice(1).sort(function (a, b) { return dist(L, place(b.id)) - dist(L, place(a.id)); });
+      stops = [stops[0]].concat(tail);
+      var tmp = { loc: S.loc, start: start, stops: stops }; recalc(tmp); t = tmp.end;
+    }
+    var end = plan.endBy < start ? plan.endBy + 1440 : plan.endBy, cut = false;
+    while (stops.length > 1 && t > end) {
+      // сначала убираем места не по запросу; места по запросу — только если их больше одного
+      var k = stops.length - 1; while (k > 0 && stops[k].hit) k--;
+      if (stops[k].hit || k === 0) { if (stops.filter(function (x) { return x.hit; }).length <= 1 && stops.length <= 2) break; k = stops.length - 1; }
+      stops.splice(k, 1); var tmp2 = { loc: S.loc, start: start, stops: stops }; recalc(tmp2); t = tmp2.end; cut = true;
+    }
+    var totalKm = stops.reduce(function (s, x) { return s + x.leg.km; }, 0);
+    return { id: "r" + Date.now(), created: Date.now(), plan: JSON.parse(JSON.stringify(plan)), loc: S.loc, start: start, end: t, stops: stops, km: totalKm, relaxed: relaxed, cut: cut, note: note };
+  }
+  function recalc(r) {
+    var cur = byId(D.districts, r.loc) || locObj(), t = r.start;
+    r.stops.forEach(function (s) { var p = place(s.id); s.leg = travel(cur, p); t += s.leg.min; s.arrive = t; t += p.stay; cur = p; });
+    r.end = t; r.km = r.stops.reduce(function (s, x) { return s + x.leg.km; }, 0);
+  }
+  function build() {
+    if (leftR() <= 0) { haptic("warning"); paywall("Бесплатный маршрут на сегодня уже собран."); return; }
+    spend("r");
+    var ov = $("overlay");
+    ov.innerHTML = '<div class="loader"><div class="orb"></div><h2>Собираем вечер<br>под твоё настроение</h2><p>Смотрим, что открыто и как удобнее дойти</p></div>';
+    ov.classList.add("show");
+    setTimeout(function () { ov.classList.remove("show"); S.route = buildRoute(S.plan); haptic("success"); go("route"); }, 1700);
+  }
+
+  /* ================= экран маршрута ================= */
+  function routeView() {
+    var r = S.route, saved = S.routes.some(function (x) { return x.id === r.id; });
+    var dateTxt = new Date(r.created).toLocaleDateString("ru-RU", { day: "numeric", month: "long" });
+    var items = r.stops.map(function (s, i) {
+      var p = place(s.id);
+      return (i ? "" : "") +
+        '<div class="leg">' + ic(s.leg.mode === "walk" ? "walk" : "route") + esc(s.leg.text) + " · " + km(s.leg.km) + (i === 0 ? " от старта" : "") + '</div>' +
+        '<div class="tl-item">' +
+          '<div class="tl-time"><b>' + hhmm(s.arrive) + '</b><small>~' + dur(p.stay) + '</small></div>' +
+          '<div class="neu tl-card"><span class="num">' + (i + 1) + '</span>' + art(p) +
+            '<div><b>' + esc(p.name) + '</b><div class="cat">' + esc(p.category) + " · " + esc(p.priceText) + (s.hit ? ' · по запросу' : '') + '</div>' +
+            '<p>' + esc(p.why) + '</p>' +
+            '<div class="row between swap"><button class="link" data-swap="' + i + '">' + ic("refresh") + ' Заменить</button><button class="link" data-place="' + p.id + '">Подробнее ' + ic("chev") + '</button></div></div>' +
+          '</div>' +
+        '</div>';
+    }).join("");
+    return '' +
+      '<div class="subhead"><button class="round" data-act="back" aria-label="Назад">' + ic("back") + '</button><div class="ttl">Твой маршрут</div>' +
+      '<button class="round" data-act="saveRoute" aria-label="Сохранить маршрут" style="color:' + (saved ? "var(--hot)" : "inherit") + '">' + ic("bookmark") + '</button></div>' +
+      '<section class="glass route-hero">' +
+        '<span class="eyebrow">' + esc(dateTxt) + " · " + esc(locObj().label) + '</span>' +
+        '<h1 class="h-display">' + hhmm(r.start) + " – " + hhmm(r.end) + '</h1>' +
+        '<div class="meta"><span class="pill">' + r.stops.length + " " + plural(r.stops.length, "место", "места", "мест") + '</span><span class="pill">' + dur(r.end - r.start) + '</span><span class="pill">' + km(r.km) + '</span>' +
+        '<button class="pill" data-act="shareRoute">' + ic("share") + ' Поделиться</button></div>' +
+      '</section>' +
+      (r.note ? '<div class="note" style="margin:-10px 0 18px">' + esc(r.note) + '</div>' : r.relaxed ? '<div class="note" style="margin:-10px 0 18px">Под все фильтры мест не хватило, добавили похожие</div>' : "") +
+      (r.cut ? '<div class="note" style="margin:-10px 0 18px">Чтобы успеть к ' + hhmm(S.route.plan.endBy) + ', оставили ' + r.stops.length + " " + plural(r.stops.length, "место", "места", "мест") + '</div>' : "") +
+      '<div class="tl">' + items + '</div>';
+  }
+  function swap(i) {
+    var r = S.route, ex = r.stops.map(function (s) { return s.id; });
+    var bud = byId(D.budgets, r.plan.budget);
+    var pool = r.plan.q ? D.places.filter(function (p) { return ex.indexOf(p.id) < 0 && fits(p, { q: r.plan.q }); }) : [];
+    if (!pool.length) pool = D.places.filter(function (p) { return ex.indexOf(p.id) < 0 && fits(p, { moods: r.plan.moods, max: bud ? bud.max : null }); });
+    if (!pool.length) pool = D.places.filter(function (p) { return ex.indexOf(p.id) < 0; });
+    if (!pool.length) { toast("Больше нечем заменить"); return; }
+    var prev = i ? place(r.stops[i - 1].id) : locObj();
+    pool.sort(function (a, b) { return travel(prev, a).min - travel(prev, b).min; });
+    r.stops[i].id = pool[Math.floor(Math.random() * Math.min(3, pool.length))].id;
+    recalc(r); haptic("light"); render();
+  }
+  function shareRoute(r) {
+    var names = r.stops.map(function (s, i) { return (i + 1) + ". " + place(s.id).name + " (" + hhmm(s.arrive) + ")"; }).join("\n");
+    var text = "Мой вечер в VIBE, " + hhmm(r.start) + "–" + hhmm(r.end) + ":\n" + names;
+    openTgLink("https://t.me/share/url?url=" + encodeURIComponent("https://t.me") + "&text=" + encodeURIComponent(text));
+  }
+
+  /* ================= прогулка по маршруту ================= */
+  function activeView() {
+    var r = S.active.route, k = S.active.i, s = r.stops[k], p = place(s.id), nx = r.stops[k + 1];
+    var steps = r.stops.map(function (x, i) {
+      return (i ? '<span class="bar' + (i <= k ? " done" : "") + '"></span>' : "") + '<span class="s' + (i < k ? " done" : i === k ? " cur" : "") + '">' + (i < k ? ic("check") : i + 1) + "</span>";
+    }).join("");
+    return '' +
+      '<div class="subhead"><button class="round" data-act="stopActive" aria-label="Закрыть">' + ic("close") + '</button><div class="ttl">Точка ' + (k + 1) + " из " + r.stops.length + '</div><span class="sp"></span></div>' +
+      '<div class="steps">' + steps + '</div>' +
+      '<section class="neu now" style="margin-top:22px">' + art(p) +
+        '<div class="t"><span class="eyebrow" style="color:var(--hot)">Сейчас</span><h2 class="h-display">' + esc(p.name) + '</h2>' +
+        '<div class="row" style="gap:8px;flex-wrap:wrap"><span class="pill">' + ic("clock") + " " + hhmm(s.arrive) + '</span><span class="pill">' + esc(p.category) + '</span></div>' +
+        '<p class="muted" style="font-size:14px;line-height:1.5;margin:12px 0 16px">' + esc(p.why) + '</p>' +
+        '<button class="btn gloss" data-act="here">' + ic("check") + ' Я на месте</button>' +
+        '<div style="text-align:center;margin-top:12px"><button class="link" data-act="routeToCur">' + ic("route") + ' Как добраться</button></div></div>' +
+      '</section>' +
+      (nx ? '<div class="sec"><div class="sec-head"><h3>Далее</h3><span class="muted" style="font-size:12px;font-weight:600">' + esc(nx.leg.text) + '</span></div>' +
+        '<div class="neu list-item">' + art(place(nx.id)) + '<div><b>' + esc(place(nx.id).name) + '</b><small>' + hhmm(nx.arrive) + " · " + esc(place(nx.id).category) + "</small></div></div></div>" : "") +
+      '<div class="sec neu row" style="padding:16px 18px;gap:14px"><span class="stamp got" style="width:44px;flex:none">' + ic("star") + '</span><div><b style="font-size:14px">Штамп за каждую точку</b><div class="muted" style="font-size:12px;margin-top:3px">Уже собрано: ' + S.stamps + '</div></div></div>';
+  }
+  function here() {
+    var A = S.active, r = A.route, p = place(r.stops[A.i].id);
+    S.stamps++; store.set("stamps", S.stamps);
+    S.stats.places++; S.stats.km = Math.round((S.stats.km + r.stops[A.i].leg.km) * 10) / 10; store.set("stats", S.stats);
+    haptic("success"); toast("Штамп получен: " + p.name);
+    if (A.i < r.stops.length - 1) { A.i++; render(); window.scrollTo(0, 0); }
+    else { S.stats.evenings++; store.set("stats", S.stats); go("done"); }
+  }
+  function doneView() {
+    var r = S.active.route;
+    return '<div style="text-align:center;padding-top:8vh">' +
+      '<div class="loader"><div class="orb" style="display:grid;place-items:center;color:#fff">' + ic("star", "big") + '</div></div>' +
+      '<h1 class="h-display" style="font-size:30px">Вечер собран</h1>' +
+      '<p class="muted" style="font-size:14px;margin:12px auto 26px;max-width:28ch;line-height:1.5">Ты прошла ' + r.stops.length + " " + plural(r.stops.length, "точку", "точки", "точек") + " и " + km(r.km) + '. Штампы уже в профиле.</p>' +
+      '<div class="stats" style="text-align:center;margin-bottom:26px">' +
+        '<div class="neu stat"><b>' + r.stops.length + '</b><small>места</small></div>' +
+        '<div class="neu stat"><b>' + km(r.km).replace(" км", "") + '</b><small>км</small></div>' +
+        '<div class="neu stat"><b>' + S.stamps + '</b><small>штампов</small></div>' +
+      '</div>' +
+      '<div class="stack"><button class="btn gloss" data-act="shareDone">' + ic("share") + ' Поделиться вечером</button><button class="btn soft" data-nav="home">На главную</button></div></div>';
+  }
+
+  /* ================= избранное ================= */
+  function savedView() {
+    var isR = S.savedTab === "routes", body;
+    if (!isR) {
+      var items = S.saved.map(place).filter(Boolean);
+      body = items.length ? '<div class="stack">' + items.map(function (p) {
+        var t = travel(locObj(), p);
+        return '<button class="neu list-item" data-place="' + p.id + '">' + art(p) + '<div><b>' + esc(p.name) + '</b><small>' + esc(t.text) + " · " + esc(p.priceText) + '</small></div>' + ic("chev") + '</button>';
+      }).join("") + "</div>" : '<div class="empty"><div class="round">' + ic("heart") + '</div>Здесь появятся места, которые понравились.<br>Нажми сердечко или свайпни фото вправо.</div>';
+    } else {
+      body = S.routes.length ? '<div class="stack">' + S.routes.slice().reverse().map(function (r) {
+        var first = place(r.stops[0].id);
+        return '<button class="neu list-item" data-openroute="' + r.id + '">' + art(first) + '<div><b>' + r.stops.map(function (s) { return place(s.id).name.replace(/[«»]/g, ""); }).slice(0, 2).join(" → ") + (r.stops.length > 2 ? " …" : "") + '</b><small>' +
+          new Date(r.created).toLocaleDateString("ru-RU", { day: "numeric", month: "short" }) + " · " + r.stops.length + " " + plural(r.stops.length, "место", "места", "мест") + " · " + km(r.km) + '</small></div>' + ic("chev") + '</button>';
+      }).join("") + "</div>" : '<div class="empty"><div class="round">' + ic("route") + '</div>Сохраняй маршруты значком закладки,<br>чтобы вернуться к ним позже.</div>';
+    }
+    return '<div class="top" style="margin-bottom:22px"><div class="hello"><small>Твоё</small><b>Избранное</b></div></div>' +
+      '<div class="seg' + (isR ? " r" : "") + '"><span class="thumb"></span><button class="' + (isR ? "" : "on") + '" data-seg="places">Места · ' + S.saved.length + '</button><button class="' + (isR ? "on" : "") + '" data-seg="routes">Маршруты · ' + S.routes.length + '</button></div>' +
+      '<div style="margin-top:22px">' + body + '</div>';
+  }
+
+  /* ================= профиль ================= */
+  function profileView() {
+    var a = D.app, stamps = "";
+    for (var i = 0; i < 10; i++) stamps += '<span class="stamp' + (i < S.stamps ? " got" : "") + '">' + ic("star") + "</span>";
+    var u = usage();
+    return '<div class="top" style="margin-bottom:22px"><div class="avatar" style="width:56px;height:56px;font-size:20px">' + esc((user.name || "V").charAt(0)) + '</div>' +
+      '<div class="hello" style="margin-left:6px"><small>Бесплатный план</small><b>' + esc(user.name || "Гость VIBE") + '</b></div></div>' +
+      '<section class="gloss plus"><span class="eyebrow">Подписка</span><h2>' + esc(a.premium.title) + '</h2>' +
+        '<ul>' + a.premium.perks.map(function (x) { return "<li>" + ic("check") + esc(x) + "</li>"; }).join("") + '</ul>' +
+        '<button class="btn" data-act="buy">Подключить за ' + esc(a.premium.price) + '</button></section>' +
+      '<div class="sec"><div class="sec-head"><h3>Сегодня</h3></div><div class="stats">' +
+        '<div class="neu stat"><b>' + Math.max(0, a.limits.surprisesPerDay - u.s) + '</b><small>удивлений</small></div>' +
+        '<div class="neu stat"><b>' + Math.max(0, a.limits.routesPerDay - u.r) + '</b><small>маршрутов</small></div>' +
+        '<div class="neu stat"><b>' + S.saved.length + '</b><small>в избранном</small></div></div></div>' +
+      '<div class="sec"><div class="sec-head"><h3>Коллекция штампов</h3><span class="muted" style="font-size:12px;font-weight:600">' + S.stamps + ' / 10</span></div><div class="neu stamps">' + stamps + '</div></div>' +
+      '<div class="sec"><div class="sec-head"><h3>За всё время</h3></div><div class="stats">' +
+        '<div class="neu stat"><b>' + S.stats.evenings + '</b><small>вечеров</small></div>' +
+        '<div class="neu stat"><b>' + S.stats.places + '</b><small>мест</small></div>' +
+        '<div class="neu stat"><b>' + String(S.stats.km).replace(".", ",") + '</b><small>км</small></div></div></div>' +
+      '<div class="sec neu settings" style="padding:0;overflow:hidden">' +
+        '<button class="list-item" data-act="changeLoc">' + ic("pin") + '<div><b>Точка старта</b><small>' + esc(locObj().label) + '</small></div>' + ic("chev") + '</button>' +
+        '<button class="list-item" data-act="resetDemo">' + ic("refresh") + '<div><b>Сбросить демо</b><small>Лимиты, штампы и избранное</small></div>' + ic("chev") + '</button>' +
+      '</div>';
+  }
+
+  /* ================= шторки ================= */
+  function openSheet(html) { $("sheetBody").innerHTML = html; $("scrim").classList.add("show"); $("sheet").classList.add("show"); bindSheet(); }
+  function closeSheet() { $("scrim").classList.remove("show"); $("sheet").classList.remove("show"); }
+  function paywall(reason) {
+    var pr = D.app.premium;
+    openSheet('<span class="eyebrow">Подписка</span><h3 style="margin-top:6px">' + esc(pr.title) + '</h3><p>' + esc(reason) + ' Завтра лимит обновится, а с ' + esc(pr.title) + ' ограничений нет.</p>' +
+      pr.perks.map(function (x) { return '<div class="opt" style="box-shadow:none;background:var(--bg);margin-bottom:8px">' + ic("check") + esc(x) + "</div>"; }).join("") +
+      '<div style="margin-top:14px" class="stack"><button class="btn gloss" data-act="buy">Подключить за ' + esc(pr.price) + '</button><button class="link" style="margin:0 auto" data-act="resetLimits">Демо: сбросить лимиты</button></div>');
+  }
+  function locSheet() {
+    openSheet('<h3>Точка старта</h3><p>От неё считаем, что рядом и сколько идти.</p>' +
+      '<button class="opt" data-act="locate">' + ic("locate") + 'Определить автоматически</button>' +
+      D.districts.map(function (d) { return '<button class="opt" data-loc="' + d.id + '">' + ic(S.loc === d.id ? "check" : "pin") + esc(d.label) + "</button>"; }).join(""));
+  }
+  function bindSheet() {
+    var sb = $("sheetBody");
+    sb.querySelectorAll("[data-url]").forEach(function (b) { b.onclick = function () { haptic("light"); openLink(b.getAttribute("data-url")); closeSheet(); }; });
+    sb.querySelectorAll("[data-set]").forEach(function (b) { b.onclick = function () { var kv = b.getAttribute("data-set").split(":"); S[kv[0]] = kv[1]; store.set(kv[0], kv[1]); haptic("select"); closeSheet(); render(); }; });
+    sb.querySelectorAll("[data-loc]").forEach(function (b) { b.onclick = function () { S.loc = b.getAttribute("data-loc"); store.set("loc", S.loc); haptic("select"); closeSheet(); render(); }; });
+    sb.querySelectorAll("[data-act]").forEach(function (b) { b.onclick = function () { act(b.getAttribute("data-act")); }; });
+  }
+  $("scrim").onclick = closeSheet;
+
+  /* ================= действия ================= */
+  function act(a) {
+    switch (a) {
+      case "back": back(); break;
+      case "plan": S.plan = newPlan(); go("plan1"); break;
+      case "closePlan": S.history = []; go(S.tab === "plan1" ? "home" : S.tab, false); break;
+      case "toPlan2": go("plan2"); break;
+      case "toPlan3": go("plan3"); break;
+      case "build": build(); break;
+      case "rebuild": S.route = buildRoute(S.route.plan); haptic("light"); render(); toast("Собрали другой вариант"); break;
+      case "saveRoute":
+        var ix = -1; S.routes.forEach(function (x, i) { if (x.id === S.route.id) ix = i; });
+        if (ix >= 0) { S.routes.splice(ix, 1); toast("Маршрут убран из избранного"); } else { S.routes.push(S.route); toast("Маршрут сохранён"); }
+        store.set("routes", S.routes); haptic("light"); render(); break;
+      case "shareRoute": shareRoute(S.route); break;
+      case "start": S.active = { route: S.route, i: 0 }; go("active"); break;
+      case "here": here(); break;
+      case "routeToCur": routeSheet(place(S.active.route.stops[S.active.i].id)); break;
+      case "stopActive": S.history = []; go("home", false); break;
+      case "shareDone": shareRoute(S.active.route); break;
+      case "routeTo": routeSheet(S.current); break;
+      case "another": another(); break;
+      case "save": toggleSave(S.current.id); render(); break;
+      case "invite": invite(S.current); break;
+      case "surprise": haptic("medium"); surprise(); break;
+      case "pickBudget": optSheet("Бюджет", "Сколько готова потратить на человека", D.budgets, S.budget, "budget"); break;
+      case "pickCompany": optSheet("С кем идёшь", "Подберём место под компанию", D.company, S.company, "company"); break;
+      case "clearMood": S.mood = null; store.set("mood", null); render(); break;
+      case "changeLoc": locSheet(); break;
+      case "locate": closeSheet(); locate(); break;
+      case "cnt-": S.plan.count = Math.max(2, S.plan.count - 1); haptic("select"); render(); break;
+      case "cnt+": S.plan.count = Math.min(5, S.plan.count + 1); haptic("select"); render(); break;
+      case "buy": haptic("light"); toast("Оплата через Telegram Stars подключится на следующем шаге"); break;
+      case "resetLimits": store.set("usage", { day: today(), s: 0, r: 0 }); closeSheet(); render(); toast("Лимиты сброшены"); break;
+      case "resetDemo":
+        ["usage", "saved", "routes", "seen", "stamps", "stats", "mood"].forEach(function (k) { try { localStorage.removeItem("vibe2:" + k); } catch (e) {} });
+        S.saved = []; S.routes = []; S.seen = []; S.stamps = 0; S.stats = { evenings: 0, places: 0, km: 0 }; S.mood = null;
+        render(); toast("Демо-данные сброшены"); break;
+    }
+  }
+
+  function bind() {
+    var root = document;
+    root.querySelectorAll("#app [data-act], #barIn [data-act]").forEach(function (b) { b.onclick = function () { act(b.getAttribute("data-act")); }; });
+    root.querySelectorAll("[data-nav]").forEach(function (b) {
+      b.onclick = function () {
+        var t = b.getAttribute("data-nav"); haptic("select");
+        if (t === "plan1") { S.plan = newPlan(); S.tab = "plan1"; S.history = []; S.screen = "plan1"; render(); window.scrollTo(0, 0); return; }
+        go(t);
+      };
+    });
+    root.querySelectorAll("#app [data-place]").forEach(function (b) { b.onclick = function () { S.current = place(b.getAttribute("data-place")); S.note = ""; haptic("light"); go("place"); }; });
+    root.querySelectorAll("#app [data-mood]").forEach(function (b) {
+      b.onclick = function () { var id = b.getAttribute("data-mood"); S.mood = S.mood === id ? null : id; store.set("mood", S.mood); haptic("select"); render(); };
+    });
+    root.querySelectorAll("#app [data-pmood]").forEach(function (b) {
+      b.onclick = function () { var id = b.getAttribute("data-pmood"), m = S.plan.moods, i = m.indexOf(id); if (i >= 0) m.splice(i, 1); else m.push(id); haptic("select"); render(); };
+    });
+    root.querySelectorAll("#app [data-pcomp]").forEach(function (b) { b.onclick = function () { S.plan.company = b.getAttribute("data-pcomp"); haptic("select"); render(); }; });
+    root.querySelectorAll("#app [data-ptime]").forEach(function (b) { b.onclick = function () { S.plan.time = b.getAttribute("data-ptime"); haptic("select"); render(); }; });
+    root.querySelectorAll("#app [data-pbud]").forEach(function (b) { b.onclick = function () { S.plan.budget = b.getAttribute("data-pbud"); haptic("select"); render(); }; });
+    root.querySelectorAll("#app [data-pfin]").forEach(function (b) { b.onclick = function () { S.plan.finish = b.getAttribute("data-pfin"); haptic("select"); render(); }; });
+    root.querySelectorAll("#app [data-loc]").forEach(function (b) { b.onclick = function () { S.loc = b.getAttribute("data-loc"); store.set("loc", S.loc); haptic("select"); render(); }; });
+    root.querySelectorAll("#app [data-swap]").forEach(function (b) { b.onclick = function () { swap(+b.getAttribute("data-swap")); }; });
+    root.querySelectorAll("#app [data-seg]").forEach(function (b) { b.onclick = function () { S.savedTab = b.getAttribute("data-seg"); haptic("select"); render(); }; });
+    root.querySelectorAll("#app [data-openroute]").forEach(function (b) {
+      b.onclick = function () { var id = b.getAttribute("data-openroute"); S.route = S.routes.filter(function (r) { return r.id === id; })[0]; recalc(S.route); go("route"); };
+    });
+    var q = $("pq"); if (q) q.oninput = function () { S.plan.q = q.value.trim(); };
+    var e = $("pend"); if (e) e.onchange = function () { var p = e.value.split(":"); if (p.length === 2) S.plan.endBy = +p[0] * 60 + +p[1]; };
+    bindSlider(); bindSwipe(); bindGallery(); loadVisiblePhotos();
+  }
+
+  if (tg && tg.BackButton) { try { tg.BackButton.onClick(back); } catch (e) {} }
+
+  /* ================= загрузка ================= */
+  function fallback() {
+    $("nav").hidden = true; $("bar").hidden = true;
+    $("app").innerHTML = '<div class="glass fallback"><div class="round">' + ic("pin") + '</div><h2>Места не загрузились</h2>' +
+      '<p>Похоже, пропал интернет или файл с местами временно недоступен. Попробуй ещё раз через пару секунд.</p>' +
+      '<button class="btn gloss" id="retry">' + ic("refresh") + ' Обновить</button></div>';
+    $("retry").onclick = function () { haptic("light"); load(); };
+  }
+  function load() {
+    fetch("data.json?v=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) {
+        if (!d || !d.places || !d.places.length) throw new Error("empty");
+        D = d;
+        if (!byId(D.districts, S.loc)) S.loc = D.districts[0].id;
+        render();
+      })
+      .catch(fallback);
+  }
+  load();
+})();
+</script>
+</body>
+</html>
