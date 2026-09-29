@@ -554,7 +554,12 @@
   function openLink(url) { try { if (tg && tg.openLink) { tg.openLink(url); return; } } catch (e) {} window.open(url, "_blank"); }
   function openTgLink(url) { try { if (tg && tg.openTelegramLink) { tg.openTelegramLink(url); return; } } catch (e) {} window.open(url, "_blank"); }
   var user = { name: "" };
-  try { user.name = tg.initDataUnsafe.user.first_name || ""; } catch (e) {}
+  try { var tu = tg.initDataUnsafe.user; user.name = tu.first_name || ""; user.username = tu.username || ""; user.photo = tu.photo_url || ""; } catch (e) {}
+  function avatarHtml(size) {
+    var st = size ? "width:" + size + "px;height:" + size + "px;font-size:" + Math.round(size / 2.8) + "px;" : "";
+    if (user.photo) return '<div class="avatar" style="' + st + 'background-image:url(\'' + esc(user.photo) + '\');background-size:cover;background-position:center"></div>';
+    return '<div class="avatar" style="' + st + '">' + esc((user.name || "V").charAt(0)) + "</div>";
+  }
 
   /* ================= хранилище ================= */
   var store = {
@@ -761,7 +766,7 @@
     stamps: store.get("stamps", 0),
     stats: store.get("stats", { evenings: 0, places: 0, km: 0 }),
     savedTab: "places",
-    plan: null, route: null, active: null, current: null, note: ""
+    plan: null, route: store.get("lastRoute", null), active: store.get("active", null), done: null, current: null, note: ""
   };
   function usage() { var u = store.get("usage", null); if (!u || u.day !== today()) u = { day: today(), s: 0, r: 0 }; return u; }
   /* VIBE+ по подарочной ссылке: t.me/<бот>?startapp=КОД или ...github.io/vibe-app/?gift=КОД */
@@ -875,6 +880,10 @@
           '<button class="filter" data-act="pickBudget"><span><small>Бюджет</small><b>' + esc(bud.label) + '</b></span>' + ic("chev") + '</button>' +
           '<button class="filter" data-act="pickCompany"><span><small>С кем</small><b>' + esc(comp.label) + '</b></span>' + ic("chev") + '</button>' +
         '</div></div>' +
+      (S.active ? '<button class="neu plan-card" data-act="resumeActive" style="width:100%;text-align:left;margin-top:18px">' +
+        '<span class="ico">' + ic("walk") + '</span>' +
+        '<span><b>Маршрут в процессе</b><small>Точка ' + (S.active.i + 1) + " из " + S.active.route.stops.length + ": " + esc(place(S.active.route.stops[S.active.i].id).name) + '</small></span>' +
+        '<span class="go gloss">' + ic("arrow") + '</span></button>' : "") +
       '<button class="neu plan-card" data-act="plan" style="width:100%;text-align:left;margin-top:18px">' +
         '<span class="ico">' + ic("route") + '</span>' +
         '<span><b>Собрать весь вечер</b><small>Маршрут из 2–5 мест со временем и дорогой</small></span>' +
@@ -970,7 +979,7 @@
       S.seen = S.seen.filter(function (id) { return ids.indexOf(id) < 0; });
       fresh = pool.filter(function (p) { return !cur || p.id !== cur.id; });
       if (!fresh.length) fresh = pool;
-      note = note || "Ты посмотрела всё рядом, начинаем новый круг";
+      note = note || "Все места рядом уже показаны, начинаем новый круг";
     }
     var p = fresh[Math.floor(Math.random() * fresh.length)];
     S.seen.push(p.id); store.set("seen", S.seen);
@@ -1079,7 +1088,7 @@
   function invite(p) {
     haptic("light");
     var url = "https://yandex.ru/maps/?pt=" + p.lon + "," + p.lat + "&z=16&l=map";
-    var text = "Пойдём сюда? " + p.name + ": " + p.why.toLowerCase() + ". Нашла в VIBE";
+    var text = "Пойдём сюда? " + p.name + ": " + p.why.toLowerCase() + ". Из VIBE: https://t.me/vibe_places_bot?startapp";
     openTgLink("https://t.me/share/url?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(text));
   }
 
@@ -1178,7 +1187,7 @@
     return planHead(3, "Детали маршрута") +
       '<h1 class="h-display" style="font-size:26px;margin:0 4px">Последние штрихи</h1>' +
       '<p class="muted" style="margin:10px 4px 0;font-size:14px">Можно ничего не менять, подставим удобные значения.</p>' +
-      '<div class="q">Сколько мест</div>' +
+      '<div class="q">Сколько точек в маршруте</div><p class="muted" style="margin:-4px 4px 12px;font-size:13px">Парки, кафе, музеи и т. д., от 2 до 5. С кем идёшь, ты уже выбрал(а) на первом шаге.</p>' +
       '<div class="neu stepper"><button class="round" data-act="cnt-" aria-label="Меньше">−</button><b>' + P3.count + '</b><button class="round" data-act="cnt+" aria-label="Больше">+</button></div>' +
       '<div class="q">Бюджет на человека</div>' +
       '<div class="chips">' + D.budgets.map(function (b) { return '<button class="chip' + (P3.budget === b.id ? " on" : "") + '" data-pbud="' + b.id + '">' + esc(b.label) + "</button>"; }).join("") + '</div>' +
@@ -1267,7 +1276,7 @@
     var ov = $("overlay");
     ov.innerHTML = '<div class="loader"><div class="orb"></div><h2>Собираем вечер<br>под твоё настроение</h2><p>Смотрим, что открыто и как удобнее дойти</p></div>';
     ov.classList.add("show");
-    setTimeout(function () { ov.classList.remove("show"); S.route = buildRoute(S.plan); haptic("success"); go("route"); }, 1700);
+    setTimeout(function () { ov.classList.remove("show"); S.route = buildRoute(S.plan); store.set("lastRoute", S.route); haptic("success"); go("route"); }, 1700);
   }
 
   /* ================= экран маршрута ================= */
@@ -1294,7 +1303,8 @@
         '<span class="eyebrow">' + esc(dateTxt) + " · " + esc(locObj().label) + '</span>' +
         '<h1 class="h-display">' + hhmm(r.start) + " – " + hhmm(r.end) + '</h1>' +
         '<div class="meta"><span class="pill">' + r.stops.length + " " + plural(r.stops.length, "место", "места", "мест") + '</span><span class="pill">' + dur(r.end - r.start) + '</span><span class="pill">' + km(r.km) + '</span>' +
-        '<button class="pill" data-act="shareRoute">' + ic("share") + ' Поделиться</button></div>' +
+        '<button class="pill" data-act="shareRoute">' + ic("share") + ' Поделиться</button>' +
+        '<button class="pill" data-act="newPlan">' + ic("refresh") + ' Собрать новый</button></div>' +
       '</section>' +
       (r.note ? '<div class="note" style="margin:-10px 0 18px">' + esc(r.note) + '</div>' : r.relaxed ? '<div class="note" style="margin:-10px 0 18px">Под все фильтры мест не хватило, добавили похожие</div>' : "") +
       (r.cut ? '<div class="note" style="margin:-10px 0 18px">Чтобы успеть к ' + hhmm(S.route.plan.endBy) + ', оставили ' + r.stops.length + " " + plural(r.stops.length, "место", "места", "мест") + '</div>' : "") +
@@ -1315,7 +1325,7 @@
   function shareRoute(r) {
     var names = r.stops.map(function (s, i) { return (i + 1) + ". " + place(s.id).name + " (" + hhmm(s.arrive) + ")"; }).join("\n");
     var text = "Мой вечер в VIBE, " + hhmm(r.start) + "–" + hhmm(r.end) + ":\n" + names;
-    openTgLink("https://t.me/share/url?url=" + encodeURIComponent("https://t.me") + "&text=" + encodeURIComponent(text));
+    openTgLink("https://t.me/share/url?url=" + encodeURIComponent("https://t.me/vibe_places_bot?startapp") + "&text=" + encodeURIComponent(text));
   }
 
   /* ================= прогулка по маршруту ================= */
@@ -1336,22 +1346,23 @@
       '</section>' +
       (nx ? '<div class="sec"><div class="sec-head"><h3>Далее</h3><span class="muted" style="font-size:12px;font-weight:600">' + esc(nx.leg.text) + '</span></div>' +
         '<div class="neu list-item">' + art(place(nx.id)) + '<div><b>' + esc(place(nx.id).name) + '</b><small>' + hhmm(nx.arrive) + " · " + esc(place(nx.id).category) + "</small></div></div></div>" : "") +
-      '<div class="sec neu row" style="padding:16px 18px;gap:14px"><span class="stamp got" style="width:44px;flex:none">' + ic("star") + '</span><div><b style="font-size:14px">Штамп за каждую точку</b><div class="muted" style="font-size:12px;margin-top:3px">Уже собрано: ' + S.stamps + '</div></div></div>';
+      '<div class="sec neu row" style="padding:16px 18px;gap:14px"><span class="stamp got" style="width:44px;flex:none">' + ic("star") + '</span><div><b style="font-size:14px">Штамп за каждую точку</b><div class="muted" style="font-size:12px;margin-top:3px">Уже собрано: ' + S.stamps + '</div></div></div>' +
+      '<div style="text-align:center;margin-top:18px"><button class="link" data-act="endActive" style="color:var(--ink-3)">Завершить маршрут</button></div>';
   }
   function here() {
     var A = S.active, r = A.route, p = place(r.stops[A.i].id);
     S.stamps++; store.set("stamps", S.stamps);
     S.stats.places++; S.stats.km = Math.round((S.stats.km + r.stops[A.i].leg.km) * 10) / 10; store.set("stats", S.stats);
     haptic("success"); toast("Штамп получен: " + p.name);
-    if (A.i < r.stops.length - 1) { A.i++; render(); window.scrollTo(0, 0); }
-    else { S.stats.evenings++; store.set("stats", S.stats); go("done"); }
+    if (A.i < r.stops.length - 1) { A.i++; store.set("active", A); render(); window.scrollTo(0, 0); }
+    else { S.stats.evenings++; store.set("stats", S.stats); S.done = A; S.active = null; store.set("active", null); go("done"); }
   }
   function doneView() {
-    var r = S.active.route;
+    var r = (S.done || S.active).route;
     return '<div style="text-align:center;padding-top:8vh">' +
       '<div class="loader"><div class="orb" style="display:grid;place-items:center;color:#fff">' + ic("star", "big") + '</div></div>' +
       '<h1 class="h-display" style="font-size:30px">Вечер собран</h1>' +
-      '<p class="muted" style="font-size:14px;margin:12px auto 26px;max-width:28ch;line-height:1.5">Ты прошла ' + r.stops.length + " " + plural(r.stops.length, "точку", "точки", "точек") + " и " + km(r.km) + '. Штампы уже в профиле.</p>' +
+      '<p class="muted" style="font-size:14px;margin:12px auto 26px;max-width:28ch;line-height:1.5">Пройдено ' + r.stops.length + " " + plural(r.stops.length, "точку", "точки", "точек") + " и " + km(r.km) + '. Штампы уже в профиле.</p>' +
       '<div class="stats" style="text-align:center;margin-bottom:26px">' +
         '<div class="neu stat"><b>' + r.stops.length + '</b><small>места</small></div>' +
         '<div class="neu stat"><b>' + km(r.km).replace(" км", "") + '</b><small>км</small></div>' +
@@ -1386,8 +1397,8 @@
     var a = D.app, stamps = "";
     for (var i = 0; i < 10; i++) stamps += '<span class="stamp' + (i < S.stamps ? " got" : "") + '">' + ic("star") + "</span>";
     var u = usage();
-    return '<div class="top" style="margin-bottom:22px"><div class="avatar" style="width:56px;height:56px;font-size:20px">' + esc((user.name || "V").charAt(0)) + '</div>' +
-      '<div class="hello" style="margin-left:6px"><small>' + (isPlus() ? "VIBE+ · подарочный доступ" : "Бесплатный план") + '</small><b>' + esc(user.name || "Гость VIBE") + '</b></div></div>' +
+    return '<div class="top" style="margin-bottom:22px">' + avatarHtml(56) +
+      '<div class="hello" style="margin-left:6px"><small>' + (isPlus() ? "VIBE+ · подарочный доступ" : "Бесплатный план") + '</small><b>' + esc(user.name || "Гость VIBE") + '</b>' + (user.username ? '<small style="margin-top:2px">@' + esc(user.username) + "</small>" : "") + '</div></div>' +
       '<section class="gloss plus"><span class="eyebrow">' + (isPlus() ? "Активна" : "Подписка") + '</span><h2>' + esc(a.premium.title) + '</h2>' +
         '<ul>' + a.premium.perks.map(function (x) { return "<li>" + ic("check") + esc(x) + "</li>"; }).join("") + '</ul>' +
         (isPlus() ? '<div class="btn" style="pointer-events:none">' + ic("check") + ' Открыт бесплатно</div>' : '<button class="btn" data-act="buy">Подключить за ' + esc(a.premium.price) + '</button>') + '</section>' +
@@ -1438,23 +1449,26 @@
       case "toPlan2": go("plan2"); break;
       case "toPlan3": go("plan3"); break;
       case "build": build(); break;
-      case "rebuild": S.route = buildRoute(S.route.plan); haptic("light"); render(); toast("Собрали другой вариант"); break;
+      case "rebuild": S.route = buildRoute(S.route.plan); store.set("lastRoute", S.route); haptic("light"); render(); toast("Собрали другой вариант"); break;
       case "saveRoute":
         var ix = -1; S.routes.forEach(function (x, i) { if (x.id === S.route.id) ix = i; });
         if (ix >= 0) { S.routes.splice(ix, 1); toast("Маршрут убран из избранного"); } else { S.routes.push(S.route); toast("Маршрут сохранён"); }
         store.set("routes", S.routes); haptic("light"); render(); break;
       case "shareRoute": shareRoute(S.route); break;
-      case "start": S.active = { route: S.route, i: 0 }; go("active"); break;
+      case "start": S.active = { route: S.route, i: 0 }; store.set("active", S.active); go("active"); break;
+      case "resumeActive": go("active"); break;
+      case "endActive": S.active = null; store.set("active", null); toast("Маршрут завершён"); render(); break;
+      case "newPlan": S.plan = newPlan(); go("plan1"); break;
       case "here": here(); break;
       case "routeToCur": routeSheet(place(S.active.route.stops[S.active.i].id)); break;
       case "stopActive": S.history = []; go("home", false); break;
-      case "shareDone": shareRoute(S.active.route); break;
+      case "shareDone": shareRoute((S.done || S.active).route); break;
       case "routeTo": routeSheet(S.current); break;
       case "another": another(); break;
       case "save": toggleSave(S.current.id); render(); break;
       case "invite": invite(S.current); break;
       case "surprise": haptic("medium"); surprise(); break;
-      case "pickBudget": optSheet("Бюджет", "Сколько готова потратить на человека", D.budgets, S.budget, "budget"); break;
+      case "pickBudget": optSheet("Бюджет", "Сколько потратить на человека", D.budgets, S.budget, "budget"); break;
       case "pickCompany": optSheet("С кем идёшь", "Подберём место под компанию", D.company, S.company, "company"); break;
       case "clearMood": S.mood = null; store.set("mood", null); render(); break;
       case "changeLoc": locSheet(); break;
@@ -1476,7 +1490,7 @@
     root.querySelectorAll("[data-nav]").forEach(function (b) {
       b.onclick = function () {
         var t = b.getAttribute("data-nav"); haptic("select");
-        if (t === "plan1") { S.plan = newPlan(); S.tab = "plan1"; S.history = []; S.screen = "plan1"; render(); window.scrollTo(0, 0); return; }
+        if (t === "plan1") { S.tab = "plan1"; S.history = []; if (S.active) { S.screen = "active"; } else if (S.route) { S.screen = "route"; } else { S.plan = newPlan(); S.screen = "plan1"; } render(); window.scrollTo(0, 0); return; }
         go(t);
       };
     });
