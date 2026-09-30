@@ -726,7 +726,7 @@
     fetch("https://places.googleapis.com/v1/places:searchText", {
       method: "POST",
       headers: { "Content-Type": "application/json", "X-Goog-Api-Key": key, "X-Goog-FieldMask": "places.id,places.photos" },
-      body: JSON.stringify({ textQuery: p.name.replace(/[«»]/g, "") + ", " + p.address + ", " + D.app.city, languageCode: "ru", maxResultCount: 1,
+      body: JSON.stringify({ textQuery: p.name.replace(/[«»]/g, "") + ", " + p.address + ", " + ((byId(D.cities || [], p.city) || {}).label || D.app.city), languageCode: "ru", maxResultCount: 1,
         locationBias: { circle: { center: { latitude: p.lat, longitude: p.lon }, radius: 600 } } })
     })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -804,6 +804,15 @@
   }
   function spend(k) { var u = usage(); u[k]++; store.set("usage", u); }
   function locObj() { return byId(D.districts, S.loc) || D.districts[0]; }
+  /* города: город определяется по выбранному району, всё остальное показывается только для него */
+  function cityObj() { var c = locObj().city || "moscow"; return byId(D.cities || [], c) || { id: c, label: "Москва", currency: "₽" }; }
+  function cityPlaces() { var c = cityObj().id; return D.places.filter(function (p) { return (p.city || "moscow") === c; }); }
+  function cityDistricts() { var c = cityObj().id; return D.districts.filter(function (d) { return (d.city || "moscow") === c; }); }
+  function isBYN() { return cityObj().currency === "BYN"; }
+  function budgetMax(b) { return !b ? null : isBYN() ? (b.maxBYN === undefined ? b.max : b.maxBYN) : b.max; }
+  function budgetLabel(b) { return !b ? "" : isBYN() && b.labelBYN ? b.labelBYN : b.label; }
+  function budgetList() { return D.budgets.map(function (b) { return { id: b.id, label: budgetLabel(b) }; }); }
+  function whereLabel() { var L = locObj(), c = cityObj(); return c.label + " · " + L.label; }
   function timeNow() { var h = new Date().getHours(); for (var i = 0; i < D.times.length; i++) { var t = D.times[i]; if (t.from < t.to ? h >= t.from && h < t.to : h >= t.from || h < t.to) return t.id; } return "evening"; }
   function greet() { var h = new Date().getHours(); return h < 5 ? "Доброй ночи" : h < 12 ? "Доброе утро" : h < 17 ? "Добрый день" : "Добрый вечер"; }
 
@@ -871,7 +880,7 @@
     var a = D.app, L = locObj(), u = leftS(), lim = a.limits.surprisesPerDay;
     var bud = byId(D.budgets, S.budget) || D.budgets[D.budgets.length - 1], comp = byId(D.company, S.company) || D.company[0];
     var dots = ""; for (var i = 0; i < lim; i++) dots += '<i class="' + (i < u ? "" : "off") + '"></i>';
-    var near = D.places.map(function (p) { return { p: p, t: travel(L, p) }; }).sort(function (x, y) { return x.t.km - y.t.km; }).slice(0, 5);
+    var near = cityPlaces().map(function (p) { return { p: p, t: travel(L, p) }; }).sort(function (x, y) { return x.t.km - y.t.km; }).slice(0, 5);
     return '' +
       '<div class="top">' +
         '<div class="hello"><small>' + greet() + (user.name ? ", " + esc(user.name) : "") + '</small><b>VIBE</b></div>' +
@@ -879,7 +888,7 @@
         '<button class="avatar" data-nav="saved" aria-label="Избранное">' + ic("heart") + '</button>' +
       '</div>' +
       '<section class="glass hero">' +
-        '<div class="meta"><button class="pill" data-act="changeLoc">' + ic("pin") + " " + esc(L.label) + '</button><span class="pill">' + ic("clock") + " " + hhmm(nowMin()) + '</span></div>' +
+        '<div class="meta"><button class="pill" data-act="changeLoc">' + ic("pin") + " " + esc(whereLabel()) + '</button><span class="pill">' + ic("clock") + " " + hhmm(nowMin()) + '</span></div>' +
         '<h1 class="h-display">Куда сегодня?</h1>' +
         '<p>Потяни сферу вправо или просто нажми, и VIBE выберет одно место рядом под твоё настроение.</p>' +
         '<div class="slide" id="slide" role="button" aria-label="Удиви меня">' +
@@ -892,7 +901,7 @@
       '<div class="sec"><div class="sec-head"><h3>Какое настроение</h3>' + (S.mood ? '<button data-act="clearMood">Любое</button>' : "") + '</div>' +
         '<div class="chips scroll">' + D.moods.map(function (m) { return '<button class="chip' + (S.mood === m.id ? " on" : "") + '" data-mood="' + m.id + '">' + ic(MOOD_IC[m.id] || "spark") + esc(m.label) + "</button>"; }).join("") + '</div>' +
         '<div class="filters">' +
-          '<button class="filter" data-act="pickBudget"><span><small>Бюджет</small><b>' + esc(bud.label) + '</b></span>' + ic("chev") + '</button>' +
+          '<button class="filter" data-act="pickBudget"><span><small>Бюджет</small><b>' + esc(budgetLabel(bud)) + '</b></span>' + ic("chev") + '</button>' +
           '<button class="filter" data-act="pickCompany"><span><small>С кем</small><b>' + esc(comp.label) + '</b></span>' + ic("chev") + '</button>' +
         '</div></div>' +
       (S.active ? '<button class="neu plan-card" data-act="resumeActive" style="width:100%;text-align:left;margin-top:18px">' +
@@ -904,7 +913,7 @@
         '<span><b>Собрать весь вечер</b><small>Маршрут из 2–5 мест со временем и дорогой</small></span>' +
         '<span class="go gloss">' + ic("arrow") + '</span>' +
       '</button>' +
-      '<div class="sec"><div class="sec-head"><h3>Рядом с тобой</h3><button data-act="changeLoc">' + esc(L.label) + '</button></div>' +
+      '<div class="sec"><div class="sec-head"><h3>Рядом с тобой</h3><button data-act="changeLoc">' + esc(cityObj().label) + '</button></div>' +
         '<div class="hscroll">' + near.map(function (n) {
           var o = openInfo(n.p);
           return '<button class="neu pcard-s" data-place="' + n.p.id + '">' +
@@ -981,12 +990,12 @@
   }
   function pickOne() {
     var L = locObj(), cur = S.current;
-    var bud = byId(D.budgets, S.budget), f = { mood: S.mood, company: S.company, max: bud ? bud.max : null };
-    var pool = D.places.filter(function (p) { return fits(p, f) && openInfo(p).open; });
+    var bud = byId(D.budgets, S.budget), f = { mood: S.mood, company: S.company, max: budgetMax(bud) };
+    var pool = cityPlaces().filter(function (p) { return fits(p, f) && openInfo(p).open; });
     var note = "";
-    if (!pool.length) { pool = D.places.filter(function (p) { return fits(p, { mood: S.mood, max: f.max }) && openInfo(p).open; }); note = pool.length ? "Под эту компанию мест мало, показываю похожее" : ""; }
-    if (!pool.length) { pool = D.places.filter(function (p) { return fits(p, { mood: S.mood }); }); note = "Под эти фильтры сейчас ничего не открыто, показываю похожее"; }
-    if (!pool.length) { pool = D.places.slice(); note = "Под это настроение мест пока нет, вот что есть рядом"; }
+    if (!pool.length) { pool = cityPlaces().filter(function (p) { return fits(p, { mood: S.mood, max: f.max }) && openInfo(p).open; }); note = pool.length ? "Под эту компанию мест мало, показываю похожее" : ""; }
+    if (!pool.length) { pool = cityPlaces().filter(function (p) { return fits(p, { mood: S.mood }); }); note = "Под эти фильтры сейчас ничего не открыто, показываю похожее"; }
+    if (!pool.length) { pool = cityPlaces(); note = "Под это настроение мест пока нет, вот что есть рядом"; }
     pool = pool.filter(function (p) { return travel(L, p).min <= 45; }).length ? pool.filter(function (p) { return travel(L, p).min <= 45; }) : pool;
     var fresh = pool.filter(function (p) { return S.seen.indexOf(p.id) < 0 && (!cur || p.id !== cur.id); });
     if (!fresh.length) {
@@ -1008,7 +1017,7 @@
     var res = pickOne(), n = 0, total = 12, ov = $("overlay");
     ov.innerHTML = '<div class="glass slot" id="slot"></div>'; ov.classList.add("show");
     (function spin() {
-      var p = n < total - 1 ? D.places[Math.floor(Math.random() * D.places.length)] : res.p;
+      var cp = cityPlaces(), p = n < total - 1 ? cp[Math.floor(Math.random() * cp.length)] : res.p;
       var sl = $("slot"); sl.innerHTML = art(p) + "<b>" + esc(p.name) + "</b>";
       sl.classList.remove("tick"); void sl.offsetWidth; sl.classList.add("tick");
       haptic(n < total - 1 ? "soft" : "medium"); n++;
@@ -1133,8 +1142,16 @@
   }
 
   /* ================= шаг 2: откуда ================= */
+  function mapBounds() {
+    if (cityObj().id === "moscow") return [55.70, 55.81, 37.54, 37.68];
+    var pts = cityPlaces().concat(cityDistricts()), c = cityObj();
+    var la = pts.map(function (x) { return x.lat; }).concat([c.lat]), lo = pts.map(function (x) { return x.lon; }).concat([c.lon]);
+    var a = Math.min.apply(null, la), b = Math.max.apply(null, la), m = Math.min.apply(null, lo), n = Math.max.apply(null, lo);
+    var pl = Math.max((b - a) * .18, .006), pn = Math.max((n - m) * .18, .01);
+    return [a - pl, b + pl, m - pn, n + pn];
+  }
   function mapXY(pt) {
-    var minLat = 55.70, maxLat = 55.81, minLon = 37.54, maxLon = 37.68;
+    var B = mapBounds(), minLat = B[0], maxLat = B[1], minLon = B[2], maxLon = B[3];
     return { x: (pt.lon - minLon) / (maxLon - minLon) * 100, y: (1 - (pt.lat - minLat) / (maxLat - minLat)) * 100 };
   }
   // Москва-река через центр (упрощённые реальные координаты)
@@ -1151,9 +1168,10 @@
     return d + " L" + l.x.toFixed(1) + " " + l.y.toFixed(1);
   }
   function plan2View() {
-    var L = locObj(), xy = mapXY(L), k = mapXY({ lat: 55.752, lon: 37.617 }), park = mapXY({ lat: 55.722, lon: 37.588 }), rv = riverPath();
-    var dots = D.places.map(function (p) { var q = mapXY(p); return '<span class="dot" style="left:' + q.x + "%;top:" + q.y + '%"></span>'; }).join("");
-    var lbls = D.districts.map(function (d) { var q = mapXY(d); return '<span class="lbl' + (d.id === S.loc ? " on" : "") + '" style="left:' + q.x + "%;top:" + (q.y - 7) + '%">' + esc(d.label) + "</span>"; }).join("");
+    var isMsk = cityObj().id === "moscow", C0 = cityObj();
+    var L = locObj(), xy = mapXY(L), k = isMsk ? mapXY({ lat: 55.752, lon: 37.617 }) : mapXY(C0), park = mapXY({ lat: 55.722, lon: 37.588 }), rv = isMsk ? riverPath() : "";
+    var dots = cityPlaces().map(function (p) { var q = mapXY(p); return '<span class="dot" style="left:' + q.x + "%;top:" + q.y + '%"></span>'; }).join("");
+    var lbls = cityDistricts().map(function (d) { var q = mapXY(d); return '<span class="lbl' + (d.id === S.loc ? " on" : "") + '" style="left:' + q.x + "%;top:" + (q.y - 7) + '%">' + esc(d.label) + "</span>"; }).join("");
     var ns = ' vector-effect="non-scaling-stroke"';
     return planHead(2, "Откуда стартуем") +
       '<h1 class="h-display" style="font-size:26px;margin:0 4px">Где ты сейчас?</h1>' +
@@ -1171,19 +1189,23 @@
         '</svg>' + lbls + dots +
         '<span class="pin" style="left:' + xy.x + "%;top:" + xy.y + '%"></span>' +
         '<button class="round locate" data-act="locate" aria-label="Определить автоматически">' + ic("locate") + '</button>' +
-        '<div class="legend"><span><i></i>места VIBE</span><span>Москва-река</span></div>' +
+        '<div class="legend"><span><i></i>места VIBE · ' + esc(C0.label) + '</span>' + (isMsk ? "<span>Москва-река</span>" : "") + '</div>' +
       '</div>' +
-      '<div class="q">Или выбери район</div>' +
-      '<div class="chips">' + D.districts.map(function (d) { return '<button class="chip' + (S.loc === d.id ? " on" : "") + '" data-loc="' + d.id + '">' + esc(d.label) + "</button>"; }).join("") + '</div>';
+      '<div class="q">Или выбери город</div>' +
+      '<div class="chips" style="margin-bottom:14px">' + (D.cities || []).map(function (c) { return '<button class="chip' + (cityObj().id === c.id ? " on" : "") + '" data-city="' + c.id + '">' + esc(c.label) + "</button>"; }).join("") + '</div>' +
+      '<div class="q" style="margin-top:6px">Район</div>' +
+      '<div class="chips">' + cityDistricts().map(function (d) { return '<button class="chip' + (S.loc === d.id ? " on" : "") + '" data-loc="' + d.id + '">' + esc(d.label) + "</button>"; }).join("") + '</div>';
   }
-  function locate() {
+  function locate(silent) {
     function apply(lat, lon) {
       var best = D.districts[0], bd = 1e9;
       D.districts.forEach(function (d) { var x = dist({ lat: lat, lon: lon }, d); if (x < bd) { bd = x; best = d; } });
-      if (bd > 30) { toast("Ты далеко от Москвы, пока выбери район вручную"); return; }
-      S.loc = best.id; store.set("loc", S.loc); haptic("success"); toast("Нашли тебя: " + best.label); render();
+      store.set("locAsked", true);
+      if (bd > 80) { if (!silent) toast("VIBE пока нет в твоём городе, выбери ближайший вручную"); return; }
+      S.loc = best.id; store.set("loc", S.loc); haptic("success");
+      toast("Ты здесь: " + whereLabel()); render();
     }
-    function fail() { toast("Геолокация недоступна, выбери район вручную"); }
+    function fail() { store.set("locAsked", true); if (!silent) toast("Геолокация недоступна, выбери город вручную"); }
     try {
       if (tg && tg.LocationManager && tg.isVersionAtLeast && tg.isVersionAtLeast("8.0")) {
         tg.LocationManager.init(function () {
@@ -1206,7 +1228,7 @@
       '<div class="q">Сколько точек в маршруте</div><p class="muted" style="margin:-4px 4px 12px;font-size:13px">Парки, кафе, музеи и т. д., от 2 до 5. С кем идёшь, ты уже выбрал(а) на первом шаге.</p>' +
       '<div class="neu stepper"><button class="round" data-act="cnt-" aria-label="Меньше">−</button><b>' + P3.count + '</b><button class="round" data-act="cnt+" aria-label="Больше">+</button></div>' +
       '<div class="q">Бюджет на человека</div>' +
-      '<div class="chips">' + D.budgets.map(function (b) { return '<button class="chip' + (P3.budget === b.id ? " on" : "") + '" data-pbud="' + b.id + '">' + esc(b.label) + "</button>"; }).join("") + '</div>' +
+      '<div class="chips">' + budgetList().map(function (b) { return '<button class="chip' + (P3.budget === b.id ? " on" : "") + '" data-pbud="' + b.id + '">' + esc(b.label) + "</button>"; }).join("") + '</div>' +
       '<div class="q">Закончить к</div>' +
       '<label class="field">' + ic("clock") + '<input id="pend" type="time" value="' + hhmm(P3.endBy) + '"></label>' +
       '<div class="q">Где закончить</div>' +
@@ -1215,7 +1237,7 @@
 
   /* ================= сборка маршрута ================= */
   function buildRoute(plan, exclude) {
-    var L = locObj(), bud = byId(D.budgets, plan.budget), max = bud ? bud.max : null;
+    var L = locObj(), bud = byId(D.budgets, plan.budget), max = budgetMax(bud);
     var tries = [
       { moods: plan.moods, company: plan.company, time: plan.time, max: max, q: plan.q },
       { moods: plan.moods, company: plan.company, time: plan.time, max: max },
@@ -1235,13 +1257,13 @@
         { q: plan.q }
       ];
       for (var j = 0; j < qTries.length; j++) {
-        hits = D.places.filter(function (p) { return fits(p, qTries[j]) && ok(p); });
+        hits = cityPlaces().filter(function (p) { return fits(p, qTries[j]) && ok(p); });
         if (hits.length) { if (j > 1) note = "По запросу «" + plan.q + "» нашли места, но не под все фильтры"; break; }
       }
       if (!hits.length) note = "По запросу «" + plan.q + "» пока ничего нет, собрали по настроению";
     }
     for (var i = 1; i < tries.length; i++) {
-      pool = D.places.filter(function (p) { return fits(p, tries[i]) && ok(p) && hits.indexOf(p) < 0; });
+      pool = cityPlaces().filter(function (p) { return fits(p, tries[i]) && ok(p) && hits.indexOf(p) < 0; });
       if (pool.length + hits.length >= Math.min(plan.count, 2)) { relaxed = i > 2 && !hits.length; break; }
     }
     if (hits.length && hits.length < plan.count && !note) note = "По запросу «" + plan.q + "» нашли " + hits.length + ", добавили ещё места рядом";
@@ -1329,9 +1351,9 @@
   function swap(i) {
     var r = S.route, ex = r.stops.map(function (s) { return s.id; });
     var bud = byId(D.budgets, r.plan.budget);
-    var pool = r.plan.q ? D.places.filter(function (p) { return ex.indexOf(p.id) < 0 && fits(p, { q: r.plan.q }); }) : [];
-    if (!pool.length) pool = D.places.filter(function (p) { return ex.indexOf(p.id) < 0 && fits(p, { moods: r.plan.moods, max: bud ? bud.max : null }); });
-    if (!pool.length) pool = D.places.filter(function (p) { return ex.indexOf(p.id) < 0; });
+    var pool = r.plan.q ? cityPlaces().filter(function (p) { return ex.indexOf(p.id) < 0 && fits(p, { q: r.plan.q }); }) : [];
+    if (!pool.length) pool = cityPlaces().filter(function (p) { return ex.indexOf(p.id) < 0 && fits(p, { moods: r.plan.moods, max: budgetMax(bud) }); });
+    if (!pool.length) pool = cityPlaces().filter(function (p) { return ex.indexOf(p.id) < 0; });
     if (!pool.length) { toast("Больше нечем заменить"); return; }
     var prev = i ? place(r.stops[i - 1].id) : locObj();
     pool.sort(function (a, b) { return travel(prev, a).min - travel(prev, b).min; });
@@ -1442,15 +1464,22 @@
       pr.perks.map(function (x) { return '<div class="opt" style="box-shadow:none;background:var(--bg);margin-bottom:8px">' + ic("check") + esc(x) + "</div>"; }).join("") +
       '<div style="margin-top:14px" class="stack"><button class="btn gloss" data-act="buy">Подключить за ' + esc(pr.price) + '</button><button class="link" style="margin:0 auto" data-act="resetLimits">Демо: сбросить лимиты</button></div>');
   }
+  function setCity(id) {
+    var first = D.districts.filter(function (d) { return (d.city || "moscow") === id; })[0];
+    if (first) { S.loc = first.id; store.set("loc", S.loc); }
+  }
   function locSheet() {
-    openSheet('<h3>Точка старта</h3><p>От неё считаем, что рядом и сколько идти.</p>' +
-      '<button class="opt" data-act="locate">' + ic("locate") + 'Определить автоматически</button>' +
-      D.districts.map(function (d) { return '<button class="opt" data-loc="' + d.id + '">' + ic(S.loc === d.id ? "check" : "pin") + esc(d.label) + "</button>"; }).join(""));
+    openSheet('<h3>Где ты?</h3><p>Покажем места рядом и посчитаем время в пути.</p>' +
+      '<button class="opt" data-act="locate">' + ic("locate") + 'Определить по геолокации</button>' +
+      '<div class="q" style="margin:16px 4px 10px">Город</div><div class="chips">' + (D.cities || []).map(function (c) { return '<button class="chip' + (cityObj().id === c.id ? " on" : "") + '" data-city="' + c.id + '">' + esc(c.label) + "</button>"; }).join("") + '</div>' +
+      '<div class="q" style="margin:16px 4px 10px">Район · ' + esc(cityObj().label) + '</div>' +
+      cityDistricts().map(function (d) { return '<button class="opt" data-loc="' + d.id + '">' + ic(S.loc === d.id ? "check" : "pin") + esc(d.label) + "</button>"; }).join(""));
   }
   function bindSheet() {
     var sb = $("sheetBody");
     sb.querySelectorAll("[data-url]").forEach(function (b) { b.onclick = function () { haptic("light"); openLink(b.getAttribute("data-url")); closeSheet(); }; });
     sb.querySelectorAll("[data-set]").forEach(function (b) { b.onclick = function () { var kv = b.getAttribute("data-set").split(":"); S[kv[0]] = kv[1]; store.set(kv[0], kv[1]); haptic("select"); closeSheet(); render(); }; });
+    sb.querySelectorAll("[data-city]").forEach(function (b) { b.onclick = function () { setCity(b.getAttribute("data-city")); haptic("select"); render(); locSheet(); }; });
     sb.querySelectorAll("[data-loc]").forEach(function (b) { b.onclick = function () { S.loc = b.getAttribute("data-loc"); store.set("loc", S.loc); haptic("select"); closeSheet(); render(); }; });
     sb.querySelectorAll("[data-act]").forEach(function (b) { b.onclick = function () { act(b.getAttribute("data-act")); }; });
   }
@@ -1484,7 +1513,7 @@
       case "save": toggleSave(S.current.id); render(); break;
       case "invite": invite(S.current); break;
       case "surprise": haptic("medium"); surprise(); break;
-      case "pickBudget": optSheet("Бюджет", "Сколько потратить на человека", D.budgets, S.budget, "budget"); break;
+      case "pickBudget": optSheet("Бюджет", "Сколько потратить на человека", budgetList(), S.budget, "budget"); break;
       case "pickCompany": optSheet("С кем идёшь", "Подберём место под компанию", D.company, S.company, "company"); break;
       case "clearMood": S.mood = null; store.set("mood", null); render(); break;
       case "changeLoc": locSheet(); break;
@@ -1521,6 +1550,7 @@
     root.querySelectorAll("#app [data-ptime]").forEach(function (b) { b.onclick = function () { S.plan.time = b.getAttribute("data-ptime"); haptic("select"); render(); }; });
     root.querySelectorAll("#app [data-pbud]").forEach(function (b) { b.onclick = function () { S.plan.budget = b.getAttribute("data-pbud"); haptic("select"); render(); }; });
     root.querySelectorAll("#app [data-pfin]").forEach(function (b) { b.onclick = function () { S.plan.finish = b.getAttribute("data-pfin"); haptic("select"); render(); }; });
+    root.querySelectorAll("#app [data-city]").forEach(function (b) { b.onclick = function () { setCity(b.getAttribute("data-city")); haptic("select"); render(); }; });
     root.querySelectorAll("#app [data-loc]").forEach(function (b) { b.onclick = function () { S.loc = b.getAttribute("data-loc"); store.set("loc", S.loc); haptic("select"); render(); }; });
     root.querySelectorAll("#app [data-swap]").forEach(function (b) { b.onclick = function () { swap(+b.getAttribute("data-swap")); }; });
     root.querySelectorAll("#app [data-seg]").forEach(function (b) { b.onclick = function () { S.savedTab = b.getAttribute("data-seg"); haptic("select"); render(); }; });
@@ -1550,6 +1580,7 @@
         D = d;
         if (!byId(D.districts, S.loc)) S.loc = D.districts[0].id;
         render();
+        if (!store.get("locAsked", false)) setTimeout(function () { locate(true); }, 600);
         checkGift(function (ok) { if (ok) { haptic("success"); render(); toast("Тебе открыт VIBE+ бесплатно ✦"); } });
       })
       .catch(fallback);
