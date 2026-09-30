@@ -1047,7 +1047,7 @@
         '</div>' +
         '<p class="desc">' + esc(p.description) + '</p>' +
         '<div class="addr">' + ic("pin") + esc(p.address) + " · " + km(t.km) + '</div>' +
-        '<div class="credit" id="photoCredit">' + (p.photoCredit ? '<a href="' + esc(p.photoSource || "#") + '" target="_blank" rel="noopener">Фото: ' + esc(p.photoCredit) + "</a>" : PHOTOS[p.id] && PHOTOS[p.id].author ? "Фото: " + esc(PHOTOS[p.id].author) + " · Google Карты" : "") + '</div>' +
+        '<div class="credit" id="photoCredit">' + (p.photoCredit ? '<a href="' + esc(p.photoSource || "#") + '" target="_blank" rel="noopener">Фото: ' + esc(p.photoCredit) + "</a>" : PHOTOS[p.id] && PHOTOS[p.id].author ? "Фото: " + esc(PHOTOS[p.id].author) + " · Google Карты" : p.osm ? '<a href="' + esc(p.osm) + '" target="_blank" rel="noopener">Данные: © участники OpenStreetMap</a>' : "") + '</div>' +
       '</section>' +
       (S.note ? '<div class="note">' + esc(S.note) + "</div>" : "") +
       '<div style="margin-top:16px"><button class="btn gloss" data-act="routeTo">' + ic("route") + ' Построить маршрут</button></div>' +

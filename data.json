@@ -287,6 +287,146 @@
       "label": "Центр",
       "lat": 55.486,
       "lon": 28.769
+    },
+    {
+      "id": "bobruisk-center",
+      "city": "bobruisk",
+      "label": "Центр",
+      "lat": 53.1384,
+      "lon": 29.2214
+    },
+    {
+      "id": "baranovichi-center",
+      "city": "baranovichi",
+      "label": "Центр",
+      "lat": 53.1327,
+      "lon": 26.0139
+    },
+    {
+      "id": "borisov-center",
+      "city": "borisov",
+      "label": "Центр",
+      "lat": 54.2279,
+      "lon": 28.505
+    },
+    {
+      "id": "pinsk-center",
+      "city": "pinsk",
+      "label": "Центр",
+      "lat": 52.1124,
+      "lon": 26.1034
+    },
+    {
+      "id": "orsha-center",
+      "city": "orsha",
+      "label": "Центр",
+      "lat": 54.5081,
+      "lon": 30.4172
+    },
+    {
+      "id": "gomel-железнодорожный",
+      "city": "gomel",
+      "label": "Железнодорожный район",
+      "lat": 52.4886,
+      "lon": 30.963
+    },
+    {
+      "id": "gomel-новобелицкий",
+      "city": "gomel",
+      "label": "Новобелицкий район",
+      "lat": 52.3954,
+      "lon": 31.0808
+    },
+    {
+      "id": "gomel-советский",
+      "city": "gomel",
+      "label": "Советский район",
+      "lat": 52.4207,
+      "lon": 30.9061
+    },
+    {
+      "id": "gomel-центральный",
+      "city": "gomel",
+      "label": "Центральный район",
+      "lat": 52.4427,
+      "lon": 31.028
+    },
+    {
+      "id": "mogilev-ленинский",
+      "city": "mogilev",
+      "label": "Ленинский район",
+      "lat": 53.9278,
+      "lon": 30.3062
+    },
+    {
+      "id": "mogilev-октябрьский",
+      "city": "mogilev",
+      "label": "Октябрьский район",
+      "lat": 53.8438,
+      "lon": 30.3625
+    },
+    {
+      "id": "vitebsk-октябрьский",
+      "city": "vitebsk",
+      "label": "Октябрьский район",
+      "lat": 55.2145,
+      "lon": 30.2223
+    },
+    {
+      "id": "vitebsk-первомайский",
+      "city": "vitebsk",
+      "label": "Первомайский район",
+      "lat": 55.158,
+      "lon": 30.2016
+    },
+    {
+      "id": "vitebsk-железнодорожный",
+      "city": "vitebsk",
+      "label": "Железнодорожный район",
+      "lat": 55.2466,
+      "lon": 30.1994
+    },
+    {
+      "id": "brest-ленинский",
+      "city": "brest",
+      "label": "Ленинский район",
+      "lat": 52.085,
+      "lon": 23.69
+    },
+    {
+      "id": "brest-московский",
+      "city": "brest",
+      "label": "Московский район",
+      "lat": 52.105,
+      "lon": 23.755
+    },
+    {
+      "id": "grodno-ленинский",
+      "city": "grodno",
+      "label": "Ленинский район",
+      "lat": 53.695,
+      "lon": 23.845
+    },
+    {
+      "id": "grodno-октябрьский",
+      "city": "grodno",
+      "label": "Октябрьский район",
+      "lat": 53.66,
+      "lon": 23.8
+    },
+    {
+      "id": "bobruisk-ленинский",
+      "city": "bobruisk",
+      "label": "Ленинский район",
+      "lat": 53.14,
+      "lon": 29.2
+    },
+    {
+      "id": "bobruisk-первомайский",
+      "city": "bobruisk",
+      "label": "Первомайский район",
+      "lat": 53.125,
+      "lon": 29.26
     }
   ],
   "places": [
@@ -2867,6 +3007,7191 @@
       ],
       "photoCredit": "Futureal · CC BY-SA 3.0 · Wikimedia Commons",
       "photoSource": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BB%D0%B0%D1%86%D0%B0%D0%BA,_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0-%D0%95%D1%9E%D1%84%D1%80%D0%B0%D1%81%D1%96%D0%BD%D1%8C%D0%BD%D0%B5%D1%9E%D1%81%D0%BA%D1%96_%D0%BC%D0%B0%D0%BD%D0%B0%D1%81%D1%82%D1%8B%D1%80.jpg"
+    },
+    {
+      "id": "osm-brest-n11443024769",
+      "city": "brest",
+      "name": "Территория",
+      "category": "Паб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "16:00-02:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Паб в городе Брест.",
+      "address": "Брест",
+      "lat": 52.091012,
+      "lon": 23.694504,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "паб",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11443024769"
+    },
+    {
+      "id": "osm-brest-n10082838318",
+      "city": "brest",
+      "name": "Cheers",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "18:00-02:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Брест, вуліца Куйбышава, 13А.",
+      "address": "вуліца Куйбышава, 13А",
+      "lat": 52.096543,
+      "lon": 23.691177,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10082838318"
+    },
+    {
+      "id": "osm-brest-n7320052006",
+      "city": "brest",
+      "name": "Парубаб",
+      "category": "Паб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "12:00-00:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Паб в городе Брест, вуліца Дзяржынскага, 52.",
+      "address": "вуліца Дзяржынскага, 52",
+      "lat": 52.089123,
+      "lon": 23.697433,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "паб",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/7320052006"
+    },
+    {
+      "id": "osm-brest-n8883596917",
+      "city": "brest",
+      "name": "Роб Рой",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "19:00-02:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Брест, Камсамольская вуліца, 31/1.",
+      "address": "Камсамольская вуліца, 31/1",
+      "lat": 52.09377,
+      "lon": 23.688685,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8883596917"
+    },
+    {
+      "id": "osm-brest-w68543405",
+      "city": "brest",
+      "name": "Планета Рок",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "09:00-21:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Брест, Піянерская вуліца, 48А.",
+      "address": "Піянерская вуліца, 48А",
+      "lat": 52.099856,
+      "lon": 23.727183,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/68543405"
+    },
+    {
+      "id": "osm-brest-n4893728421",
+      "city": "brest",
+      "name": "Место",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "12:00-03:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Брест.",
+      "address": "Брест",
+      "lat": 52.09816,
+      "lon": 23.692924,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4893728421"
+    },
+    {
+      "id": "osm-brest-n8285231944",
+      "city": "brest",
+      "name": "Таполи",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-22:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: завтраки, кофе",
+      "description": "Кафе в городе Брест, вуліца 17 Верасня, 5.",
+      "address": "вуліца 17 Верасня, 5",
+      "lat": 52.089891,
+      "lon": 23.692394,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "завтраки",
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8285231944"
+    },
+    {
+      "id": "osm-brest-n11438642169",
+      "city": "brest",
+      "name": "Моцарелла",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: итальянская кухня",
+      "description": "Кафе в городе Брест, Пушкінская вуліца, 27А.",
+      "address": "Пушкінская вуліца, 27А",
+      "lat": 52.095545,
+      "lon": 23.691455,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "итальянская кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11438642169"
+    },
+    {
+      "id": "osm-brest-w61374205",
+      "city": "brest",
+      "name": "Кафе «Цитадель»",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "09:00-21:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Брест.",
+      "address": "Брест",
+      "lat": 52.084717,
+      "lon": 23.659233,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/61374205"
+    },
+    {
+      "id": "osm-brest-n3753941060",
+      "city": "brest",
+      "name": "Параграф",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "07:30-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: кофе",
+      "description": "Кафе в городе Брест, Савецкая вуліца, 66.",
+      "address": "Савецкая вуліца, 66",
+      "lat": 52.090147,
+      "lon": 23.694578,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3753941060"
+    },
+    {
+      "id": "osm-brest-n4216190789",
+      "city": "brest",
+      "name": "Papi",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-24:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: кофе, итальянская кухня",
+      "description": "Кафе в городе Брест, Рабінавая вуліца, 1А.",
+      "address": "Рабінавая вуліца, 1А",
+      "lat": 52.064462,
+      "lon": 23.730498,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кофе",
+        "итальянская кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4216190789"
+    },
+    {
+      "id": "osm-brest-n4300975193",
+      "city": "brest",
+      "name": "Caffe Progresso",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "07:30-24:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: завтраки, кофе",
+      "description": "Кафе в городе Брест, вуліца 17 Верасня.",
+      "address": "вуліца 17 Верасня",
+      "lat": 52.084995,
+      "lon": 23.693879,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "завтраки",
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4300975193"
+    },
+    {
+      "id": "osm-brest-n10297412901",
+      "city": "brest",
+      "name": "Momoo",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Брест.",
+      "address": "Брест",
+      "lat": 52.091516,
+      "lon": 23.687489,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10297412901"
+    },
+    {
+      "id": "osm-brest-n8309245754",
+      "city": "brest",
+      "name": "Хинкальня Брест",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки: грузинская кухня",
+      "description": "Ресторан в городе Брест, вуліца Гогаля, 40.",
+      "address": "вуліца Гогаля, 40",
+      "lat": 52.092415,
+      "lon": 23.689376,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "грузинская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8309245754"
+    },
+    {
+      "id": "osm-brest-n10984279005",
+      "city": "brest",
+      "name": "Генацвале",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки: грузинская кухня",
+      "description": "Ресторан в городе Брест, праспект Машэрава, 23А.",
+      "address": "праспект Машэрава, 23А",
+      "lat": 52.086403,
+      "lon": 23.698353,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "грузинская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10984279005"
+    },
+    {
+      "id": "osm-brest-w428985732",
+      "city": "brest",
+      "name": "Жюль Верн",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-24:00",
+      "why": "Хорошее место для ужина без спешки: кофе, гриль",
+      "description": "Ресторан в городе Брест, вуліца Гогаля, 29.",
+      "address": "вуліца Гогаля, 29",
+      "lat": 52.091773,
+      "lon": 23.689263,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кофе",
+        "гриль",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/428985732"
+    },
+    {
+      "id": "osm-brest-n4417997891",
+      "city": "brest",
+      "name": "12 стульев",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-01:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Брест, вуліца Янкі Купалы, 104/3.",
+      "address": "вуліца Янкі Купалы, 104/3",
+      "lat": 52.111322,
+      "lon": 23.751443,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4417997891"
+    },
+    {
+      "id": "osm-brest-n306064261",
+      "city": "brest",
+      "name": "Художественный музей",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "09:00-16:30",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Брест.",
+      "address": "Брест",
+      "lat": 52.081519,
+      "lon": 23.654087,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/306064261"
+    },
+    {
+      "id": "osm-brest-n3270426785",
+      "city": "brest",
+      "name": "ГУ «Мемориальный комплекс «Брестская крепость-герой» экспозиция «Оборона Восточного форта»",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "09:00-17:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Посвящен обороне Восточного форта – одного из самых мощных и организованных очагов сопротивления Брестской крепости в июне 1941 г.",
+      "address": "Брест",
+      "lat": 52.088209,
+      "lon": 23.65949,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3270426785"
+    },
+    {
+      "id": "osm-brest-w60962129",
+      "city": "brest",
+      "name": "Брестский областной краеведческий музей",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Брест, вуліца Карла Маркса, 60.",
+      "address": "вуліца Карла Маркса, 60",
+      "lat": 52.090129,
+      "lon": 23.689331,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/60962129"
+    },
+    {
+      "id": "osm-brest-n306068657",
+      "city": "brest",
+      "name": "Пороховой погреб № 3",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "00:00-24:00",
+      "why": "Вид на город, красиво на закате",
+      "description": "Смотровая в городе Брест.",
+      "address": "Брест",
+      "lat": 52.074726,
+      "lon": 23.739491,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "смотровая"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/306068657"
+    },
+    {
+      "id": "osm-brest-n2288249382",
+      "city": "brest",
+      "name": "Часы фонарщика",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "00:00-24:00",
+      "why": "Вид на город, красиво на закате",
+      "description": "Смотровая в городе Брест.",
+      "address": "Брест",
+      "lat": 52.086882,
+      "lon": 23.696078,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "смотровая"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/2288249382"
+    },
+    {
+      "id": "osm-brest-w418120696",
+      "city": "brest",
+      "name": "Парк воинов-интернационалистов",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Брест.",
+      "address": "Брест",
+      "lat": 52.099513,
+      "lon": 23.774294,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/418120696"
+    },
+    {
+      "id": "osm-brest-w60962147",
+      "city": "brest",
+      "name": "площадь Свободы",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Брест.",
+      "address": "Брест",
+      "lat": 52.091347,
+      "lon": 23.691745,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/60962147"
+    },
+    {
+      "id": "osm-brest-w847127860",
+      "city": "brest",
+      "name": "Пушкинский сквер",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Брест.",
+      "address": "Брест",
+      "lat": 52.098557,
+      "lon": 23.689367,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/847127860"
+    },
+    {
+      "id": "osm-gomel-n2609102066",
+      "city": "gomel",
+      "name": "Театральное",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-24:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Гомель, праспект Леніна, 3.",
+      "address": "праспект Леніна, 3",
+      "lat": 52.424678,
+      "lon": 31.010915,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/2609102066"
+    },
+    {
+      "id": "osm-gomel-n3524866770",
+      "city": "gomel",
+      "name": "Coffee&Toast",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "07:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: завтраки, кофе",
+      "description": "Кафе в городе Гомель, Рагачоўская вуліца, 1А.",
+      "address": "Рагачоўская вуліца, 1А",
+      "lat": 52.438898,
+      "lon": 31.003709,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "завтраки",
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3524866770"
+    },
+    {
+      "id": "osm-gomel-n4232084590",
+      "city": "gomel",
+      "name": "Маркони",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: итальянская кухня, пицца",
+      "description": "Кафе в городе Гомель, праспект Перамогі, 4.",
+      "address": "праспект Перамогі, 4",
+      "lat": 52.434716,
+      "lon": 31.00612,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "итальянская кухня",
+        "пицца",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4232084590"
+    },
+    {
+      "id": "osm-gomel-n6053184017",
+      "city": "gomel",
+      "name": "Красная панда",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-19:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: чай",
+      "description": "Кафе в городе Гомель, вуліца Кірава, 20.",
+      "address": "вуліца Кірава, 20",
+      "lat": 52.428882,
+      "lon": 31.007005,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "чай",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6053184017"
+    },
+    {
+      "id": "osm-gomel-n6126988664",
+      "city": "gomel",
+      "name": "Махорка",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "07:45-20:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: кофе",
+      "description": "Кафе в городе Гомель, вуліца Карповіча, 17.",
+      "address": "вуліца Карповіча, 17",
+      "lat": 52.427712,
+      "lon": 30.998845,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6126988664"
+    },
+    {
+      "id": "osm-gomel-n6131566861",
+      "city": "gomel",
+      "name": "Рок Стар Пицца",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-24:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: пицца",
+      "description": "Кафе в городе Гомель, Чачэрская вуліца, 1А.",
+      "address": "Чачэрская вуліца, 1А",
+      "lat": 52.462963,
+      "lon": 31.038169,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "пицца",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6131566861"
+    },
+    {
+      "id": "osm-gomel-n455895968",
+      "city": "gomel",
+      "name": "Обзорная башня",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "10:00-18:00",
+      "why": "Вид на город, красиво на закате",
+      "description": "Смотровая в городе Гомель.",
+      "address": "Гомель",
+      "lat": 52.418904,
+      "lon": 31.01445,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "смотровая"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/455895968"
+    },
+    {
+      "id": "osm-gomel-n4273013089",
+      "city": "gomel",
+      "name": "Лошадь",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "00:00-24:00",
+      "why": "Вид на город, красиво на закате",
+      "description": "Смотровая в городе Гомель.",
+      "address": "Гомель",
+      "lat": 52.468085,
+      "lon": 30.981302,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "смотровая"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4273013089"
+    },
+    {
+      "id": "osm-gomel-n882429176",
+      "city": "gomel",
+      "name": "Батьки",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки: белорусская кухня",
+      "description": "Ресторан в городе Гомель, Сялянская вуліца, 16.",
+      "address": "Сялянская вуліца, 16",
+      "lat": 52.427949,
+      "lon": 31.012751,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "белорусская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/882429176"
+    },
+    {
+      "id": "osm-gomel-n2544997678",
+      "city": "gomel",
+      "name": "Прованс",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-00:00",
+      "why": "Хорошее место для ужина без спешки: итальянская кухня, французская кухня",
+      "description": "Ресторан в городе Гомель, Білецкі спуск, 1.",
+      "address": "Білецкі спуск, 1",
+      "lat": 52.4272,
+      "lon": 31.019975,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "итальянская кухня",
+        "французская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/2544997678"
+    },
+    {
+      "id": "osm-gomel-n4741158041",
+      "city": "gomel",
+      "name": "Бефана",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки: итальянская кухня",
+      "description": "Ресторан в городе Гомель, праспект Леніна, 20.",
+      "address": "праспект Леніна, 20",
+      "lat": 52.427142,
+      "lon": 31.003059,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "итальянская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4741158041"
+    },
+    {
+      "id": "osm-gomel-n5221932813",
+      "city": "gomel",
+      "name": "Уми",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-24:00",
+      "why": "Хорошее место для ужина без спешки: азиатская кухня",
+      "description": "Ресторан в городе Гомель, вуліца Кірава, 35.",
+      "address": "вуліца Кірава, 35",
+      "lat": 52.432453,
+      "lon": 31.005082,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "азиатская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5221932813"
+    },
+    {
+      "id": "osm-gomel-n6690992189",
+      "city": "gomel",
+      "name": "Сябры",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки: белорусская кухня",
+      "description": "Ресторан в городе Гомель, праспект Леніна, 33.",
+      "address": "праспект Леніна, 33",
+      "lat": 52.427386,
+      "lon": 31.003576,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "белорусская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6690992189"
+    },
+    {
+      "id": "osm-gomel-n4716068192",
+      "city": "gomel",
+      "name": "Андеграунд",
+      "category": "Паб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "17:00-05:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Паб в городе Гомель, плошча Паўстання, 1.",
+      "address": "плошча Паўстання, 1",
+      "lat": 52.436363,
+      "lon": 31.011199,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "паб",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4716068192"
+    },
+    {
+      "id": "osm-gomel-n11024878122",
+      "city": "gomel",
+      "name": "Бульдог Паб",
+      "category": "Паб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "17:00-24:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Паб в городе Гомель, вуліца Дастаеўскага, 1 к1.",
+      "address": "вуліца Дастаеўскага, 1 к1",
+      "lat": 52.386838,
+      "lon": 31.022509,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "паб",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11024878122"
+    },
+    {
+      "id": "osm-gomel-n11039749440",
+      "city": "gomel",
+      "name": "Блек Бар",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "12:00-24:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Гомель, вуліца Катуніна, 14.",
+      "address": "вуліца Катуніна, 14",
+      "lat": 52.424555,
+      "lon": 31.004372,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11039749440"
+    },
+    {
+      "id": "osm-gomel-n2609341181",
+      "city": "gomel",
+      "name": "Квартирник",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "16:00-01:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Гомель, Білецкі спуск, 1.",
+      "address": "Білецкі спуск, 1",
+      "lat": 52.427226,
+      "lon": 31.020054,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/2609341181"
+    },
+    {
+      "id": "osm-gomel-w89807468",
+      "city": "gomel",
+      "name": "Гомельский областной музей военной славы",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "11:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Гомель, вуліца Пушкіна, 5.",
+      "address": "вуліца Пушкіна, 5",
+      "lat": 52.429749,
+      "lon": 31.014052,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/89807468"
+    },
+    {
+      "id": "osm-gomel-n9076393226",
+      "city": "gomel",
+      "name": "Музей центральной части Дворца Румянцевых и Паскевичей",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "11:00-19:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Гомель, плошча Леніна, 4.",
+      "address": "плошча Леніна, 4",
+      "lat": 52.422268,
+      "lon": 31.016699,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/9076393226"
+    },
+    {
+      "id": "osm-gomel-w247610150",
+      "city": "gomel",
+      "name": "Ветковский музей старообрядства и беларуских традиций",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "09:30-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Гомель, плошча Леніна, 4/4.",
+      "address": "плошча Леніна, 4/4",
+      "lat": 52.423551,
+      "lon": 31.018184,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/247610150"
+    },
+    {
+      "id": "osm-gomel-n11024878123",
+      "city": "gomel",
+      "name": "Блеклист",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "21:00-05:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Гомель, вуліца Дастаеўскага, 1 к1.",
+      "address": "вуліца Дастаеўскага, 1 к1",
+      "lat": 52.38672,
+      "lon": 31.022184,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11024878123"
+    },
+    {
+      "id": "osm-gomel-w247622468",
+      "city": "gomel",
+      "name": "КРЦ «Европа»",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "23:00-06:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Гомель, плошча Леніна, 2.",
+      "address": "плошча Леніна, 2",
+      "lat": 52.422899,
+      "lon": 31.013936,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/247622468"
+    },
+    {
+      "id": "osm-gomel-w38524071",
+      "city": "gomel",
+      "name": "Парк Гомельского дворцово-паркового ансамбля",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Гомель.",
+      "address": "Гомель",
+      "lat": 52.422761,
+      "lon": 31.015304,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/38524071"
+    },
+    {
+      "id": "osm-gomel-w44529500",
+      "city": "gomel",
+      "name": "Сквер имени А. А. Громыко",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Гомель.",
+      "address": "Гомель",
+      "lat": 52.431865,
+      "lon": 31.011153,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/44529500"
+    },
+    {
+      "id": "osm-gomel-w47010623",
+      "city": "gomel",
+      "name": "Студенческий сквер",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Гомель.",
+      "address": "Гомель",
+      "lat": 52.447011,
+      "lon": 30.995813,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/47010623"
+    },
+    {
+      "id": "osm-vitebsk-n1124825589",
+      "city": "vitebsk",
+      "name": "Васильки",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: местная кухня",
+      "description": "Кафе в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.181857,
+      "lon": 30.206236,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/1124825589"
+    },
+    {
+      "id": "osm-vitebsk-n4691684434",
+      "city": "vitebsk",
+      "name": "Pizza House",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: пицца, местная кухня",
+      "description": "Кафе в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.195103,
+      "lon": 30.204642,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "пицца",
+        "местная кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4691684434"
+    },
+    {
+      "id": "osm-vitebsk-n4535405230",
+      "city": "vitebsk",
+      "name": "Амстердам",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "11:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.159814,
+      "lon": 30.166202,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4535405230"
+    },
+    {
+      "id": "osm-vitebsk-n5391135198",
+      "city": "vitebsk",
+      "name": "Витебский трактир",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-24:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.195168,
+      "lon": 30.20572,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5391135198"
+    },
+    {
+      "id": "osm-vitebsk-n6338429952",
+      "city": "vitebsk",
+      "name": "Арена Десерто",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "08:00-22:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: десерты, кофе",
+      "description": "Кафе в городе Витебск, вуліца Леніна, 16а.",
+      "address": "вуліца Леніна, 16а",
+      "lat": 55.189008,
+      "lon": 30.20525,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "десерты",
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6338429952"
+    },
+    {
+      "id": "osm-vitebsk-n10555336860",
+      "city": "vitebsk",
+      "name": "Гараж",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "09:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.181963,
+      "lon": 30.203159,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10555336860"
+    },
+    {
+      "id": "osm-vitebsk-n9981341235",
+      "city": "vitebsk",
+      "name": "Губернский трактир",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-00:00",
+      "why": "Хорошее место для ужина без спешки: местная кухня",
+      "description": "Ресторан в городе Витебск, Камсамольская вуліца, 11/5.",
+      "address": "Камсамольская вуліца, 11/5",
+      "lat": 55.195396,
+      "lon": 30.195065,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/9981341235"
+    },
+    {
+      "id": "osm-vitebsk-n8945446408",
+      "city": "vitebsk",
+      "name": "Пицца Смайл",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "10:00-21:00",
+      "why": "Хорошее место для ужина без спешки: пицца",
+      "description": "Ресторан в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.170462,
+      "lon": 30.21914,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "пицца",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8945446408"
+    },
+    {
+      "id": "osm-vitebsk-n8667700417",
+      "city": "vitebsk",
+      "name": "Manao - тайская кухня",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-24:00",
+      "why": "Хорошее место для ужина без спешки: тайская кухня",
+      "description": "Ресторан в городе Витебск, вуліца Леніна, 46.",
+      "address": "вуліца Леніна, 46",
+      "lat": 55.197531,
+      "lon": 30.206654,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "тайская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8667700417"
+    },
+    {
+      "id": "osm-vitebsk-n338978799",
+      "city": "vitebsk",
+      "name": "Арена суши",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки: суши",
+      "description": "Ресторан в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.197903,
+      "lon": 30.208063,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "суши",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/338978799"
+    },
+    {
+      "id": "osm-vitebsk-n1820607793",
+      "city": "vitebsk",
+      "name": "У Ганны",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.17293,
+      "lon": 30.263532,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/1820607793"
+    },
+    {
+      "id": "osm-vitebsk-n10170889347",
+      "city": "vitebsk",
+      "name": "Ресторан-клуб «Танцы»",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "12:00-23:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.171006,
+      "lon": 30.215395,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10170889347"
+    },
+    {
+      "id": "osm-vitebsk-n717544895",
+      "city": "vitebsk",
+      "name": "Мята Lounge",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "18:00-03:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.180344,
+      "lon": 30.247359,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/717544895"
+    },
+    {
+      "id": "osm-vitebsk-w27900949",
+      "city": "vitebsk",
+      "name": "Дом-музей Марка Шагала",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "11:00-19:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Витебск, Пакроўская вуліца, 11.",
+      "address": "Пакроўская вуліца, 11",
+      "lat": 55.200348,
+      "lon": 30.190624,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/27900949"
+    },
+    {
+      "id": "osm-vitebsk-w139098219",
+      "city": "vitebsk",
+      "name": "Музей истории Витебского народного художественного училища",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Витебск, вуліца Марка Шагала, 5.",
+      "address": "вуліца Марка Шагала, 5",
+      "lat": 55.188511,
+      "lon": 30.202828,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/139098219"
+    },
+    {
+      "id": "osm-vitebsk-w174962472",
+      "city": "vitebsk",
+      "name": "Витебский областной краеведческий музей",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-19:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Витебск, вуліца Леніна, 36.",
+      "address": "вуліца Леніна, 36",
+      "lat": 55.195652,
+      "lon": 30.205883,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/174962472"
+    },
+    {
+      "id": "osm-vitebsk-n4560194288",
+      "city": "vitebsk",
+      "name": "Бревис",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "12:00-00:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "кафе-бар",
+      "address": "праезд Гогаля, 11",
+      "lat": 55.186335,
+      "lon": 30.202484,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4560194288"
+    },
+    {
+      "id": "osm-vitebsk-n10847151718",
+      "city": "vitebsk",
+      "name": "Nimbus",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "00:00-02:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.172422,
+      "lon": 30.198515,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10847151718"
+    },
+    {
+      "id": "osm-vitebsk-n2289457963",
+      "city": "vitebsk",
+      "name": "Краны стаканы",
+      "category": "Паб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "beer shop",
+      "address": "Витебск",
+      "lat": 55.166031,
+      "lon": 30.210083,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "паб",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/2289457963"
+    },
+    {
+      "id": "osm-vitebsk-n11350470273",
+      "city": "vitebsk",
+      "name": "Роки",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "17:00-02:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Витебск, вуліца Дзімітрава, 4.",
+      "address": "вуліца Дзімітрава, 4",
+      "lat": 55.196037,
+      "lon": 30.192786,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11350470273"
+    },
+    {
+      "id": "osm-vitebsk-n9066460832",
+      "city": "vitebsk",
+      "name": "Колесо обозрения",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "00:00-24:00",
+      "why": "Вид на город, красиво на закате",
+      "description": "Смотровая в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.185799,
+      "lon": 30.201273,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "смотровая"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/9066460832"
+    },
+    {
+      "id": "osm-vitebsk-r11087626",
+      "city": "vitebsk",
+      "name": "Ботанический сад",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "08:30-20:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Витебск, вуліца Урыцкага, 25.",
+      "address": "вуліца Урыцкага, 25",
+      "lat": 55.200882,
+      "lon": 30.212252,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/relation/11087626"
+    },
+    {
+      "id": "osm-vitebsk-w28256319",
+      "city": "vitebsk",
+      "name": "парк имени Фрунзе",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.195824,
+      "lon": 30.210064,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/28256319"
+    },
+    {
+      "id": "osm-vitebsk-w170185109",
+      "city": "vitebsk",
+      "name": "лесопарк Юрьева Горка",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Витебск.",
+      "address": "Витебск",
+      "lat": 55.190026,
+      "lon": 30.166353,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/170185109"
+    },
+    {
+      "id": "osm-mir-n3012913733",
+      "city": "mir",
+      "name": "Княжеский двор",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "09:00-23:00",
+      "why": "Хорошее место для ужина без спешки: местная кухня",
+      "description": "Ресторан в городе Мир, Чырвонаармейская вуліца, 2.",
+      "address": "Чырвонаармейская вуліца, 2",
+      "lat": 53.451157,
+      "lon": 26.473228,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3012913733"
+    },
+    {
+      "id": "osm-mir-w551467663",
+      "city": "mir",
+      "name": "Ресторан Мирского посада",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Мир.",
+      "address": "Мир",
+      "lat": 53.455335,
+      "lon": 26.464941,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/551467663"
+    },
+    {
+      "id": "osm-mir-n6561398286",
+      "city": "mir",
+      "name": "Лихтарик 1876",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "09:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: местная кухня, кофе",
+      "description": "Кафе в городе Мир.",
+      "address": "Мир",
+      "lat": 53.453507,
+      "lon": 26.466384,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6561398286"
+    },
+    {
+      "id": "osm-mir-n5302311091",
+      "city": "mir",
+      "name": "Мирум",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "09:00-24:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Мир.",
+      "address": "Мир",
+      "lat": 53.450994,
+      "lon": 26.469822,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5302311091"
+    },
+    {
+      "id": "osm-mir-n5308166550",
+      "city": "mir",
+      "name": "Пекарня",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "09:00-22:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Мир, Піянерская вуліца.",
+      "address": "Піянерская вуліца",
+      "lat": 53.451663,
+      "lon": 26.46594,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5308166550"
+    },
+    {
+      "id": "osm-mir-n10572808231",
+      "city": "mir",
+      "name": "Замковый комплекс Мир",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Мир, Чырвонаармейская вуліца, 2.",
+      "address": "Чырвонаармейская вуліца, 2",
+      "lat": 53.451236,
+      "lon": 26.47327,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10572808231"
+    },
+    {
+      "id": "osm-mir-w264435921",
+      "city": "mir",
+      "name": "Мирский посад",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Мир, завулак Кірава, 2.",
+      "address": "завулак Кірава, 2",
+      "lat": 53.455787,
+      "lon": 26.464514,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/264435921"
+    },
+    {
+      "id": "osm-mir-w229581651",
+      "city": "mir",
+      "name": "Английский пейзажный парк",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Мир.",
+      "address": "Мир",
+      "lat": 53.451042,
+      "lon": 26.477879,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/229581651"
+    },
+    {
+      "id": "osm-mir-w229581652",
+      "city": "mir",
+      "name": "Итальянский парк",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Мир.",
+      "address": "Мир",
+      "lat": 53.45304,
+      "lon": 26.474583,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/229581652"
+    },
+    {
+      "id": "osm-nesvizh-n4635761915",
+      "city": "nesvizh",
+      "name": "Гетман",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки: местная кухня",
+      "description": "Ресторан в городе Несвиж.",
+      "address": "Несвиж",
+      "lat": 53.222669,
+      "lon": 26.691572,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4635761915"
+    },
+    {
+      "id": "osm-nesvizh-n4273167290",
+      "city": "nesvizh",
+      "name": "Скарбница",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-00:00",
+      "why": "Хорошее место для ужина без спешки: местная кухня",
+      "description": "Ресторан в городе Несвиж, Савецкая вуліца.",
+      "address": "Савецкая вуліца",
+      "lat": 53.219616,
+      "lon": 26.681849,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4273167290"
+    },
+    {
+      "id": "osm-nesvizh-n2333396880",
+      "city": "nesvizh",
+      "name": "Cafe",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-24:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Несвиж.",
+      "address": "Несвиж",
+      "lat": 53.218403,
+      "lon": 26.680581,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/2333396880"
+    },
+    {
+      "id": "osm-nesvizh-n4379603591",
+      "city": "nesvizh",
+      "name": "Харчевня на Замковой",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "11:00-00:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: местная кухня",
+      "description": "Кафе в городе Несвиж, Замкавая вуліца, 1.",
+      "address": "Замкавая вуліца, 1",
+      "lat": 53.223118,
+      "lon": 26.689388,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4379603591"
+    },
+    {
+      "id": "osm-nesvizh-n4273143091",
+      "city": "nesvizh",
+      "name": "Нестерка",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "11:00-00:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Несвиж, Савецкая вуліца.",
+      "address": "Савецкая вуліца",
+      "lat": 53.219754,
+      "lon": 26.679996,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4273143091"
+    },
+    {
+      "id": "osm-nesvizh-n10039204417",
+      "city": "nesvizh",
+      "name": "Дворцовое",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "09:00-22:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: местная кухня",
+      "description": "Кафе в городе Несвиж.",
+      "address": "Несвиж",
+      "lat": 53.222683,
+      "lon": 26.691108,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10039204417"
+    },
+    {
+      "id": "osm-nesvizh-n7741408787",
+      "city": "nesvizh",
+      "name": "Д Гриль Крафт Бар",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "18:00-02:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Несвиж.",
+      "address": "Несвиж",
+      "lat": 53.220699,
+      "lon": 26.681666,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/7741408787"
+    },
+    {
+      "id": "osm-nesvizh-n9740729238",
+      "city": "nesvizh",
+      "name": "Квартира-музей М.К.Севрука",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "09:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Несвиж, Садовая вуліца, 38.",
+      "address": "Садовая вуліца, 38",
+      "lat": 53.220499,
+      "lon": 26.670071,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/9740729238"
+    },
+    {
+      "id": "osm-nesvizh-w128273504",
+      "city": "nesvizh",
+      "name": "Слуцкая брама",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Даты строительства / обновления: 1690 г. / 1700 г. (1760?) / 1970-е гг. Рейтинг: увидеть обязательно",
+      "address": "Несвиж",
+      "lat": 53.218003,
+      "lon": 26.685519,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/128273504"
+    },
+    {
+      "id": "osm-nesvizh-r15898907",
+      "city": "nesvizh",
+      "name": "Лесопарк Альба",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Несвиж.",
+      "address": "Несвиж",
+      "lat": 53.203392,
+      "lon": 26.64216,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/relation/15898907"
+    },
+    {
+      "id": "osm-nesvizh-w261437855",
+      "city": "nesvizh",
+      "name": "Парк Антония",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Несвиж.",
+      "address": "Несвиж",
+      "lat": 53.223314,
+      "lon": 26.688092,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/261437855"
+    },
+    {
+      "id": "osm-bobruisk-n9251137940",
+      "city": "bobruisk",
+      "name": "Смага",
+      "category": "Паб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Паб в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.136505,
+      "lon": 29.225701,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "паб",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/9251137940"
+    },
+    {
+      "id": "osm-bobruisk-n5082590621",
+      "city": "bobruisk",
+      "name": "Форсаж",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "12:00-04:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер: русская кухня",
+      "description": "Бар в городе Бобруйск, вуліца Арджанікідзэ.",
+      "address": "вуліца Арджанікідзэ",
+      "lat": 53.163494,
+      "lon": 29.205892,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "русская кухня",
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5082590621"
+    },
+    {
+      "id": "osm-bobruisk-n5014301824",
+      "city": "bobruisk",
+      "name": "Авиатор",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.118971,
+      "lon": 29.235294,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5014301824"
+    },
+    {
+      "id": "osm-bobruisk-n5173851625",
+      "city": "bobruisk",
+      "name": "Магазин пива Точка",
+      "category": "Паб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "10:00-22:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Паб в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.151147,
+      "lon": 29.226212,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "паб",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5173851625"
+    },
+    {
+      "id": "osm-bobruisk-n5837866985",
+      "city": "bobruisk",
+      "name": "История",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-00:15",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: завтраки, итальянская кухня",
+      "description": "Кафе в городе Бобруйск, Маскоўская вуліца, 42.",
+      "address": "Маскоўская вуліца, 42",
+      "lat": 53.13658,
+      "lon": 29.226502,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "завтраки",
+        "итальянская кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5837866985"
+    },
+    {
+      "id": "osm-bobruisk-w205328415",
+      "city": "bobruisk",
+      "name": "Тимьян",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-24:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Бобруйск, вуліца Гарэліка, 309.",
+      "address": "вуліца Гарэліка, 309",
+      "lat": 53.13944,
+      "lon": 29.153455,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/205328415"
+    },
+    {
+      "id": "osm-bobruisk-w312734391",
+      "city": "bobruisk",
+      "name": "Амстердам",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: пицца, местная кухня",
+      "description": "Кафе в городе Бобруйск, вуліца 50 год УЛКСМ, 33-3.",
+      "address": "вуліца 50 год УЛКСМ, 33-3",
+      "lat": 53.165452,
+      "lon": 29.188683,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "пицца",
+        "местная кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/312734391"
+    },
+    {
+      "id": "osm-bobruisk-n4238992218",
+      "city": "bobruisk",
+      "name": "Кофе Саунд",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "08:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: кофе",
+      "description": "Кафе в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.139948,
+      "lon": 29.223896,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4238992218"
+    },
+    {
+      "id": "osm-bobruisk-n8478458817",
+      "city": "bobruisk",
+      "name": "Пушкина 202",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: местная кухня",
+      "description": "Кафе в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.144496,
+      "lon": 29.224127,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8478458817"
+    },
+    {
+      "id": "osm-bobruisk-n13064822560",
+      "city": "bobruisk",
+      "name": "Кафе Крафт",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "09:00-22:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Бобруйск, Савецкая вуліца, 107.",
+      "address": "Савецкая вуліца, 107",
+      "lat": 53.145936,
+      "lon": 29.227796,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/13064822560"
+    },
+    {
+      "id": "osm-bobruisk-n538388283",
+      "city": "bobruisk",
+      "name": "Пониженный люнет",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "00:00-24:00",
+      "why": "Вид на город, красиво на закате",
+      "description": "Смотровая в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.137185,
+      "lon": 29.24987,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "смотровая"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/538388283"
+    },
+    {
+      "id": "osm-bobruisk-n1111149434",
+      "city": "bobruisk",
+      "name": "Бастион с галереей",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "00:00-24:00",
+      "why": "Вид на город, красиво на закате",
+      "description": "Смотровая в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.141128,
+      "lon": 29.250955,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "смотровая"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/1111149434"
+    },
+    {
+      "id": "osm-bobruisk-w1210320398",
+      "city": "bobruisk",
+      "name": "Базилик",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки: итальянская кухня",
+      "description": "Ресторан в городе Бобруйск, Інтэрнацыянальная вуліца, 12.",
+      "address": "Інтэрнацыянальная вуліца, 12",
+      "lat": 53.14004,
+      "lon": 29.227085,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "итальянская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/1210320398"
+    },
+    {
+      "id": "osm-bobruisk-n539236643",
+      "city": "bobruisk",
+      "name": "«Пицца Браво» пиццерия",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки: пицца",
+      "description": "Ресторан в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.137193,
+      "lon": 29.227279,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "пицца",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/539236643"
+    },
+    {
+      "id": "osm-bobruisk-w381026143",
+      "city": "bobruisk",
+      "name": "Чырвоная Вежа",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.142596,
+      "lon": 29.222233,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/381026143"
+    },
+    {
+      "id": "osm-bobruisk-n6109600519",
+      "city": "bobruisk",
+      "name": "Красный дракон",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Бобруйск, Кастрычніцкая вуліца, 96.",
+      "address": "Кастрычніцкая вуліца, 96",
+      "lat": 53.141009,
+      "lon": 29.220395,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6109600519"
+    },
+    {
+      "id": "osm-bobruisk-n6109705688",
+      "city": "bobruisk",
+      "name": "Юбилейный ресторан",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Бобруйск, вуліца 50 год УЛКСМ, 26.",
+      "address": "вуліца 50 год УЛКСМ, 26",
+      "lat": 53.167913,
+      "lon": 29.191067,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6109705688"
+    },
+    {
+      "id": "osm-bobruisk-n3031273053",
+      "city": "bobruisk",
+      "name": "Художественный музей",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-19:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Картинная галерея Бобруйского художественного музея им. Г. Г. Поплавского",
+      "address": "Бобруйск",
+      "lat": 53.146068,
+      "lon": 29.226272,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3031273053"
+    },
+    {
+      "id": "osm-bobruisk-n3031926735",
+      "city": "bobruisk",
+      "name": "Бобруйский краеведческий музей",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.135286,
+      "lon": 29.227685,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3031926735"
+    },
+    {
+      "id": "osm-bobruisk-n3034154734",
+      "city": "bobruisk",
+      "name": "Выставочный зал",
+      "category": "Галерея",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Выставочный зал Бобруйского художественного музея им. Г. Г. Поплавского",
+      "address": "Сацыялістычная вуліца, 100",
+      "lat": 53.143115,
+      "lon": 29.228417,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "галерея"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3034154734"
+    },
+    {
+      "id": "osm-bobruisk-w205338536",
+      "city": "bobruisk",
+      "name": "Сафари",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "12:00-04:30",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Бобруйск, вуліца Урыцкага, 64.",
+      "address": "вуліца Урыцкага, 64",
+      "lat": 53.137371,
+      "lon": 29.232031,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/205338536"
+    },
+    {
+      "id": "osm-bobruisk-w206260597",
+      "city": "bobruisk",
+      "name": "Best club",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "23:00-06:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Бобруйск, вуліца Каменскага, 10.",
+      "address": "вуліца Каменскага, 10",
+      "lat": 53.134128,
+      "lon": 29.208627,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/206260597"
+    },
+    {
+      "id": "osm-bobruisk-w175334864",
+      "city": "bobruisk",
+      "name": "Центральный городской парк культуры и отдыха",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.137276,
+      "lon": 29.21126,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/175334864"
+    },
+    {
+      "id": "osm-bobruisk-w284982397",
+      "city": "bobruisk",
+      "name": "Детский парк",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.135319,
+      "lon": 29.221345,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/284982397"
+    },
+    {
+      "id": "osm-bobruisk-w288874070",
+      "city": "bobruisk",
+      "name": "Свято-Никольский сквер",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Бобруйск.",
+      "address": "Бобруйск",
+      "lat": 53.139131,
+      "lon": 29.225676,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/288874070"
+    },
+    {
+      "id": "osm-baranovichi-n3194797312",
+      "city": "baranovichi",
+      "name": "Nero",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "17:00-01:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Барановичи.",
+      "address": "Барановичи",
+      "lat": 53.131893,
+      "lon": 26.01534,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3194797312"
+    },
+    {
+      "id": "osm-baranovichi-n6274120785",
+      "city": "baranovichi",
+      "name": "Пиросмани",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "07:29-23:00",
+      "why": "Хорошее место для ужина без спешки: завтраки, кофе",
+      "description": "Ресторан в городе Барановичи, Барысаўская вуліца, 4.",
+      "address": "Барысаўская вуліца, 4",
+      "lat": 53.132754,
+      "lon": 26.036196,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "завтраки",
+        "кофе",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6274120785"
+    },
+    {
+      "id": "osm-baranovichi-n13460045766",
+      "city": "baranovichi",
+      "name": "Krazy Smak",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки: суши, пицца",
+      "description": "Ресторан в городе Барановичи, вуліца Леніна, 26/2.",
+      "address": "вуліца Леніна, 26/2",
+      "lat": 53.131753,
+      "lon": 26.034569,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "суши",
+        "пицца",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/13460045766"
+    },
+    {
+      "id": "osm-baranovichi-n3281780433",
+      "city": "baranovichi",
+      "name": "Josh Club",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "18:00-05:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Барановичи.",
+      "address": "Барановичи",
+      "lat": 53.13394,
+      "lon": 26.015729,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3281780433"
+    },
+    {
+      "id": "osm-baranovichi-n8556324664",
+      "city": "baranovichi",
+      "name": "Амстердам",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-22:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Барановичи.",
+      "address": "Барановичи",
+      "lat": 53.15362,
+      "lon": 25.99434,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8556324664"
+    },
+    {
+      "id": "osm-baranovichi-n8788339794",
+      "city": "baranovichi",
+      "name": "Кофе Саунд",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "08:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: кофе",
+      "description": "Кафе в городе Барановичи.",
+      "address": "Барановичи",
+      "lat": 53.132178,
+      "lon": 26.033995,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8788339794"
+    },
+    {
+      "id": "osm-baranovichi-n12115146135",
+      "city": "baranovichi",
+      "name": "Hotfix Coffee",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "07:30-22:30",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: кофе",
+      "description": "Кафе в городе Барановичи.",
+      "address": "Барановичи",
+      "lat": 53.132672,
+      "lon": 26.021073,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/12115146135"
+    },
+    {
+      "id": "osm-baranovichi-n4853721322",
+      "city": "baranovichi",
+      "name": "Шефс",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "12:00-03:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Барановичи.",
+      "address": "Барановичи",
+      "lat": 53.129904,
+      "lon": 26.01259,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4853721322"
+    },
+    {
+      "id": "osm-baranovichi-n6067521385",
+      "city": "baranovichi",
+      "name": "БильYARD",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "12:00-01:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер: бургеры, пицца",
+      "description": "Бар в городе Барановичи, Савецкая вуліца, 82.",
+      "address": "Савецкая вуліца, 82",
+      "lat": 53.132051,
+      "lon": 26.015806,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бургеры",
+        "пицца",
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6067521385"
+    },
+    {
+      "id": "osm-baranovichi-w219935115",
+      "city": "baranovichi",
+      "name": "Экспозиция железнодорожной техники",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "08:00-17:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Это часть музея истории Барановичского отделения Белорусской железной дороги (Фроленкова,11)",
+      "address": "вуліца Фраленкова, 19",
+      "lat": 53.132668,
+      "lon": 26.039373,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/219935115"
+    },
+    {
+      "id": "osm-baranovichi-n6125446880",
+      "city": "baranovichi",
+      "name": "Краеведческий музей",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-16:30",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Барановичи.",
+      "address": "Барановичи",
+      "lat": 53.13424,
+      "lon": 26.014735,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6125446880"
+    },
+    {
+      "id": "osm-baranovichi-w125541804",
+      "city": "baranovichi",
+      "name": "Молодой парк",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Барановичи.",
+      "address": "Барановичи",
+      "lat": 53.13199,
+      "lon": 26.011192,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/125541804"
+    },
+    {
+      "id": "osm-baranovichi-w230525157",
+      "city": "baranovichi",
+      "name": "Старый парк",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Барановичи.",
+      "address": "Барановичи",
+      "lat": 53.125165,
+      "lon": 25.998264,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/230525157"
+    },
+    {
+      "id": "osm-borisov-n1780987846",
+      "city": "borisov",
+      "name": "Ирландский Паб",
+      "category": "Паб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "15:00-03:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Паб в городе Борисов, вуліца Максіма Горкага, 32А.",
+      "address": "вуліца Максіма Горкага, 32А",
+      "lat": 54.222724,
+      "lon": 28.488426,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "паб",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/1780987846"
+    },
+    {
+      "id": "osm-borisov-n2079487568",
+      "city": "borisov",
+      "name": "Траттория",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "09:00-24:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Борисов, вуліца Юрыя Гагарына, 58Б.",
+      "address": "вуліца Юрыя Гагарына, 58Б",
+      "lat": 54.212049,
+      "lon": 28.486813,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/2079487568"
+    },
+    {
+      "id": "osm-borisov-n4370908710",
+      "city": "borisov",
+      "name": "Амстердам",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "11:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: завтраки, бургеры",
+      "description": "Кафе в городе Борисов.",
+      "address": "Борисов",
+      "lat": 54.236203,
+      "lon": 28.508471,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "завтраки",
+        "бургеры",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4370908710"
+    },
+    {
+      "id": "osm-borisov-n4630108491",
+      "city": "borisov",
+      "name": "Пиццерия Соле Мио",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-24:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: пицца",
+      "description": "Кафе в городе Борисов, праспект Рэвалюцыі, 43А.",
+      "address": "праспект Рэвалюцыі, 43А",
+      "lat": 54.225166,
+      "lon": 28.507343,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "пицца",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4630108491"
+    },
+    {
+      "id": "osm-borisov-w1218634351",
+      "city": "borisov",
+      "name": "Кафе «Акация»",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "11:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: пицца, кофе",
+      "description": "Кафе в городе Борисов, Дняпроўская вуліца, 21 Г.",
+      "address": "Дняпроўская вуліца, 21 Г",
+      "lat": 54.238122,
+      "lon": 28.470333,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "пицца",
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/1218634351"
+    },
+    {
+      "id": "osm-borisov-w1330855200",
+      "city": "borisov",
+      "name": "Веранда",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки: грузинская кухня",
+      "description": "Ресторан в городе Борисов, праспект Рэвалюцыі, 9.",
+      "address": "праспект Рэвалюцыі, 9",
+      "lat": 54.22069,
+      "lon": 28.525515,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "грузинская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/1330855200"
+    },
+    {
+      "id": "osm-borisov-n4584759693",
+      "city": "borisov",
+      "name": "ЧебурекМи",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Борисов.",
+      "address": "Борисов",
+      "lat": 54.225163,
+      "lon": 28.507908,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4584759693"
+    },
+    {
+      "id": "osm-borisov-n10786705505",
+      "city": "borisov",
+      "name": "Старый Млын",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки: русская кухня",
+      "description": "Ресторан в городе Борисов.",
+      "address": "Борисов",
+      "lat": 54.215756,
+      "lon": 28.487478,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "русская кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10786705505"
+    },
+    {
+      "id": "osm-borisov-n5008246617",
+      "city": "borisov",
+      "name": "Этнографический музей «Спадчына»",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "12:00-12:45",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Борисов, Стаханаўская вуліца.",
+      "address": "Стаханаўская вуліца",
+      "lat": 54.222619,
+      "lon": 28.500422,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5008246617"
+    },
+    {
+      "id": "osm-borisov-w168166178",
+      "city": "borisov",
+      "name": "Краеведческий музей",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "09:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Борисов, праспект Рэвалюцыі, 67.",
+      "address": "праспект Рэвалюцыі, 67",
+      "lat": 54.230542,
+      "lon": 28.501177,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/168166178"
+    },
+    {
+      "id": "osm-borisov-n6338123312",
+      "city": "borisov",
+      "name": "Барбоса",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "23:00-06:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Борисов.",
+      "address": "Борисов",
+      "lat": 54.24193,
+      "lon": 28.509129,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6338123312"
+    },
+    {
+      "id": "osm-borisov-w156298292",
+      "city": "borisov",
+      "name": "Городской парк имени Горького",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Борисов.",
+      "address": "Борисов",
+      "lat": 54.219379,
+      "lon": 28.523716,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/156298292"
+    },
+    {
+      "id": "osm-borisov-w404111328",
+      "city": "borisov",
+      "name": "Кировский парк",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Борисов.",
+      "address": "Борисов",
+      "lat": 54.225427,
+      "lon": 28.523049,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/404111328"
+    },
+    {
+      "id": "osm-pinsk-w72427235",
+      "city": "pinsk",
+      "name": "GRO.",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-23:00",
+      "why": "Хорошее место для ужина без спешки: итальянская кухня, морепродукты",
+      "description": "Ресторан в городе Пинск, вуліца Каржа, 2.",
+      "address": "вуліца Каржа, 2",
+      "lat": 52.113007,
+      "lon": 26.104697,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "итальянская кухня",
+        "морепродукты",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/72427235"
+    },
+    {
+      "id": "osm-pinsk-n10651342844",
+      "city": "pinsk",
+      "name": "Сити кафе 121",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки: местная кухня",
+      "description": "Ресторан в городе Пинск, Першамайская вуліца, 55.",
+      "address": "Першамайская вуліца, 55",
+      "lat": 52.119192,
+      "lon": 26.10105,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "местная кухня",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10651342844"
+    },
+    {
+      "id": "osm-pinsk-n13277830780",
+      "city": "pinsk",
+      "name": "Ваби-Саби",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-22:00",
+      "why": "Хорошее место для ужина без спешки: суши",
+      "description": "Ресторан в городе Пинск.",
+      "address": "Пинск",
+      "lat": 52.132306,
+      "lon": 26.077937,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "суши",
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/13277830780"
+    },
+    {
+      "id": "osm-pinsk-w253284978",
+      "city": "pinsk",
+      "name": "Зефир",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: кофе",
+      "description": "Кафе в городе Пинск, плошча Леніна, 7/1.",
+      "address": "плошча Леніна, 7/1",
+      "lat": 52.112951,
+      "lon": 26.102754,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кофе",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/253284978"
+    },
+    {
+      "id": "osm-pinsk-n4420969089",
+      "city": "pinsk",
+      "name": "Пицца Итальяна",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-23:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: итальянская кухня",
+      "description": "Доставка бесплатно по городу",
+      "address": "вуліца Леніна, 31",
+      "lat": 52.114111,
+      "lon": 26.109116,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "итальянская кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/4420969089"
+    },
+    {
+      "id": "osm-pinsk-n7496660885",
+      "city": "pinsk",
+      "name": "Kapibara",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-21:45",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: суши",
+      "description": "УНП 291586818",
+      "address": "Першамайская вуліца, 55",
+      "lat": 52.118898,
+      "lon": 26.101134,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "суши",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/7496660885"
+    },
+    {
+      "id": "osm-pinsk-n2788681652",
+      "city": "pinsk",
+      "name": "Музей Белорусского Полесья",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-17:30",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Пинск, плошча Леніна, 22.",
+      "address": "плошча Леніна, 22",
+      "lat": 52.111143,
+      "lon": 26.10397,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/2788681652"
+    },
+    {
+      "id": "osm-pinsk-n8915766416",
+      "city": "pinsk",
+      "name": "Музей матери",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "07:15-21:15",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Пинск.",
+      "address": "Пинск",
+      "lat": 52.132526,
+      "lon": 26.072424,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8915766416"
+    },
+    {
+      "id": "osm-pinsk-n10023871617",
+      "city": "pinsk",
+      "name": "Кальянная «КУРИЛЫ»",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "16:00-02:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Пинск.",
+      "address": "Пинск",
+      "lat": 52.115526,
+      "lon": 26.10256,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10023871617"
+    },
+    {
+      "id": "osm-pinsk-n8557420697",
+      "city": "pinsk",
+      "name": "Мята",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "17:00-02:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Пинск, вуліца Леніна, 30.",
+      "address": "вуліца Леніна, 30",
+      "lat": 52.113571,
+      "lon": 26.10973,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/8557420697"
+    },
+    {
+      "id": "osm-pinsk-n11244279409",
+      "city": "pinsk",
+      "name": "Prime",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "21:00-05:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Пинск.",
+      "address": "Пинск",
+      "lat": 52.11391,
+      "lon": 26.080356,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11244279409"
+    },
+    {
+      "id": "osm-pinsk-n12370356927",
+      "city": "pinsk",
+      "name": "Бывшая пантонная военая часть",
+      "category": "Смотровая",
+      "icon": "view",
+      "moods": [
+        "romance",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 20,
+      "open": "00:00-24:00",
+      "why": "Вид на город, красиво на закате",
+      "description": "Смотровая в городе Пинск.",
+      "address": "Пинск",
+      "lat": 52.12594,
+      "lon": 26.05706,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "смотровая"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/12370356927"
+    },
+    {
+      "id": "osm-pinsk-w328468420",
+      "city": "pinsk",
+      "name": "Детский парк",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Пинск, вуліца Зоі Касмадзямʼянскай.",
+      "address": "вуліца Зоі Касмадзямʼянскай",
+      "lat": 52.115844,
+      "lon": 26.098457,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/328468420"
+    },
+    {
+      "id": "osm-pinsk-w367877750",
+      "city": "pinsk",
+      "name": "Парк культуры «Трикотажник»",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Пинск, Цэнтральная вуліца.",
+      "address": "Цэнтральная вуліца",
+      "lat": 52.134704,
+      "lon": 26.099001,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/367877750"
+    },
+    {
+      "id": "osm-orsha-n11281709341",
+      "city": "orsha",
+      "name": "Капибара",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "10:00-22:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: суши",
+      "description": "Кафе в городе Орша, Савецкая вуліца, 29.",
+      "address": "Савецкая вуліца, 29",
+      "lat": 54.50182,
+      "lon": 30.410323,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "суши",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11281709341"
+    },
+    {
+      "id": "osm-orsha-n12424528703",
+      "city": "orsha",
+      "name": "Грей",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "11:00-24:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить",
+      "description": "Кафе в городе Орша, вуліца 1 Мая, 62А.",
+      "address": "вуліца 1 Мая, 62А",
+      "lat": 54.527038,
+      "lon": 30.428036,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/12424528703"
+    },
+    {
+      "id": "osm-orsha-n2469061825",
+      "city": "orsha",
+      "name": "Алиса",
+      "category": "Кафе",
+      "icon": "coffee",
+      "moods": [
+        "tasty",
+        "calm",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 15,
+      "priceText": "≈ 15 BYN",
+      "stay": 45,
+      "open": "12:00-22:00",
+      "why": "Место, чтобы выпить кофе и спокойно поговорить: белорусская кухня",
+      "description": "Кафе в городе Орша, праспект Тэкстыльшчыкаў, 20.",
+      "address": "праспект Тэкстыльшчыкаў, 20",
+      "lat": 54.495858,
+      "lon": 30.402314,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "белорусская кухня",
+        "кафе"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/2469061825"
+    },
+    {
+      "id": "osm-orsha-n5040598489",
+      "city": "orsha",
+      "name": "Музей Владимира Короткевича",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Орша, вуліца Уладзіміра Леніна, 26.",
+      "address": "вуліца Уладзіміра Леніна, 26",
+      "lat": 54.511466,
+      "lon": 30.428932,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/5040598489"
+    },
+    {
+      "id": "osm-orsha-n11375028038",
+      "city": "orsha",
+      "name": "Оршанский этнографический музей «Мельница»",
+      "category": "Музей",
+      "icon": "frame",
+      "moods": [
+        "culture",
+        "calm"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day"
+      ],
+      "price": 8,
+      "priceText": "≈ 8 BYN",
+      "stay": 75,
+      "open": "10:00-18:00",
+      "why": "Короткая культурная пауза в городе",
+      "description": "Музей в городе Орша, Замкавая вуліца, 2А.",
+      "address": "Замкавая вуліца, 2А",
+      "lat": 54.506189,
+      "lon": 30.421344,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "музей"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11375028038"
+    },
+    {
+      "id": "osm-orsha-n12424539940",
+      "city": "orsha",
+      "name": "Бурдог",
+      "category": "Бар",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "11:00-24:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Бар в городе Орша, праспект Тэкстыльшчыкаў, 16.",
+      "address": "праспект Тэкстыльшчыкаў, 16",
+      "lat": 54.494592,
+      "lon": 30.400709,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "бар",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/12424539940"
+    },
+    {
+      "id": "osm-orsha-n11283867148",
+      "city": "orsha",
+      "name": "Пинт Хаус",
+      "category": "Паб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "tasty",
+        "atmo"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 30,
+      "priceText": "≈ 30 BYN",
+      "stay": 90,
+      "open": "12:00-24:00",
+      "why": "Коктейли и атмосфера, чтобы начать вечер",
+      "description": "Паб в городе Орша, вуліца Уладзіміра Леніна, 14/15.",
+      "address": "вуліца Уладзіміра Леніна, 14/15",
+      "lat": 54.508978,
+      "lon": 30.426001,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "паб",
+        "бар",
+        "коктейли"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/11283867148"
+    },
+    {
+      "id": "osm-orsha-n10215362869",
+      "city": "orsha",
+      "name": "Хвамли",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "11:00-24:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Орша, вуліца Аляксандра Астроўскага, 2В.",
+      "address": "вуліца Аляксандра Астроўскага, 2В",
+      "lat": 54.51021,
+      "lon": 30.423273,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/10215362869"
+    },
+    {
+      "id": "osm-orsha-n12293314251",
+      "city": "orsha",
+      "name": "Каласки",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "10:00-23:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Орша, вуліца Уладзіміра Леніна, 18.",
+      "address": "вуліца Уладзіміра Леніна, 18",
+      "lat": 54.509833,
+      "lon": 30.427067,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/12293314251"
+    },
+    {
+      "id": "osm-orsha-n3128135568",
+      "city": "orsha",
+      "name": "Атмосфера",
+      "category": "Ресторан",
+      "icon": "food",
+      "moods": [
+        "tasty",
+        "romance",
+        "atmo"
+      ],
+      "company": [
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "day",
+        "evening"
+      ],
+      "price": 40,
+      "priceText": "≈ 40 BYN",
+      "stay": 90,
+      "open": "12:00-23:00",
+      "why": "Хорошее место для ужина без спешки",
+      "description": "Ресторан в городе Орша.",
+      "address": "Орша",
+      "lat": 54.521618,
+      "lon": 30.437844,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "ресторан"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/3128135568"
+    },
+    {
+      "id": "osm-orsha-n6126389685",
+      "city": "orsha",
+      "name": "Клубника",
+      "category": "Клуб",
+      "icon": "glass",
+      "moods": [
+        "party",
+        "active"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends"
+      ],
+      "times": [
+        "evening",
+        "night"
+      ],
+      "price": 20,
+      "priceText": "≈ 20 BYN вход",
+      "stay": 180,
+      "open": "23:00-06:00",
+      "why": "Музыка и танцы до утра",
+      "description": "Клуб в городе Орша.",
+      "address": "Орша",
+      "lat": 54.499737,
+      "lon": 30.433478,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "клуб",
+        "клуб",
+        "танцы",
+        "вечеринка"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/node/6126389685"
+    },
+    {
+      "id": "osm-orsha-w99505294",
+      "city": "orsha",
+      "name": "Городской парк",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Орша.",
+      "address": "Орша",
+      "lat": 54.508749,
+      "lon": 30.423552,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/99505294"
+    },
+    {
+      "id": "osm-orsha-w99721928",
+      "city": "orsha",
+      "name": "Парк Льнокомбината",
+      "category": "Парк",
+      "icon": "tree",
+      "moods": [
+        "calm",
+        "active",
+        "romance"
+      ],
+      "company": [
+        "solo",
+        "pair",
+        "friends",
+        "family"
+      ],
+      "times": [
+        "morning",
+        "day",
+        "evening",
+        "night"
+      ],
+      "price": 0,
+      "priceText": "Бесплатно",
+      "stay": 60,
+      "open": "00:00-24:00",
+      "why": "Зелень и прогулка, чтобы выдохнуть",
+      "description": "Парк в городе Орша.",
+      "address": "Орша",
+      "lat": 54.488533,
+      "lon": 30.403778,
+      "photo": "",
+      "tones": [
+        "#d7e9f8",
+        "#f3f0ff"
+      ],
+      "tags": [
+        "парк"
+      ],
+      "photos": [],
+      "osm": "https://www.openstreetmap.org/way/99721928"
     }
   ],
   "cities": [
@@ -2949,6 +10274,46 @@
       "currency": "BYN",
       "lat": 55.486,
       "lon": 28.769
+    },
+    {
+      "id": "bobruisk",
+      "label": "Бобруйск",
+      "country": "Беларусь",
+      "currency": "BYN",
+      "lat": 53.1384,
+      "lon": 29.2214
+    },
+    {
+      "id": "baranovichi",
+      "label": "Барановичи",
+      "country": "Беларусь",
+      "currency": "BYN",
+      "lat": 53.1327,
+      "lon": 26.0139
+    },
+    {
+      "id": "borisov",
+      "label": "Борисов",
+      "country": "Беларусь",
+      "currency": "BYN",
+      "lat": 54.2279,
+      "lon": 28.505
+    },
+    {
+      "id": "pinsk",
+      "label": "Пинск",
+      "country": "Беларусь",
+      "currency": "BYN",
+      "lat": 52.1124,
+      "lon": 26.1034
+    },
+    {
+      "id": "orsha",
+      "label": "Орша",
+      "country": "Беларусь",
+      "currency": "BYN",
+      "lat": 54.5081,
+      "lon": 30.4172
     }
   ]
 }
