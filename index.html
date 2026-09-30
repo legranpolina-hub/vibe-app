@@ -888,7 +888,7 @@
         '<button class="avatar" data-nav="saved" aria-label="Избранное">' + ic("heart") + '</button>' +
       '</div>' +
       '<section class="glass hero">' +
-        '<div class="meta"><button class="pill" data-act="changeLoc">' + ic("pin") + " " + esc(whereLabel()) + '</button><span class="pill">' + ic("clock") + " " + hhmm(nowMin()) + '</span></div>' +
+        '<div class="meta"><button class="pill" data-act="changeLoc">' + ic("pin") + " " + esc(whereLabel()) + '</button>' + (store.get("located", false) ? "" : '<button class="pill" data-act="locate" style="color:var(--sky-deep)">' + ic("locate") + ' Где я?</button>') + '<span class="pill">' + ic("clock") + " " + hhmm(nowMin()) + '</span></div>' +
         '<h1 class="h-display">Куда сегодня?</h1>' +
         '<p>Потяни сферу вправо или просто нажми, и VIBE выберет одно место рядом под твоё настроение.</p>' +
         '<div class="slide" id="slide" role="button" aria-label="Удиви меня">' +
@@ -1202,19 +1202,28 @@
       D.districts.forEach(function (d) { var x = dist({ lat: lat, lon: lon }, d); if (x < bd) { bd = x; best = d; } });
       store.set("locAsked", true);
       if (bd > 80) { if (!silent) toast("VIBE пока нет в твоём городе, выбери ближайший вручную"); return; }
-      S.loc = best.id; store.set("loc", S.loc); haptic("success");
+      S.loc = best.id; store.set("loc", S.loc); store.set("located", true); haptic("success");
       toast("Ты здесь: " + whereLabel()); render();
     }
     function fail() { store.set("locAsked", true); if (!silent) toast("Геолокация недоступна, выбери город вручную"); }
     try {
       if (tg && tg.LocationManager && tg.isVersionAtLeast && tg.isVersionAtLeast("8.0")) {
         tg.LocationManager.init(function () {
-          if (!tg.LocationManager.isLocationAvailable) { fail(); return; }
-          tg.LocationManager.getLocation(function (l) { if (l) apply(l.latitude, l.longitude); else fail(); });
+          var LM = tg.LocationManager;
+          if (!LM.isLocationAvailable) { fail(); return; }
+          if (silent && !LM.isAccessGranted) return;
+          if (!silent && LM.isAccessRequested && !LM.isAccessGranted) {
+            // доступ уже запрещали: предлагаем открыть настройки вместо системной ошибки
+            toast("Разреши доступ к геолокации в настройках");
+            try { LM.openSettings(); } catch (e) {}
+            return;
+          }
+          LM.getLocation(function (l) { if (l) apply(l.latitude, l.longitude); else fail(); });
         });
         return;
       }
     } catch (e) {}
+    if (silent) return;
     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function (p) { apply(p.coords.latitude, p.coords.longitude); }, fail, { timeout: 6000 });
     else fail();
   }
